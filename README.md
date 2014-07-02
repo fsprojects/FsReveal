@@ -7,6 +7,6 @@ F#Reveal
 - [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) by _Tomas Petricek_  
 - F#Reveal parses fsx file (markdown & F# code) and generates reveal.js slides!
 
-See some sample [here](http://kimsk.github.io/fsreveal).
+See some sample [here](http://kimsk.github.io/FsReveal).
 
 #### More to come..
