@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>9f02ffb1-f351-4e48-b3b2-a3f816528a43</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FsReveal</RootNamespace>
+    <AssemblyName>FsReveal</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
+    <Name>FsReveal</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Debug\FsReveal.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Release\FsReveal.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" />
+  <ItemGroup>
+    <Compile Include="Formatters.fs" />
+    <Compile Include="FsReveal.fs" />
+    <None Include="packages.config" />
+    <None Include="Generate.fsx" />
+    <None Include="template.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CSharpFormat">
+      <HintPath>..\..\FSharp.Formatting\bin\CSharpFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Deedle">
+      <HintPath>..\packages\Deedle.1.0.1\lib\net40\Deedle.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Deedle.RProvider.Plugin">
+      <HintPath>..\packages\Deedle.RPlugin.1.0.1\lib\net40\Deedle.RProvider.Plugin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Charting">
+      <HintPath>..\packages\FSharp.Charting.0.90.6\lib\net40\FSharp.Charting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.CodeFormat">
+      <HintPath>..\..\FSharp.Formatting\bin\FSharp.CodeFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Compiler.Service">
+      <HintPath>..\..\FSharp.Formatting\bin\FSharp.Compiler.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\RProvider.1.0.13\lib\net40\FSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Data">
+      <HintPath>..\packages\FSharp.Data.2.0.9\lib\net40\FSharp.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Literate">
+      <HintPath>..\..\FSharp.Formatting\bin\FSharp.Literate.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Markdown">
+      <HintPath>..\..\FSharp.Formatting\bin\FSharp.Markdown.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\packages\MathNet.Numerics.3.0.0\lib\net40\MathNet.Numerics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MathNet.Numerics.FSharp">
+      <HintPath>..\packages\MathNet.Numerics.FSharp.3.0.0\lib\net40\MathNet.Numerics.FSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="RDotNet">
+      <HintPath>..\packages\R.NET.Community.1.5.15\lib\net40\RDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RDotNet.FSharp">
+      <HintPath>..\packages\R.NET.Community.FSharp.0.1.8\lib\net40\RDotNet.FSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RDotNet.NativeLibrary">
+      <HintPath>..\packages\R.NET.Community.1.5.15\lib\net40\RDotNet.NativeLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RProvider">
+      <HintPath>..\packages\RProvider.1.0.13\lib\net40\RProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RProvider.DesignTime">
+      <HintPath>..\packages\RProvider.1.0.13\lib\net40\RProvider.DesignTime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RProvider.Runtime">
+      <HintPath>..\packages\RProvider.1.0.13\lib\net40\RProvider.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RProvider.Server">
+      <HintPath>..\packages\RProvider.1.0.13\lib\net40\RProvider.Server.exe</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package >
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>@project@</id>
+    <version>@build.number@</version>
+    <authors>@authors@</authors>
+    <owners>@authors@</owners>
+    <licenseUrl>http://github.com/tpetricek/FSharp.Formatting/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://github.com/tpetricek/FSharp.Formatting</projectUrl>
+    <iconUrl>https://raw.github.com/tpetricek/FSharp.Formatting/master/docs/files/misc/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>@summary@</summary>
+    <description>@description@</description>
+    <releaseNotes>@releaseNotes@</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>@tags@</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Razor" version="2.0.30506.0" />
+      <dependency id="RazorEngine" version="3.3.0" />
+      <dependency id="FSharp.Compiler.Service" version="0.0.44" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- Automatically referenced by VS -->
+    <file src="..\bin\CSharpFormat.*" target="lib/net40" />
+    <file src="..\bin\FSharp.CodeFormat.*" target="lib/net40" />
+    <file src="..\bin\FSharp.Literate.*" target="lib/net40" />
+    <file src="..\bin\FSharp.Markdown.*" target="lib/net40" />
+    <file src="..\bin\FSharp.MetadataFormat.*" target="lib/net40" />
+    <!-- Templates & styles & literate demos -->
+    <file src="..\misc\templates\*.cshtml" target="templates" />
+    <file src="..\misc\templates\reference\*.cshtml" target="templates/reference" />
+    <file src="..\misc\literate\*" target="literate" />
+    <file src="..\misc\literate\templates\*" target="literate/templates" />
+    <file src="..\docs\files\content\*" target="styles" />
+    <file src="..\docs\files\content\img\*" target="styles/img" />
+  </files>
+</package>
