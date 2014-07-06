@@ -16,8 +16,7 @@
 (*** slide-end ***)
 (*** slide-start ***)
 (*** hide ***)
-#I @"G:\GitHub\FSharp-Snippets\FsReveal\FsReveal"
-#load "packages/FsLab.0.0.14-beta/FsLab.fsx"
+#load "./src/FsReveal/packages/FsLab.0.0.16/FsLab.fsx"
 let Markdown = "markdown"
 let ``F# code`` = "code"
 type Awesome = { name: string}
