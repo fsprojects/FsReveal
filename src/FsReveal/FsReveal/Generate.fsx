@@ -1,5 +1,4 @@
-﻿#load "../packages/FsLab.0.0.16/FsLab.fsx"
-
+﻿#load @"G:\Fslab Journal\packages\FsLab.0.0.16\FsLab.fsx"
 #I "../../FSharp.Formatting/bin"
 #r "FSharp.Literate.dll"
 #r "FSharp.CodeFormat.dll"
@@ -26,4 +25,4 @@ let fsx = Path.Combine(__SOURCE_DIRECTORY__, "../../../fsreveal.fsx")
 let outDir = Path.Combine(__SOURCE_DIRECTORY__, "../../../output")
 
 File.ReadAllText(fsx)
-|> FsReveal.ProcessScriptFile  outDir "index.html"
+|> FsReveal.ProcessScriptFile outDir "index.html"
