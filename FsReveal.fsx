@@ -49,7 +49,7 @@
 (**
 ###F#Reveal
 
-- F#Reveal connect FSharp.Formatting and reveal.js
+- F#Reveal links FSharp.Formatting and reveal.js
 - It parses literate F# script file and generates reveal.js slides!
 *)
 // Trying to explain F#Reveal in F#
