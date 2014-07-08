@@ -3,6 +3,8 @@
 (*@ author = Karlkim Suwanmongkol @*)
 (*@ theme = sky @*)
 (*@ transition = default @*)
+(*** hide ***)
+#load @"G:\Fslab Journal\packages\FsLab.0.0.16\FsLab.fsx"
 (*** slide-start ***)
 (**
 ***
@@ -15,27 +17,61 @@
 *)
 (*** slide-end ***)
 (*** slide-start ***)
-(*** hide ***)
-#I @"G:\GitHub\FSharp-Snippets\FsReveal\FsReveal"
-#load "packages/FsLab.0.0.14-beta/FsLab.fsx"
-let Markdown = "markdown"
-let ``F# code`` = "code"
-type Awesome = { name: string}
-let FsReveal markdown fsharp = 
-  "awesome"
+(*** slide-start ***)
 (** 
 ## What is F#Reveal?
 
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) by _Hakim El Hattab_
-- [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) by _Tomas Petricek_  
-- F#Reveal parses fsx file (markdown & F# code) and generates reveal.js slides!
+- [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) by _Tomas Petricek_
+*)
+(*** slide-end ***)
+(*** slide-start ***)
+(**
+### Reveal.js
+
+- A framework for easily creating beautiful presentations using HTML.  
   
+
+> **Atwood's Law**: any application that can be written in JavaScript, will eventually be written in JavaScript.
 *)
-// Say it in F#
+(*** slide-end ***)
+(*** slide-start ***)
+(**
+### FSharp.Formatting
+
+- F# tools for generating documentation (Markdown processor and F# code formatter).
+- It parses a literate F# script file (markdown & F# code) and generate HTML or PDF.
+- Code syntax highlighting support.
+- It also evaluates your F# code and produce tooltips.
+*)
+(*** slide-end ***)
+(*** slide-start ***)
+(**
+###F#Reveal
+
+- F#Reveal links FSharp.Formatting and reveal.js
+- It parses literate F# script file and generates reveal.js slides!
+*)
+// Trying to explain F#Reveal in F#
+let Markdown = "markdown"
+let ``F# code`` = "F# code"
+
+type RevealJs = 
+  { 
+    html: string
+    tooltips: string
+  }
+
+let FsReveal = fun m f -> { html = "html"; tooltips = "tooltips" }
 let output = (Markdown, ``F# code``) ||> FsReveal
-(** 
-**Try hovering the F# code with your mouse..**
+(**
+The value of the output is..
 *)
+(*** include-value: output ***)
+(** 
+Try hovering the F# code with your mouse..
+*)
+(*** slide-end ***)
 (*** slide-end ***)
 (*** slide-start ***)
 (**
@@ -85,6 +121,59 @@ Need to think like a compiler to understand the code above..
 (*** slide-end ***)
 (*** slide-end ***)
 (*** slide-start ***)
+(*** slide-start ***)
+(**
+### C#
+    [lang=cs]
+    using System;
+ 
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Hello, world!");
+        }
+    }
+*)
+(*** slide-end ***)
+(*** slide-start ***)
+(**
+### JavaScript
+ 
+    [lang=js]
+    var sum = function() {
+        var i, x = 0;
+        for (i = 0; i < arguments.length; ++i) {
+            x += arguments[i];
+        }
+        return x;
+    }
+*)
+(*** slide-end ***)
+(*** slide-start ***)
+(**
+### Haskell
+ 
+    [lang=haskell]
+    factorial 0 = 1
+    factorial n | n > 0 = n * factorial (n - 1)
+*)
+(*** slide-end ***)
+(*** slide-start ***)
+(**
+### SQL
+ 
+    [lang=sql]
+    SELECT Book.title AS Title, COUNT(*) AS Authors
+    FROM  Book
+    JOIN  Book_author
+    ON  Book.isbn = Book_author.isbn
+    GROUP BY Book.title;
+ 
+*)
+(*** slide-end ***)
+(*** slide-end ***)
+(*** slide-start ***)
 (** 
 ### Define some values
 *)
@@ -96,8 +185,7 @@ let prices = [|53000<dollar>;44000<dollar>;59000<dollar>;82000<dollar>;50000<dol
 (*** slide-start ***)
 (** 
 ### F# code is evaluated
-  
-  
+
 #### `sizes.[0]`
 *)
 (*** include-value: sizes.[0] ***)
@@ -144,14 +232,11 @@ data
 (**
 **Bayes' Rule in LaTeX**
   
-  
-
-  
 $ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
 *)
 (*** slide-end ***)
 (*** slide-start ***)
 (**
-## More to come..
+- [Here](https://github.com/kimsk/FsReveal/blob/master/FsReveal.fsx) is the literate F# script file generating this presentation.
 *)
 (*** slide-end ***)
