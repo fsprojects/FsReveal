@@ -176,10 +176,26 @@
 <h3>FSharp.Formatting</h3>
 
 <ul>
-<li>F# tools for generating documentation (Markdown processor and F# code formatter).</li>
-<li>It parses a literate F# script file (markdown &amp; F# code) and generate HTML or PDF.</li>
+<li>F# tools for generating documentation (Markdown processor and F# code formatter).
+<ul>
+<li><a href="http://tpetricek.github.io/FSharp.Formatting/sidescript.html">Literate F# script file</a> (markdown &amp; F# code in fsx file)</li>
+<li><a href="http://tpetricek.github.io/FSharp.Formatting/sidemarkdown.html">Literate Markdown file</a> (markdown &amp; F# code in md file)</li>
+<li>Generate HTML, PDF, reveal.js, etc.</li>
+<li>Markdown extensions : LaTeX</li>
 <li>Code syntax highlighting support.</li>
-<li>It also evaluates your F# code and produce tooltips.</li>
+</ul></li>
+</ul>
+
+</section>
+
+<section>
+
+<h3>FSharp.Formatting</h3>
+
+<ul>
+<li>Evaluate F# code using <a href="http://fsharp.github.io/FSharp.Compiler.Service/">FSharp.Compiler.Service</a></li>
+<li><a href="https://github.com/tpetricek/FsLab">FsLab</a>: <a href="http://kimsk.github.io/Intro-to-Statistics/">sample</a></li>
+<li>Used by many F# and non-F# opensource projects</li>
 </ul>
 
 </section>
@@ -220,14 +236,37 @@
 
 <section>
 
+<section>
+
 <h2>Why F#Reveal?</h2>
 
 <ul>
-<li>F# Type inference</li>
+<li>F# Type inference
+<ul>
 <li>Don't need to specify type (most of the time)</li>
 <li>Less verbose and <strong>easy</strong> to write</li>
 <li>Can be <strong>hard</strong> to read without help from an IDE</li>
+</ul></li>
 </ul>
+
+</section>
+
+<section>
+
+<h2>Why F#Reveal?</h2>
+
+<ul>
+<li>Create your slides using markdown syntax</li>
+<li>Syntax highlighting for many programming languages (not only F#)</li>
+<li>LaTeX</li>
+<li>F# code is evaluated
+<ul>
+<li>Display values</li>
+<li>Charting and so on</li>
+</ul></li>
+</ul>
+
+</section>
 
 </section>
 
@@ -238,7 +277,7 @@
 <h2>Card Game Sample</h2>
 
 <blockquote>
-  <p>Domain Driven Design with F# type System by <em>Scott Wlaschin</em></p>
+  <p><a href="http://www.slideshare.net/ScottWlaschin/ddd-with-fsharptypesystemlondonndc2013">Domain Driven Design with F# type System</a> by <em>Scott Wlaschin</em></p>
 </blockquote>
 
 </section>
@@ -302,13 +341,24 @@
 
 <h3>JavaScript</h3>
 
-<pre lang="js"><span class="k">var</span> sum = <span class="k">function</span>() {
-    <span class="k">var</span> i, x = 0;
-    <span class="k">for</span> (i = 0; i &lt; arguments.length; ++i) {
-        x += arguments[i];
-    }
-    <span class="k">return</span> x;
+<pre lang="js"><span class="k">function</span> copyWithEvaluation(iElem, elem) {
+    <span class="k">return</span> <span class="k">function</span> (obj) {
+        <span class="k">var</span> newObj = {};
+        <span class="k">for</span> (<span class="k">var</span> p <span class="k">in</span> obj) {
+            <span class="k">var</span> v = obj[p];
+            <span class="k">if</span> (<span class="k">typeof</span> v === <span class="s">"function"</span>) {
+                v = v(iElem, elem);
+            }
+            newObj[p] = v;
+        }
+        <span class="k">if</span> (!newObj.exactTiming) {
+            newObj.delay += exports._libraryDelay;
+        }
+        <span class="k">return</span> newObj;
+    };
 }</pre>
+
+<p><em>code from <a href="https://github.com/winjs/winjs/blob/master/src/js/WinJS/Animations/_TransitionAnimation.js">winjs</a> project</em></p>
 
 </section>
 
@@ -316,8 +366,16 @@
 
 <h3>Haskell</h3>
 
-<pre lang="haskell">factorial 0 <span class="prep">=</span> 1
-factorial n | n <span class="prep">&gt;</span> 0 <span class="prep">=</span> n * factorial (n <span class="prep">-</span> 1)</pre>
+<pre lang="haskell">recur_count k <span class="prep">=</span> 1 : 1 : zipWith recurAdd (recur_count k) (tail (recur_count k))
+        <span class="k">where</span> recurAdd x y <span class="prep">=</span> k * x <span class="prep">+</span> y
+main <span class="prep">=</span> <span class="k">do</span>
+  argv <span class="prep">&lt;</span><span class="prep">-</span> getArgs
+  inputFile <span class="prep">&lt;</span><span class="prep">-</span> openFile (head argv) ReadMode
+  line <span class="prep">&lt;</span><span class="prep">-</span> hGetLine inputFile
+  <span class="k">let</span> [n,k] <span class="prep">=</span> map read (words line)
+  printf <span class="s">"%d\n"</span> ((recur_count k) !! (n-1))</pre>
+
+<p><em>code from <a href="https://github.com/NashFP/rosalind/blob/master/mark_wutka%2Bhaskell/FIB/fib_ziplist.hs">NashFP/rosalind</a></em></p>
 
 </section>
 
@@ -325,11 +383,12 @@ factorial n | n <span class="prep">&gt;</span> 0 <span class="prep">=</span> n *
 
 <h3>SQL</h3>
 
-<pre lang="sql"><span class="k">SELECT</span> Book.title <span class="k">AS</span> Title, <span class="k">COUNT</span>(*) <span class="k">AS</span> Authors
-<span class="k">FROM</span>  Book
-<span class="k">JOIN</span>  Book_author
-<span class="k">ON</span>  Book.isbn = Book_author.isbn
-<span class="k">GROUP</span> <span class="k">BY</span> Book.title;</pre>
+<pre lang="sql"><span class="k">select</span> * 
+<span class="k">from</span> 
+  (<span class="k">select</span> 1 <span class="k">as</span> Id <span class="k">union</span> <span class="k">all</span> <span class="k">select</span> 2 <span class="k">union</span> <span class="k">all</span> <span class="k">select</span> 3) <span class="k">as</span> X 
+<span class="k">where</span> Id <span class="k">in</span> (@Ids1, @Ids2, @Ids3)</pre>
+
+<p><em>sql from <a href="https://code.google.com/p/dapper-dot-net/">Dapper</a></em></p>
 
 </section>
 
@@ -476,8 +535,31 @@ factorial n | n <span class="prep">&gt;</span> 0 <span class="prep">=</span> n *
 
 <section>
 
+<h3>The Reality of a Developer's Life</h3>
+
+<p><strong>When I show my boss that I've fixed a bug:</strong></p>
+
+<p><img src="http://www.topito.com/wp-content/uploads/2013/01/code-07.gif" alt="When I show my boss that I've fixed a bug" /></p>
+
+<p><strong>When your regular expression returns what you expect:</strong></p>
+
+<p><img src="http://www.topito.com/wp-content/uploads/2013/01/code-03.gif" alt="When your regular expression returns what you expect" /></p>
+
+<p><em>from <a href="http://server.dzone.com/articles/reality-developers-life-gifs">The Reality of a Developer's Life - in GIFs, Of Course</a></em></p>
+
+</section>
+
+<section>
+
+<h2>Thank you for coming!</h2>
+
 <ul>
-<li><a href="https://github.com/kimsk/FsReveal/blob/master/FsReveal.fsx">Here</a> is the literate F# script file generating this presentation.</li>
+<li><a href="https://www.surveymonkey.com/s/FSharpLogo">F# Logo Project</a></li>
+<li><a href="http://fsharp.org/">The F# Software Foundation</a></li>
+<li><a href="http://c4fsharp.net/">Community for F#</a></li>
+<li><a href="https://twitter.com/search?src=typd&amp;q=%23fsharp">#fsharp</a> on twitter</li>
+<li><a href="http://www.meetup.com/nashfsharp/">Nashville F# User Group</a> &amp; <a href="https://www.facebook.com/groups/425426147563091/">F# Thai</a></li>
+<li><a href="https://github.com/kimsk/FsReveal">F#Reveal</a> (POC) on GitHub</li>
 </ul>
 
 </section>
