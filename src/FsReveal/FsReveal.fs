@@ -32,10 +32,8 @@ let splitBy v list =
         yield! loop (head::groupSoFar) tail }
   loop [] list |> List.ofSeq
 
-let getPresentation fsx =
-  let doc = Literate.ParseScriptString(fsx)
-  let paragraphs = doc.Paragraphs
-
+let getPresentation paragraphs =
+  
   /// get properties, a list of (key,value) from
   /// [[Span[Literal "key : value"]]]
   let getProperties (spans: list<list<_>>) =
@@ -74,3 +72,12 @@ let getPresentation fsx =
     Properties = properties
     Slides = slides
   }
+
+let getPresentationFromScriptString fsx =
+  let doc = Literate.ParseScriptString(fsx)
+  getPresentation doc.Paragraphs
+
+let getPresentationFromMarkdown md =
+  let doc = Literate.ParseMarkdownString(md)
+  getPresentation doc.Paragraphs
+
