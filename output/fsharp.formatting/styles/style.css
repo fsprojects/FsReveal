@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Gudea:400,700,400italic);
 
-/*-------------------------------------------------------------------------- 
-  Formatting for F# code snippets 
+/*--------------------------------------------------------------------------
+  Formatting for F# code snippets
 /*--------------------------------------------------------------------------*/
 
 /* identifier */
@@ -27,9 +27,9 @@ span.prep { color:#af75c1; }
 span.fsi { color:#808080; }
 
 /* omitted */
-span.omitted { 
-	background:#3c4e52;
-  border-radius:5px;
+span.omitted {
+    background:#3c4e52;
+    border-radius:5px;
 	color:#808080;
 	padding:0px 0px 1px 0px;
 }
@@ -37,7 +37,7 @@ span.omitted {
 div.tip {
 	background:#475b5f;
     border-radius:4px;
-    font:11pt 'Droid Sans', arial, sans-serif;
+    font:13pt 'Droid Sans', arial, sans-serif;
 	padding:6px 8px 6px 8px;
 	display:none;
     color:#d1d1d1;
@@ -47,7 +47,7 @@ table.pre pre {
   padding:0px;
   margin:0px;
   border:none;
-} 
+}
 table.pre, pre.fssnip, pre {
   line-height:16pt;
   border:1px solid #d8d8d8;
@@ -60,7 +60,7 @@ table.pre, pre.fssnip, pre {
   background-color:#212d30;
   padding:10px;
   border-radius:5px;
-  color:#d1d1d1;  
+  color:#d1d1d1;
 }
 table.pre pre {
   padding:0px;
@@ -77,7 +77,7 @@ table.pre td.lines {
   width:30px;
 }
 
-/*-------------------------------------------------------------------------- 
+/*--------------------------------------------------------------------------
   Formatting for page & standard document content
 /*--------------------------------------------------------------------------*/
 
@@ -141,7 +141,7 @@ td.title, thead {
 #main li { font-size: 12pt; margin: 5px 0px 5px 0px; }
 #main strong { font-weight:700; }
 
-/*-------------------------------------------------------------------------- 
+/*--------------------------------------------------------------------------
   Formatting for API reference
 /*--------------------------------------------------------------------------*/
 
@@ -160,14 +160,14 @@ td.title, thead {
   font-size:12pt;
   margin:10px 0px 0px 0px;
 }
-/*-------------------------------------------------------------------------- 
-  Additional formatting for the homepage 
+/*--------------------------------------------------------------------------
+  Additional formatting for the homepage
 /*--------------------------------------------------------------------------*/
 
-#nuget { 
+#nuget {
   margin-top:20px;
-  font-size: 11pt; 
-  padding:20px; 
+  font-size: 11pt;
+  padding:20px;
 }
 
 #nuget pre {
