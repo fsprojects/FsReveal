@@ -30,4 +30,26 @@
 - Code syntax highlighting support.
 - It also evaluates your F# code and produce tooltips.
 
+***
+
+# Slide-1
+
+## test
+
+---
+
+# Sub-Slide-1
+
+## test
+
+---
+
+# Sub-Slide-2
+
+## test
+
+***
+
+# Slide-2
+
 *)

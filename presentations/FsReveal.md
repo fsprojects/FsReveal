@@ -1,4 +1,4 @@
-- title : FsReveal 
+- title : FsReveal
 - description : Introduction to FsReveal
 - author : Karlkim Suwanmongkol
 - theme : dark
@@ -16,7 +16,7 @@
 ### Reveal.js
 
 - A framework for easily creating beautiful presentations using HTML.  
-  
+
 
 > **Atwood's Law**: any application that can be written in JavaScript, will eventually be written in JavaScript.
 
@@ -28,3 +28,25 @@
 - It parses a literate F# script file (markdown & F# code) and generate HTML or PDF.
 - Code syntax highlighting support.
 - It also evaluates your F# code and produce tooltips.
+
+***
+
+# Slide-1
+
+## test
+
+---
+
+# Sub-Slide-1
+
+## test
+
+---
+
+# Sub-Slide-2
+
+## test
+
+***
+
+# Slide-2
