@@ -1,7 +1,11 @@
 ﻿module FsReveal
 
+open System
+open System.IO
+open System.Collections.Generic
 open FSharp.Literate
 open FSharp.Markdown
+open FSharp.Markdown.Html
 
 type Slide =
   | Simple of MarkdownParagraph list
@@ -75,9 +79,43 @@ let getPresentation paragraphs =
 
 let getPresentationFromScriptString fsx =
   let doc = Literate.ParseScriptString(fsx)
-  getPresentation doc.Paragraphs
+  doc, getPresentation doc.Paragraphs
 
 let getPresentationFromMarkdown md =
   let doc = Literate.ParseMarkdownString(md)
-  getPresentation doc.Paragraphs
+  doc, getPresentation doc.Paragraphs
 
+
+let getSections slides =
+  let sb = new System.Text.StringBuilder()
+  use wr = new StringWriter(sb)
+
+  let ctx = 
+    {
+      Writer = wr
+      Links = Dictionary<_, _>()
+      Newline = Environment.NewLine
+      LineBreak = ignore
+      ParagraphIndent = ignore
+    }
+
+  let rec writeSections slides =
+    let writeSection paragraphs =
+      wr.Write("<section>")
+      formatParagraphs ctx paragraphs
+      wr.Write("</section>")  
+
+    match slides with
+    | [] -> ()
+    | slide::tail  ->
+      match slide with
+      | Simple(p) -> writeSection p      
+      | Nested(l) -> 
+         wr.Write("<section>")
+         l |> List.iter writeSection
+         wr.Write("</section>")
+
+      writeSections tail
+
+  writeSections slides
+  wr.ToString()
