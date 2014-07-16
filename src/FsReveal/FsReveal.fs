@@ -85,37 +85,19 @@ let getPresentationFromMarkdown md =
   let doc = Literate.ParseMarkdownString(md)
   doc, getPresentation doc.Paragraphs
 
+let getParagraphsFromPresentation (presentation:Presentation) =
+  let slides = presentation.Slides
 
-let getSections slides =
-  let sb = new System.Text.StringBuilder()
-  use wr = new StringWriter(sb)
+  let wrappedInSection paragraphs = InlineBlock("<section>")::paragraphs@[InlineBlock("</section>")]
 
-  let ctx = 
-    {
-      Writer = wr
-      Links = Dictionary<_, _>()
-      Newline = Environment.NewLine
-      LineBreak = ignore
-      ParagraphIndent = ignore
-    }
-
-  let rec writeSections slides =
-    let writeSection paragraphs =
-      wr.Write("<section>")
-      formatParagraphs ctx paragraphs
-      wr.Write("</section>")  
-
-    match slides with
-    | [] -> ()
-    | slide::tail  ->
-      match slide with
-      | Simple(p) -> writeSection p      
-      | Nested(l) -> 
-         wr.Write("<section>")
-         l |> List.iter writeSection
-         wr.Write("</section>")
-
-      writeSections tail
-
-  writeSections slides
-  wr.ToString()
+  let getParagraphsFromSlide = function
+    | Simple(paragraphs) ->
+        wrappedInSection paragraphs        
+    | Nested(listOfParagraphs) -> 
+        listOfParagraphs 
+        |> List.map (wrappedInSection)
+        |> List.collect id
+        |> wrappedInSection
+                
+        
+  List.collect (getParagraphsFromSlide) slides
