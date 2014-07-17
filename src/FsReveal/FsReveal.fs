@@ -3,6 +3,7 @@
 open System
 open System.IO
 open System.Collections.Generic
+open System.Text
 open FSharp.Literate
 open FSharp.Markdown
 open FSharp.Markdown.Html
@@ -36,8 +37,7 @@ let splitBy v list =
         yield! loop (head::groupSoFar) tail }
   loop [] list |> List.ofSeq
 
-let getPresentation paragraphs =
-  
+let getPresentation paragraphs =  
   /// get properties, a list of (key,value) from
   /// [[Span[Literal "key : value"]]]
   let getProperties (spans: list<list<_>>) =
@@ -85,19 +85,58 @@ let getPresentationFromMarkdown md =
   let doc = Literate.ParseMarkdownString(md)
   doc, getPresentation doc.Paragraphs
 
-let getParagraphsFromPresentation (presentation:Presentation) =
-  let slides = presentation.Slides
-
+let getParagraphsFromSlides (slides:Slide list) =
   let wrappedInSection paragraphs = InlineBlock("<section>")::paragraphs@[InlineBlock("</section>")]
 
   let getParagraphsFromSlide = function
     | Simple(paragraphs) ->
         wrappedInSection paragraphs        
     | Nested(listOfParagraphs) -> 
-        listOfParagraphs 
-        |> List.map (wrappedInSection)
-        |> List.collect id
+        listOfParagraphs         
+        |> List.collect (wrappedInSection)
         |> wrappedInSection
-                
         
   List.collect (getParagraphsFromSlide) slides
+
+let getHtmlSlidesAndTooltips (doc:LiterateDocument) paragraphs =  
+  let doc' = doc.With(paragraphs = paragraphs)  
+
+  let ctx =
+    { TemplateFile = None 
+      Replacements = []
+      GenerateLineNumbers = true
+      IncludeSource = false
+      Prefix = "fs"
+      OutputKind = OutputKind.Html
+      LayoutRoots = [] }
+    
+  let doc'' = Transformations.replaceLiterateParagraphs ctx doc'  
+  (doc''|> Literate.WriteHtml), doc''.FormattedTips
+
+
+let generateOutput outDir outFile doc presentation =
+  let paragraphs = getParagraphsFromSlides presentation.Slides
+  let htmlSlides, toolTips = getHtmlSlidesAndTooltips doc paragraphs
+
+  let relative subdir = Path.Combine(__SOURCE_DIRECTORY__, subdir)
+  let output = StringBuilder(File.ReadAllText (relative "template.html"))
+
+  // replace properties
+  presentation.Properties
+  |> List.iter (fun (k,v) -> 
+    let tag = sprintf "{%s}" k    
+    output.Replace(tag, v) |> ignore)
+
+  output
+    .Replace("{slides}", htmlSlides)
+    .Replace("{tooltips}", toolTips) |> ignore
+
+  File.WriteAllText (Path.Combine(outDir, outFile), output.ToString())
+
+let processMarkdownFile outDir outFile md =
+  let doc, presentation = getPresentationFromMarkdown md 
+  generateOutput outDir outFile doc presentation
+
+let processScriptFile outDir outFile fsx =
+  let doc, presentation = getPresentationFromScriptString fsx 
+  generateOutput outDir outFile doc presentation
