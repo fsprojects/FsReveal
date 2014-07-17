@@ -32,29 +32,60 @@
 
 ***
 
-# Slide-1
+# Syntax Highlighting
 
-## test
+## F# (with tooltips)
 
 *)
-let a = 10
-let b = 20
-let c = a + b
+
+let a = 5
+let factorial x = [1..x] |> List.reduce (*)
+let c = factorial a
+
 (**
----
-
-# Sub-Slide-1
-
-## test
 
 ---
 
-# Sub-Slide-2
+## C#
 
-## test
+    [lang=cs]
+    using System;
+
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Hello, world!");
+        }
+    }
+
+---
+
+## JavaScript
+
+    [lang=js]
+    function copyWithEvaluation(iElem, elem) {
+    return function (obj) {
+        var newObj = {};
+        for (var p in obj) {
+            var v = obj[p];
+            if (typeof v === "function") {
+                v = v(iElem, elem);
+            }
+            newObj[p] = v;
+        }
+        if (!newObj.exactTiming) {
+            newObj.delay += exports._libraryDelay;
+        }
+        return newObj;
+    };
+}
+
 
 ***
 
-# Slide-2
+**Bayes' Rule in LaTeX**
+  
+$ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
 
 *)
