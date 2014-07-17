@@ -100,17 +100,8 @@ let getParagraphsFromSlides (slides:Slide list) =
 
 let getHtmlSlidesAndTooltips (doc:LiterateDocument) paragraphs =  
   let doc' = doc.With(paragraphs = paragraphs)  
-
-  let ctx =
-    { TemplateFile = None 
-      Replacements = []
-      GenerateLineNumbers = true
-      IncludeSource = false
-      Prefix = "fs"
-      OutputKind = OutputKind.Html
-      LayoutRoots = [] }
     
-  let doc'' = Transformations.replaceLiterateParagraphs ctx doc'  
+  let doc'' = Literate.FormatLiterateNodes doc'  
   (doc''|> Literate.WriteHtml), doc''.FormattedTips
 
 
