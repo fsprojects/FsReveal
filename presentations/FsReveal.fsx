@@ -2,7 +2,7 @@
 - title : FsReveal 
 - description : Introduction to FsReveal
 - author : Karlkim Suwanmongkol
-- theme : dark
+- theme : Sky
 - transition : default
 
 ***
@@ -32,9 +32,9 @@
 
 ***
 
-# Syntax Highlighting
+### Syntax Highlighting
 
-## F# (with tooltips)
+#### F# (with tooltips)
 
 *)
 
@@ -46,7 +46,7 @@ let c = factorial a
 
 ---
 
-## C#
+#### C#
 
     [lang=cs]
     using System;
@@ -61,25 +61,25 @@ let c = factorial a
 
 ---
 
-## JavaScript
+#### JavaScript
 
     [lang=js]
     function copyWithEvaluation(iElem, elem) {
-    return function (obj) {
-        var newObj = {};
-        for (var p in obj) {
-            var v = obj[p];
-            if (typeof v === "function") {
-                v = v(iElem, elem);
-            }
-            newObj[p] = v;
-        }
-        if (!newObj.exactTiming) {
-            newObj.delay += exports._libraryDelay;
-        }
-        return newObj;
-    };
-}
+      return function (obj) {
+          var newObj = {};
+          for (var p in obj) {
+              var v = obj[p];
+              if (typeof v === "function") {
+                  v = v(iElem, elem);
+              }
+              newObj[p] = v;
+          }
+          if (!newObj.exactTiming) {
+              newObj.delay += exports._libraryDelay;
+          }
+          return newObj;
+      };
+    }
 
 
 ***

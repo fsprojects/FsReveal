@@ -1,7 +1,7 @@
 - title : FsReveal
 - description : Introduction to FsReveal
 - author : Karlkim Suwanmongkol
-- theme : dark
+- theme : Night
 - transition : default
 
 ***
@@ -31,9 +31,9 @@
 
 ***
 
-# Syntax Highlighting
+### Syntax Highlighting
 
-## F# (with tooltips)
+#### F# (with tooltips)
 
     let a = 5
     let factorial x = [1..x] |> List.reduce (*)
@@ -41,7 +41,7 @@
 
 ---
 
-## C#
+#### C#
 
     [lang=cs]
     using System;
@@ -56,25 +56,25 @@
 
 ---
 
-## JavaScript
+#### JavaScript
 
     [lang=js]
     function copyWithEvaluation(iElem, elem) {
-    return function (obj) {
-        var newObj = {};
-        for (var p in obj) {
-            var v = obj[p];
-            if (typeof v === "function") {
-                v = v(iElem, elem);
+        return function (obj) {
+            var newObj = {};
+            for (var p in obj) {
+                var v = obj[p];
+                if (typeof v === "function") {
+                    v = v(iElem, elem);
+                }
+                newObj[p] = v;
             }
-            newObj[p] = v;
-        }
-        if (!newObj.exactTiming) {
-            newObj.delay += exports._libraryDelay;
-        }
-        return newObj;
-    };
-}
+            if (!newObj.exactTiming) {
+                newObj.delay += exports._libraryDelay;
+            }
+            return newObj;
+        };
+    }
 
 
 ***
