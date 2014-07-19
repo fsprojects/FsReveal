@@ -16,6 +16,7 @@ type Presentation =
   {
     Properties: (string * string) list
     Slides: Slide list
+    Document: LiterateDocument
   }
 
 /// Split a list into chunks using the specified separator
@@ -37,7 +38,8 @@ let splitBy v list =
         yield! loop (head::groupSoFar) tail }
   loop [] list |> List.ofSeq
 
-let getPresentation paragraphs =  
+
+let getPresentation (doc:LiterateDocument) =
   /// get properties, a list of (key,value) from
   /// [[Span[Literal "key : value"]]]
   let getProperties (spans: list<list<_>>) =
@@ -54,13 +56,23 @@ let getPresentation paragraphs =
         | _ -> failwith "Invalid Presentation Property."
       | _ -> failwith "Invalid Presentation Property."
     )
-
+  
   // main section is separated by ***
-  let sections = splitBy (HorizontalRule('*')) paragraphs
+  let sections = splitBy (HorizontalRule('*')) doc.Paragraphs
   let properties = 
     match sections.Head with
     | [ListBlock(_, spans)] -> getProperties spans
     | _ -> failwith "Invalid Presentation Properties."
+
+  let wrappedInSection paragraphs = InlineBlock("<section>")::paragraphs@[InlineBlock("</section>")]
+
+  let getParagraphsFromSlide = function
+    | Simple(paragraphs) ->
+        wrappedInSection paragraphs        
+    | Nested(listOfParagraphs) -> 
+        listOfParagraphs         
+        |> List.collect (wrappedInSection)
+        |> wrappedInSection
 
   let slides = 
     sections.Tail
@@ -71,43 +83,33 @@ let getPresentation paragraphs =
         | [slide] -> Simple(slide)
         | _ -> Nested(result)
       )
+    
+  let paragraphs = List.collect (getParagraphsFromSlide) slides
 
   {
     Properties = properties
     Slides = slides
+    Document = doc.With(paragraphs = paragraphs)
   }
 
 let getPresentationFromScriptString fsx =
-  let doc = Literate.ParseScriptString(fsx)
-  doc, getPresentation doc.Paragraphs
+  fsx 
+  |> Literate.ParseScriptString
+  |> getPresentation 
 
 let getPresentationFromMarkdown md =
-  let doc = Literate.ParseMarkdownString(md)
-  doc, getPresentation doc.Paragraphs
+  md 
+  |> Literate.ParseMarkdownString
+  |> getPresentation
 
-let getParagraphsFromSlides (slides:Slide list) =
-  let wrappedInSection paragraphs = InlineBlock("<section>")::paragraphs@[InlineBlock("</section>")]
-
-  let getParagraphsFromSlide = function
-    | Simple(paragraphs) ->
-        wrappedInSection paragraphs        
-    | Nested(listOfParagraphs) -> 
-        listOfParagraphs         
-        |> List.collect (wrappedInSection)
-        |> wrappedInSection
-        
-  List.collect (getParagraphsFromSlide) slides
-
-let getHtmlSlidesAndTooltips (doc:LiterateDocument) paragraphs =  
-  let doc' = doc.With(paragraphs = paragraphs)  
-    
-  let doc'' = Literate.FormatLiterateNodes doc'  
-  (doc''|> Literate.WriteHtml), doc''.FormattedTips
-
-
-let generateOutput outDir outFile doc presentation =
-  let paragraphs = getParagraphsFromSlides presentation.Slides
-  let htmlSlides, toolTips = getHtmlSlidesAndTooltips doc paragraphs
+let generateOutput outDir outFile presentation =
+  let fsi = FsiEvaluator()  
+  let doc = 
+    Literate.FormatAndEvaluateCodeSnippets (presentation.Document, fsi)
+    |> Literate.FormatLiterateNodes
+  
+  let htmlSlides = Literate.WriteHtml doc
+  let toolTips = doc.FormattedTips
 
   let relative subdir = Path.Combine(__SOURCE_DIRECTORY__, subdir)
   let output = StringBuilder(File.ReadAllText (relative "template.html"))
@@ -123,11 +125,3 @@ let generateOutput outDir outFile doc presentation =
     .Replace("{tooltips}", toolTips) |> ignore
 
   File.WriteAllText (Path.Combine(outDir, outFile), output.ToString())
-
-let processMarkdownFile outDir outFile md =
-  let doc, presentation = getPresentationFromMarkdown md 
-  generateOutput outDir outFile doc presentation
-
-let processScriptFile outDir outFile fsx =
-  let doc, presentation = getPresentationFromScriptString fsx 
-  generateOutput outDir outFile doc presentation
