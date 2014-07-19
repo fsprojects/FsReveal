@@ -93,8 +93,8 @@ let getPresentation (doc:LiterateDocument) =
   }
 
 let getPresentationFromScriptString fsx =
-  fsx 
-  |> Literate.ParseScriptString
+  let fsi = FsiEvaluator() 
+  Literate.ParseScriptString (fsx, fsiEvaluator = fsi)
   |> getPresentation 
 
 let getPresentationFromMarkdown md =
@@ -103,10 +103,7 @@ let getPresentationFromMarkdown md =
   |> getPresentation
 
 let generateOutput outDir outFile presentation =
-  let fsi = FsiEvaluator()  
-  let doc = 
-    Literate.FormatAndEvaluateCodeSnippets (presentation.Document, fsi)
-    |> Literate.FormatLiterateNodes
+  let doc = Literate.FormatLiterateNodes presentation.Document 
   
   let htmlSlides = Literate.WriteHtml doc
   let toolTips = doc.FormattedTips
