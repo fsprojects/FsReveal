@@ -19,6 +19,22 @@ type Presentation =
     Document: LiterateDocument
   }
 
+/// Correctly combine two paths
+let (@@) a b = Path.Combine(a, b)
+
+/// Ensure that directory exists
+let ensureDirectory path =
+  let dir = DirectoryInfo(path)
+  if not dir.Exists then dir.Create()
+
+/// Copy all files from source to target
+let rec copyFiles source target =
+  ensureDirectory target
+  for f in Directory.GetDirectories(source) do
+    copyFiles f (target @@ Path.GetFileName(f))
+  for f in Directory.GetFiles(source) do
+    File.Copy(f, (target @@ Path.GetFileName(f)), true)
+
 /// Split a list into chunks using the specified separator
 /// This takes a list and returns a list of lists (chunks)
 /// that represent individual groups, separated by the given
@@ -108,7 +124,7 @@ let generateOutput outDir outFile presentation =
   let htmlSlides = Literate.WriteHtml doc
   let toolTips = doc.FormattedTips
 
-  let relative subdir = Path.Combine(__SOURCE_DIRECTORY__, subdir)
+  let relative subdir = __SOURCE_DIRECTORY__ @@ subdir
   let output = StringBuilder(File.ReadAllText (relative "template.html"))
 
   // replace properties
@@ -121,7 +137,8 @@ let generateOutput outDir outFile presentation =
     .Replace("{slides}", htmlSlides)
     .Replace("{tooltips}", toolTips) |> ignore
 
-  File.WriteAllText (Path.Combine(outDir, outFile), output.ToString())
+  File.WriteAllText (outDir @@ outFile, output.ToString())
+  copyFiles (__SOURCE_DIRECTORY__ @@ "../reveal.js") outDir 
 
 
 let generateOutputFromScriptFile outDir outFile fsxFile =
