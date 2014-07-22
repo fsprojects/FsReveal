@@ -122,3 +122,18 @@ let generateOutput outDir outFile presentation =
     .Replace("{tooltips}", toolTips) |> ignore
 
   File.WriteAllText (Path.Combine(outDir, outFile), output.ToString())
+
+
+let generateOutputFromScriptFile outDir outFile fsxFile =
+  let fsx = File.ReadAllText (fsxFile)
+
+  fsx 
+  |> getPresentationFromScriptString
+  |> generateOutput outDir outFile
+
+let generateOutputFromMarkdownFile outDir outFile mdFile =
+  let fsx = File.ReadAllText (mdFile)
+
+  fsx 
+  |> getPresentationFromMarkdown
+  |> generateOutput outDir outFile
