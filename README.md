@@ -1,5 +1,7 @@
-FsReveal
+FsReveal [![Build status](https://ci.appveyor.com/api/projects/status/rpwg3epbvv5fwq1p/branch/master)](https://ci.appveyor.com/project/kimsk/fsreveal/branch/master)
 ========
+
+_Inspried by two great works:_
 
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) by _Hakim El Hattab_
 - [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) by _Tomas Petricek_
