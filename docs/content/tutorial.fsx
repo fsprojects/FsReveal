@@ -3,16 +3,17 @@
 
   First, add a reference to FsReveal.dll
 *)
-#r @"..\..\bin\FsReveal.dll"
+#r "FsReveal.dll"
+open FsReveal
 (**
   Then call either `FsReveal.generateOutputFromScriptFile` or `FsReveal.generateOutputFromMarkdownFile` functions.
 
-  `outDir` is the output folder that contains all files required.
-
+  `outDir` is the output folder that contains all files required to host your reveal.js slides.   
 *)
-let outDir = @"g:\output"
+let outDir = @"c:\output"
 
-FsReveal.generateOutputFromScriptFile outDir "test-fsx.html" "input.fsx"
+(** input is an F# script file *)
+FsReveal.GenerateOutputFromScriptFile outDir "index.html" "input.fsx"
 
-FsReveal.generateOutputFromMarkdownFile outDir "test-md.html"  "input.md"
-
+(** input is a markdown file *)
+FsReveal.GenerateOutputFromMarkdownFile outDir "index.html"  "input.md"

@@ -1,3 +1,29 @@
+(**
+### See FsReveal slides in action
+
+- [1st sample](http://fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/kimsk/FsReveal/tree/master/src/presentations/fsreveal.fsx)
+- [2nd sample](http://fsreveal.azurewebsites.net/index-md.html) generated from [FsReveal.md](https://github.com/kimsk/FsReveal/tree/master/src/presentations/fsreveal.md)
+
+***
+
+  Below is a quick sample on how to generate reveal.js slides using FsReveal.
+
+  First, add a reference to FsReveal.dll
+*)
+#r "FsReveal.dll"
+open FsReveal
+(**
+  Then call either `FsReveal.generateOutputFromScriptFile` or `FsReveal.generateOutputFromMarkdownFile` functions.
+
+  `outDir` is the output folder that contains all files required to host your reveal.js slides.   
+*)
+let outDir = @"c:\output"
+
+(** input is an F# script file *)
+FsReveal.GenerateOutputFromScriptFile outDir "index.html" "input.fsx"
+
+(** input is a markdown file *)
+FsReveal.GenerateOutputFromMarkdownFile outDir "index.html"  "input.md"
 (** 
 Contributing and copyright
 --------------------------
