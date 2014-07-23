@@ -1,8 +1,8 @@
 (**
 ### See FsReveal slides in action
 
-- [1st sample](http://fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/kimsk/FsReveal/tree/master/src/presentations/fsreveal.fsx)
-- [2nd sample](http://fsreveal.azurewebsites.net/index-md.html) generated from [FsReveal.md](https://github.com/kimsk/FsReveal/tree/master/src/presentations/fsreveal.md)
+- [1st sample](http://fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/kimsk/FsReveal/blob/master/src/presentations/FsReveal.fsx)
+- [2nd sample](http://fsreveal.azurewebsites.net/index-md.html) generated from [FsReveal.md](https://github.com/kimsk/FsReveal/blob/master/src/presentations/FsReveal.md) ([raw](https://raw.githubusercontent.com/kimsk/FsReveal/master/src/presentations/FsReveal.md))
 
 ***
 
