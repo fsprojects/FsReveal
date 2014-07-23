@@ -31,8 +31,8 @@ let md = """
 ### Section 3"""
 
 [<Test>]
-let ``can read properties from markdown`` () =
-  let properties = (md |> FsReveal.getPresentationFromMarkdown).Properties
+let ``can read properties from markdown`` () =  
+  let properties = (md |> FsReveal.GetPresentationFromMarkdown).Properties
 
   Assert.AreEqual(("title", "FsReveal"), properties |> Seq.find (fun (k,_) -> k = "title"))
   Assert.AreEqual(("description", "Introduction to FsReveal"), properties |> Seq.find (fun (k,_) -> k = "description"))
@@ -41,7 +41,7 @@ let ``can read properties from markdown`` () =
 
 [<Test>]
 let ``can generate sections from markdown`` () =
-  let slides = (md |> FsReveal.getPresentationFromMarkdown).Slides
+  let slides = (md |> FsReveal.GetPresentationFromMarkdown).Slides
 
   Assert.AreEqual(3, slides.Length)
 
