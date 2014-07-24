@@ -37,9 +37,16 @@ The library is available under Public Domain license, which allows modification 
 redistribution for both commercial and non-commercial purposes. For more information see the 
 [License file][license] in the GitHub repository. 
 
+Logo
+----
+
+- [ProjectScaffold](https://github.com/fsprojects/ProjectScaffold/blob/9e28426459007df785432fca4cf8996b0aed90d0/docs/files/img/logo-template.pdn) by Sergey Tihon
+- [Presentation icon](http://thenounproject.com/term/presentation/47356/) by [Milky](http://thenounproject.com/Milky/)
+
+
   [content]: https://github.com/kimsk/FsReveal/tree/master/docs/content
   [gh]: https://github.com/kimsk/FsReveal
   [issues]: https://github.com/kimsk/FsReveal/issues
   [readme]: https://github.com/kimsk/FsReveal/blob/master/README.md
-  [license]: https://github.com/kimsk/FsReveal/blob/master/LICENSE.txt
+  [license]: https://github.com/kimsk/FsReveal/blob/master/LICENSE.txt  
 *)
