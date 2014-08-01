@@ -5,19 +5,21 @@
     <version>@build.number@</version>
     <authors>@authors@</authors>
     <owners>@authors@</owners>
-    <licenseUrl>http://github.com/fsprojects/FSharp.ProjectScaffold/blob/master/LICENSE.txt</licenseUrl>
-    <projectUrl>http://fsprojects.github.com/FSharp.ProjectScaffold</projectUrl>
-    <iconUrl>https://raw.github.com/fsharp/FSharp.ProjectScaffold/master/nuget/logo.png</iconUrl>
+    <licenseUrl>https://github.com/kimsk/FsReveal/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/kimsk/FsReveal</projectUrl>
+    <iconUrl>http://kimsk.github.io/FsReveal/img/logo-2.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>@summary@</summary>
     <description>@description@</description>
     <releaseNotes>@releaseNotes@</releaseNotes>
-    <copyright>Copyright 2013</copyright>
+    <copyright>Copyright 2014</copyright>
     <tags>@tags@</tags>
-    <dependencies />
+    <dependencies >
+      <dependency id="FSharp.Formatting" version="2.4.18" />
+    </dependencies>
   </metadata>
-  <files>
-    <file src="..\bin\FSharp.ProjectTemplate.dll" target="lib/net40" />
-    <file src="..\bin\FSharp.ProjectTemplate.pdb" target="lib/net40" />
+  <files>    
+    <file src="..\bin\FsReveal.*" target="lib/net40" />
+    <file src="..\src\reveal.js\**\*.*" target="reveal.js" />
   </files>
 </package>
