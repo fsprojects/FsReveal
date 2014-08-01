@@ -6,6 +6,12 @@
 
 ***
 
+  <div class="well well-small center" id="nuget">
+      The Com Type Provider can be
+      <a href="https://www.nuget.org/packages/FsReveal">installed from NuGet</a>:
+      <pre>PM> Install-Package FsReveal -Pre</pre>
+  </div>
+
   Below is a quick sample on how to generate reveal.js slides using FsReveal.
 
   First, add a reference to FsReveal.dll
