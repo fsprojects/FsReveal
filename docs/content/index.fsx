@@ -12,7 +12,9 @@
       <pre>PM> Install-Package FsReveal -Pre</pre>
   </div>
 
-  Below is a quick sample on how to generate reveal.js slides using FsReveal.
+  If you want to get start quickly, just look at [Script.fsx](https://github.com/kimsk/FsReveal/blob/TryFsReveal/TryFsReveal/Script.fsx) in [TryFsReveal project](https://github.com/kimsk/FsReveal/tree/TryFsReveal).
+  
+  Or follow the quick sample on how to generate reveal.js slides using FsReveal below.
 
   First, add a reference to FsReveal.dll
 *)
