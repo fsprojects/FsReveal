@@ -7,6 +7,10 @@ _Inspried by two great works:_
 - [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) by _Tomas Petricek_
 - FsReveal parses markdown and F# script file and generates reveal.js slides.
 
+
+If you want to get start quickly, just look at [Script.fsx](https://github.com/kimsk/FsReveal/blob/TryFsReveal/TryFsReveal/Script.fsx) in [TryFsReveal project](https://github.com/kimsk/FsReveal/tree/TryFsReveal).
+  
+
 #### See FsReveal slides in action
 
 - [1st sample](http://fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/kimsk/FsReveal/blob/master/src/presentations/FsReveal.fsx)
