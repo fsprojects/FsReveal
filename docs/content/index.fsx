@@ -7,7 +7,7 @@
 ***
 
   <div class="well well-small center" id="nuget">
-      The Com Type Provider can be
+      The FsReveal can be
       <a href="https://www.nuget.org/packages/FsReveal">installed from NuGet</a>:
       <pre>PM> Install-Package FsReveal -Pre</pre>
   </div>
