@@ -80,6 +80,7 @@
     <None Include="packages.config" />
     <Compile Include="FsReveal.fs" />
     <None Include="template.html" />
+    <None Include="FsReveal.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

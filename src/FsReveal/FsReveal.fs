@@ -111,6 +111,9 @@ module internal Misc =
       Document = doc.With(paragraphs = paragraphs)
     }
 
+module FsRevealHelper =
+  let mutable Folder = __SOURCE_DIRECTORY__
+
 type FsReveal =
   static member GetPresentationFromScriptString fsx =
     let fsi = FsiEvaluator() 
@@ -128,8 +131,9 @@ type FsReveal =
     let htmlSlides = Literate.WriteHtml doc
     let toolTips = doc.FormattedTips
 
-    let relative subdir = __SOURCE_DIRECTORY__ @@ subdir
-    let output = StringBuilder(File.ReadAllText (relative "template.html"))
+    let relative subdir = FsRevealHelper.Folder @@ subdir    
+    printfn "Apply template : %s" (relative "template.html")
+    let output = StringBuilder(File.ReadAllText (relative "template.html"))    
 
     // replace properties
     presentation.Properties
@@ -142,7 +146,8 @@ type FsReveal =
       .Replace("{tooltips}", toolTips) |> ignore
 
     File.WriteAllText (outDir @@ outFile, output.ToString())
-    copyFiles (__SOURCE_DIRECTORY__ @@ "../reveal.js") outDir 
+    printfn "Copy reveal.js files : %s" (FsRevealHelper.Folder @@ "../reveal.js")
+    copyFiles (FsRevealHelper.Folder @@ "../reveal.js") outDir 
 
   static member GenerateOutputFromScriptFile outDir outFile fsxFile =
     let fsx = File.ReadAllText (fsxFile)
