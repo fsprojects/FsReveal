@@ -1,14 +1,16 @@
 (**
-  Below is a quick sample on how to generate reveal.js slides using FsReveal.
+  If you want to get start quickly, just look at [Script.fsx](https://github.com/kimsk/FsReveal/blob/TryFsReveal/TryFsReveal/Script.fsx) in [TryFsReveal project](https://github.com/kimsk/FsReveal/tree/TryFsReveal).
+  
+  Or follow the quick sample on how to generate reveal.js slides using FsReveal below.
 
-  First, add a reference to FsReveal.dll
+  First, add a reference to FsReveal.dll by loading FsReveal.fsx.
 *)
-#r "FsReveal.dll"
+#load @"..\packages\FsReveal.0.0.3-beta\fsreveal\fsreveal.fsx"
 open FsReveal
 (**
   Then call either `FsReveal.generateOutputFromScriptFile` or `FsReveal.generateOutputFromMarkdownFile` functions.
 
-  `outDir` is the output folder that contains all files required to host your reveal.js slides.   
+  `outDir` is your slides output folder. After the slides are generated, FsReveal also copy all files required to host your reveal.js slides there.
 *)
 let outDir = @"c:\output"
 
