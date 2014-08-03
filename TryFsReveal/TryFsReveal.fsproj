@@ -33,56 +33,19 @@
     <DocumentationFile>bin\Release\TryFsReveal.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSharpFormat">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\CSharpFormat.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.CodeFormat">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.CodeFormat.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Compiler.Service">
-      <HintPath>..\packages\FSharp.Compiler.Service.0.0.57\lib\net45\FSharp.Compiler.Service.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Literate">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.Literate.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Markdown">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.Markdown.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.MetadataFormat">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.MetadataFormat.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FsReveal">
-      <HintPath>..\packages\FsReveal.0.0.1-beta\lib\net40\FsReveal.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RazorEngine">
-      <HintPath>..\packages\RazorEngine.3.3.0\lib\net40\RazorEngine.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Script.fsx" />
     <None Include="app.config" />
     <None Include="input.md" />
     <None Include="input.fsx" />
-    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
