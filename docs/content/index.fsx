@@ -16,8 +16,12 @@
   
   Or follow the quick sample on how to generate reveal.js slides using FsReveal below.
 
-  First, add a reference to FsReveal.dll by loading FsReveal.fsx.
+  First, load FSharp.Formatting, FSharp.Compiler.Service, and FsReveal.fsx.
 *)
+#I @"..\..\FSharp.Formatting.2.4.18\lib\net40\"
+#I @"..\..\FSharp.Compiler.Service.0.0.57\lib\net40\"
+#r "FSharp.Compiler.Service.dll"
+#r "FSharp.Literate.dll"
 #load @"..\packages\FsReveal.0.0.3-beta\fsreveal\fsreveal.fsx"
 open FsReveal
 (**
