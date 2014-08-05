@@ -5,11 +5,11 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>3624f4d4-0858-4769-872c-543461629bfe</ProjectGuid>
+    <ProjectGuid>4c3735eb-cc14-4af7-bc79-de5100816586</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>TryFsReveal</RootNamespace>
     <AssemblyName>TryFsReveal</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
     <Name>TryFsReveal</Name>
   </PropertyGroup>
@@ -58,7 +58,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FsReveal">
-      <HintPath>..\packages\FsReveal.0.0.3-beta\lib\net40\FsReveal.dll</HintPath>
+      <HintPath>..\packages\FsReveal.0.0.4-beta\lib\net40\FsReveal.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
@@ -79,9 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Script.fsx" />
-    <None Include="app.config" />
-    <None Include="input.md" />
     <None Include="input.fsx" />
+    <None Include="input.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>

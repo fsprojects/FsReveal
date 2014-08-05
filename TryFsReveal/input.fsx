@@ -5,56 +5,77 @@
 - theme : Sky
 - transition : default
 
+
 ***
 
+
 ### What is FsReveal?
+
 
 - Generates [reveal.js](http://lab.hakim.se/reveal-js/#/) presentation from [markdown](http://daringfireball.net/projects/markdown/)
 - Utilizes [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) for markdown parsing
 
+
 ***
 
+
 ### Reveal.js
+
 
 - A framework for easily creating beautiful presentations using HTML.  
   
 
+
 > **Atwood's Law**: any application that can be written in JavaScript, will eventually be written in JavaScript.
+
 
 ***
 
+
 ### FSharp.Formatting
+
 
 - F# tools for generating documentation (Markdown processor and F# code formatter).
 - It parses markdown and F# script file and generates HTML or PDF.
 - Code syntax highlighting support.
 - It also evaluates your F# code and produce tooltips.
 
+
 ***
+
 
 ### Syntax Highlighting
 
+
 #### F# (with tooltips)
 
+
 *)
+
 
 let a = 5
 let factorial x = [1..x] |> List.reduce (*)
 let c = factorial a
 (** 
 
+
 `c` is evaluated for you
+
 
 *)
 (*** include-value: c ***)
 (**
 
+
 ---
+
 
 #### C#
 
+
     [lang=cs]
     using System;
+
 
     class Program
     {
@@ -64,9 +85,12 @@ let c = factorial a
         }
     }
 
+
 ---
 
+
 #### JavaScript
+
 
     [lang=js]
     function copyWithEvaluation(iElem, elem) {
@@ -85,4 +109,58 @@ let c = factorial a
           return newObj;
       };
     }
+
+
+---
+
+
+#### Haskell
+ 
+    [lang=haskell]
+    recur_count k = 1 : 1 : zipWith recurAdd (recur_count k) (tail (recur_count k))
+            where recurAdd x y = k * x + y
+
+
+    main = do
+      argv <- getArgs
+      inputFile <- openFile (head argv) ReadMode
+      line <- hGetLine inputFile
+      let [n,k] = map read (words line)
+      printf "%d\n" ((recur_count k) !! (n-1))
+
+
+*code from [NashFP/rosalind](https://github.com/NashFP/rosalind/blob/master/mark_wutka%2Bhaskell/FIB/fib_ziplist.hs)*
+
+
+---
+
+
+### SQL
+ 
+    [lang=sql]
+    select * 
+    from 
+      (select 1 as Id union all select 2 union all select 3) as X 
+    where Id in (@Ids1, @Ids2, @Ids3)
+
+
+*sql from [Dapper](https://code.google.com/p/dapper-dot-net/)* 
+
+
+---
+
+
+**Bayes' Rule in LaTeX**
+  
+$ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
+
+
+***
+
+
+
+
+
+
 *)
+
