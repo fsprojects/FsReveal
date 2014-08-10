@@ -126,6 +126,12 @@ type FsReveal =
     |> getPresentation
 
   static member GenerateOutput outDir outFile presentation =
+    if Directory.Exists outDir then
+      printfn "%s exists.." outDir
+    else
+      Directory.CreateDirectory outDir |> ignore
+      printfn "Create %s.." outDir
+
     let doc = Literate.FormatLiterateNodes presentation.Document 
   
     let htmlSlides = Literate.WriteHtml doc
@@ -146,19 +152,32 @@ type FsReveal =
       .Replace("{tooltips}", toolTips) |> ignore
 
     File.WriteAllText (outDir @@ outFile, output.ToString())
-    printfn "Copy reveal.js files : %s" (FsRevealHelper.Folder @@ "../reveal.js")
-    copyFiles (FsRevealHelper.Folder @@ "../reveal.js") outDir 
+
+    let revealJsDir = (FsRevealHelper.Folder @@ "../reveal.js")
+    printfn "Copy reveal.js files from %s to %s" revealJsDir outDir 
+    copyFiles revealJsDir outDir 
+
+  
+  static member private checkIfFileExistsAndRun file f =
+    if File.Exists file then
+      f()
+    else
+      printfn "%s does not exist. Abort!" file
 
   static member GenerateOutputFromScriptFile outDir outFile fsxFile =
-    let fsx = File.ReadAllText (fsxFile)
+    FsReveal.checkIfFileExistsAndRun fsxFile (fun () -> 
+          let fsx = File.ReadAllText (fsxFile)
 
-    fsx 
-    |> FsReveal.GetPresentationFromScriptString
-    |> FsReveal.GenerateOutput outDir outFile
+          fsx 
+          |> FsReveal.GetPresentationFromScriptString
+          |> FsReveal.GenerateOutput outDir outFile
+      )
 
   static member GenerateOutputFromMarkdownFile outDir outFile mdFile =
-    let fsx = File.ReadAllText (mdFile)
+    FsReveal.checkIfFileExistsAndRun mdFile (fun () -> 
+          let md = File.ReadAllText (mdFile)
 
-    fsx 
-    |> FsReveal.GetPresentationFromMarkdown
-    |> FsReveal.GenerateOutput outDir outFile
+          md 
+          |> FsReveal.GetPresentationFromMarkdown
+          |> FsReveal.GenerateOutput outDir outFile
+      )       
