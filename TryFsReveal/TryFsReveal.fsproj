@@ -34,11 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CSharpFormat">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\CSharpFormat.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\CSharpFormat.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.CodeFormat">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.CodeFormat.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\FSharp.CodeFormat.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Compiler.Service">
@@ -46,19 +46,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Literate">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.Literate.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\FSharp.Literate.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Markdown">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.Markdown.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\FSharp.Markdown.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.MetadataFormat">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.MetadataFormat.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\FSharp.MetadataFormat.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FsReveal">
-      <HintPath>..\packages\FsReveal.0.0.4-beta\lib\net40\FsReveal.dll</HintPath>
+      <HintPath>..\packages\FsReveal.0.0.5-beta\lib\net40\FsReveal.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />

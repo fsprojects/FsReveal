@@ -8,7 +8,7 @@
     <ProjectGuid>98e2b970-2bb9-420a-a15a-d7418574e963</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>FsRevealConsole</RootNamespace>
-    <AssemblyName>FsRevealConsole</AssemblyName>
+    <AssemblyName>frc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
@@ -39,11 +39,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CSharpFormat">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\CSharpFormat.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\CSharpFormat.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.CodeFormat">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.CodeFormat.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\FSharp.CodeFormat.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Compiler.Service">
@@ -51,19 +51,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Literate">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.Literate.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\FSharp.Literate.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Markdown">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.Markdown.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\FSharp.Markdown.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.MetadataFormat">
-      <HintPath>..\packages\FSharp.Formatting.2.4.18\lib\net40\FSharp.MetadataFormat.dll</HintPath>
+      <HintPath>..\packages\FSharp.Formatting.2.4.20\lib\net40\FSharp.MetadataFormat.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FsReveal">
-      <HintPath>..\packages\FsReveal.0.0.4-beta\lib\net40\FsReveal.dll</HintPath>
+      <HintPath>..\packages\FsReveal.0.0.5-beta\lib\net40\FsReveal.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
@@ -85,8 +85,8 @@
   <ItemGroup>
     <Compile Include="Program.fs" />
     <None Include="App.config" />
-    <None Include="packages.config" />
     <None Include="Script.fsx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

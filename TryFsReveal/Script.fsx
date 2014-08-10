@@ -1,4 +1,4 @@
-﻿#load @"..\packages\FsReveal.0.0.4-beta\fsreveal\fsreveal.fsx"
+﻿#load @"..\packages\FsReveal.0.0.5-beta\fsreveal\fsreveal.fsx"
 open FsReveal
 
 let outDir = @"c:\output"

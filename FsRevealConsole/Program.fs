@@ -10,6 +10,8 @@ type CommandLineOptions =
 
 [<EntryPoint>]
 let main argv =   
+  FsRevealHelper.Folder <- @".\fsreveal"
+
   let defaultOutDir = @"c:\output"
   let usage = """
   frc [-o outDir] (-i inputMd|-f inputFsx)
@@ -28,15 +30,16 @@ let main argv =
       | "-i"::inputMd::rest ->
         parseArgv' { commandLineOptions with fsx = false; input = inputMd } rest
       | ["-h"]
+      | ["-help"]
       | _ -> None
 
     parseArgv' { fsx = false; outDir = defaultOutDir; input = "input.md"} (argv|> List.ofArray)
 
-  let commandLineOptions = parseArgv argv
+  let commandLineOptions =  if argv.Length > 0 then parseArgv argv else None
 
   match commandLineOptions with
   | Some {fsx = true;outDir = outDir; input = input} ->
-      FsReveal.GenerateOutputFromScriptFile outDir "index.html" input
+      printfn "FsRevealConsole does not currently support fsx."
   | Some {fsx = false;outDir = outDir; input = input} ->
       FsReveal.GenerateOutputFromMarkdownFile outDir "index.html" input
   | _ -> 
