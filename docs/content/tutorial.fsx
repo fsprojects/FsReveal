@@ -5,7 +5,7 @@
 
   First, add a reference to FsReveal.dll by loading FsReveal.fsx.
 *)
-#load @"..\packages\FsReveal.0.0.3-beta\fsreveal\fsreveal.fsx"
+#load @"..\packages\FsReveal.0.0.5-beta\fsreveal\fsreveal.fsx"
 open FsReveal
 (**
   Then call either `FsReveal.generateOutputFromScriptFile` or `FsReveal.generateOutputFromMarkdownFile` functions.
