@@ -104,11 +104,25 @@
     </Otherwise>
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
+  <PropertyGroup>
+    <fsreveal>$(SolutionDir)fsreveal</fsreveal>
+    <revealjs>$(SolutionDir)reveal.js</revealjs>
+  </PropertyGroup>
+
   <Target Name="BeforeBuild">
+    <CreateItem Include="$(fsreveal)\**\*.*">
+      <Output TaskParameter="Include" ItemName="FsRevealFiles" />
+    </CreateItem>
+    <MakeDir Directories="$(TargetDir)fsreveal"/>
+    <Copy SourceFiles="@(FsRevealFiles)"
+        DestinationFiles="@(FsRevealFiles->'$(TargetDir)fsreveal\%(RecursiveDir)%(Filename)%(Extension)')" />
+    
+    <CreateItem Include="$(revealjs)\**\*.*">
+      <Output TaskParameter="Include" ItemName="RevealJsFiles" />
+    </CreateItem>
+    <MakeDir Directories="$(TargetDir)reveal.js"/>
+    <Copy SourceFiles="@(RevealJsFiles)"
+        DestinationFiles="@(RevealJsFiles->'$(TargetDir)reveal.js\%(RecursiveDir)%(Filename)%(Extension)')" />
+
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

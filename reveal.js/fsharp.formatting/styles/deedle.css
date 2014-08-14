@@ -1,0 +1,49 @@
+﻿.deedleframe, .deedleseries {
+  margin:0px 0px 20px 20px;
+}
+
+.deedleframe td, .deedleframe th {
+  padding:4px 10px 4px 10px;
+  min-width:50px;
+}
+.deedleseries td, .deedleseries th {
+  padding:4px 20px 4px 10px;
+}
+.deedleframe td:first-child, .deedleframe th:first-child {
+  min-width:30px;
+}
+.deedleseries thead th,
+.deedleseries td:first-child,
+.deedleframe thead th,
+.deedleframe td:first-child {
+  padding:4px 20px 4px 10px;
+  text-align:left;
+  font-weight:bold;
+}
+.deedleseries table,
+.deedleframe table {
+  border-left:1px solid #e0e0e0;
+  border-top:1px solid #e0e0e0;
+}
+.deedleseries td, .deedleseries th,
+.deedleframe td, .deedleframe th {
+  border-right:1px solid #e0e0e0;
+  border-bottom:1px solid #e0e0e0;
+}
+.deedleseries thead th,
+.deedleframe thead th,
+.deedleframe tr.even {
+  background:white;
+}
+.deedleseries tr.odd,
+.deedleframe tr.odd {
+  background:#f8f8f8;
+}
+
+.deedleseries p, 
+.deedleframe p {
+  font-size:90%;
+  margin:0px;
+  padding:0px;
+  line-height:normal;
+}
