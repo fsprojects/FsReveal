@@ -66,9 +66,24 @@ let c = factorial a
 (*** include-value: c ***)
 (**
 
+--- 
+
+#### More F#
+
+*)
+[<Measure>] type sqft
+[<Measure>] type dollar
+let sizes = [|1700<sqft>;2100<sqft>;1900<sqft>;1300<sqft>|]
+let prices = [|53000<dollar>;44000<dollar>;59000<dollar>;82000<dollar>|] 
+(**
+
+#### `prices.[0]/sizes.[0]`
+
+*)
+(*** include-value: prices.[0]/sizes.[0] ***)
+(**
 
 ---
-
 
 #### C#
 
@@ -146,21 +161,25 @@ let c = factorial a
 
 *sql from [Dapper](https://code.google.com/p/dapper-dot-net/)* 
 
-
----
-
+***
 
 **Bayes' Rule in LaTeX**
-  
-$ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
 
+$ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
 
 ***
 
+### The Reality of a Developer's Life 
 
-
-
-
+**When I show my boss that I've fixed a bug:**
+  
+![When I show my boss that I've fixed a bug](http://www.topito.com/wp-content/uploads/2013/01/code-07.gif)
+  
+**When your regular expression returns what you expect:**
+  
+![When your regular expression returns what you expect](http://www.topito.com/wp-content/uploads/2013/01/code-03.gif)
+  
+*from [The Reality of a Developer's Life - in GIFs, Of Course](http://server.dzone.com/articles/reality-developers-life-gifs)*
 
 *)
 

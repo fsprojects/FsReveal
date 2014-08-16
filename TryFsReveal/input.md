@@ -106,10 +106,23 @@
 
 *sql from [Dapper](https://code.google.com/p/dapper-dot-net/)*
 
----
+***
 
 **Bayes' Rule in LaTeX**
 
 $ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
 
+***
+
+### The Reality of a Developer's Life 
+
+**When I show my boss that I've fixed a bug:**
+  
+![When I show my boss that I've fixed a bug](http://www.topito.com/wp-content/uploads/2013/01/code-07.gif)
+  
+**When your regular expression returns what you expect:**
+  
+![When your regular expression returns what you expect](http://www.topito.com/wp-content/uploads/2013/01/code-03.gif)
+  
+*from [The Reality of a Developer's Life - in GIFs, Of Course](http://server.dzone.com/articles/reality-developers-life-gifs)*
 
