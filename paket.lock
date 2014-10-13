@@ -14,3 +14,7 @@ NUGET
     RazorEngine (3.3.0)
       Microsoft.AspNet.Razor (>= 2.0.30506.0)
     SourceLink.Fake (0.4.0)
+GITHUB
+  remote: hakimel/reveal.js
+  specs:
+    FULLPROJECT (9da952fea30906090446d038430186b11dba7f13)

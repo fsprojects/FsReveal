@@ -18,7 +18,7 @@
   </metadata>
   <files>    
     <file src="..\bin\FsReveal.*" target="lib/net40" />
-    <file src="..\src\reveal.js\**\*.*" target="reveal.js" />
+    <file src="..\paket-files\hakimel\reveal.js\**\*.*" target="reveal.js" />
     <file src="..\src\FsReveal\template.html" target="fsreveal\template.html"/>
     <file src="..\src\FsReveal\FsReveal.fsx" target="fsreveal\fsreveal.fsx"/>
   </files>
