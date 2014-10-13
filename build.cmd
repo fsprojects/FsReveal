@@ -1,10 +1,14 @@
 @echo off
 cls
 
-.nuget\nuget.exe install FAKE -OutputDirectory packages -ExcludeVersion
-.nuget\nuget.exe install SourceLink.Fake -OutputDirectory packages -ExcludeVersion
-
-IF NOT EXIST build.fsx (
-  packages\FAKE\tools\FAKE.exe init.fsx
+.paket\paket.bootstrapper.exe prerelease
+if errorlevel 1 (
+  exit /b %errorlevel%
 )
+
+.paket\paket.exe restore -v
+if errorlevel 1 (
+  exit /b %errorlevel%
+)
+
 packages\FAKE\tools\FAKE.exe build.fsx %*
