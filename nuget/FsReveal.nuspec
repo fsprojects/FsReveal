@@ -15,8 +15,8 @@
     <copyright>Copyright 2014</copyright>
     <tags>@tags@</tags>
     <dependencies >
-      <dependency id="FSharp.Compiler.Service" version="[0.0.57]" />
-      <dependency id="FSharp.Formatting" version="[2.4.20]" />
+      <dependency id="FSharp.Compiler.Service" version="0.0.57" />
+      <dependency id="FSharp.Formatting" version="2.4.20" />
     </dependencies>
   </metadata>
   <files>    
