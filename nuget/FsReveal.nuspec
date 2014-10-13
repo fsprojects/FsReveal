@@ -14,14 +14,11 @@
     <releaseNotes>@releaseNotes@</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>@tags@</tags>
-    <dependencies >
-      <dependency id="FSharp.Compiler.Service" version="[0.0.57]" />
-      <dependency id="FSharp.Formatting" version="[2.4.20]" />
-    </dependencies>
+    @dependencies@
   </metadata>
   <files>    
     <file src="..\bin\FsReveal.*" target="lib/net40" />
-    <file src="..\src\reveal.js\**\*.*" target="reveal.js" />
+    <file src="..\paket-files\hakimel\reveal.js\**\*.*" target="reveal.js" />
     <file src="..\src\FsReveal\template.html" target="fsreveal\template.html"/>
     <file src="..\src\FsReveal\FsReveal.fsx" target="fsreveal\fsreveal.fsx"/>
   </files>

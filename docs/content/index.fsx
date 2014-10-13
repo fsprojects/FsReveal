@@ -18,7 +18,7 @@
 
   First, create a new F# script file and load FsReveal.fsx.
 *)
-#load @"..\packages\FsReveal.0.0.5-beta\fsreveal\fsreveal.fsx"
+#load @"..\..\packages\FsReveal\fsreveal\fsreveal.fsx"
 open FsReveal
 
 (**
