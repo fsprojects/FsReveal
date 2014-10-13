@@ -17,6 +17,12 @@ Target "GenerateSlides" (fun _ ->
             let fi = fileInfo file
             let outputFileName = fi.Name.Replace(fi.Extension,".html")
             FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file)
+            
+    !! "slides/*.fsx"
+    |> Seq.iter (fun file -> 
+            let fi = fileInfo file
+            let outputFileName = fi.Name.Replace(fi.Extension,".html")
+            FsReveal.GenerateOutputFromScriptFile outDir outputFileName file)            
 )
 
 Target "All" DoNothing
