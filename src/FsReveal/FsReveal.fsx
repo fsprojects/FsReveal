@@ -1,5 +1,5 @@
-﻿#I @"..\..\packages\FSharp.Formatting\lib\net40\"
-#I @"..\..\packages\FSharp.Compiler.Service\lib\net40\"
+﻿#I @"..\..\FSharp.Formatting\lib\net40\"
+#I @"..\..\FSharp.Compiler.Service\lib\net40\"
 #r "FSharp.Compiler.Service.dll"
 #r "FSharp.Literate.dll"
 #r @"..\lib\net40\FsReveal.dll"
