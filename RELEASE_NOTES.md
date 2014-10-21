@@ -15,3 +15,12 @@
 * Create output folder if it does not exist.
 * Check if the input file exists to avoid throwing Exception.
 * Update FSharp.Formatting to 2.4.20
+
+### 0.0.6-beta - October 13 2014
+* Use Paket
+* Remove fixed version of FSharp.Formatting and other packages
+* Retrieve reveal.js via paket
+
+### 0.0.7-beta - October 19 2014
+* Fix packages reference in fsreveal.fsx 
+* Use scheme relative urls in template 

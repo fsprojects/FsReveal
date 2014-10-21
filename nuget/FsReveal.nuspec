@@ -19,6 +19,9 @@
   <files>    
     <file src="..\bin\FsReveal.*" target="lib/net40" />
     <file src="..\paket-files\hakimel\reveal.js\**\*.*" target="reveal.js" />
+    <file src="..\src\FsReveal\style.css" target="reveal.js\fsharp.formatting\styles\style.css"/>
+    <file src="..\src\FsReveal\tips.js" target="reveal.js\fsharp.formatting\styles\tips.js"/>
+    <file src="..\src\FsReveal\deedle.css" target="reveal.js\fsharp.formatting\styles\deedle.css"/>
     <file src="..\src\FsReveal\template.html" target="fsreveal\template.html"/>
     <file src="..\src\FsReveal\FsReveal.fsx" target="fsreveal\fsreveal.fsx"/>
   </files>
