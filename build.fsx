@@ -1,6 +1,10 @@
-#r @"packages/FAKE/tools/FakeLib.dll"
+#I @"packages/FsReveal/fsreveal/"
+#I @"packages/FAKE/tools/"
+#I @"packages/RazorEngine/lib/net45/"
 
-#load @"packages\FsReveal\fsreveal\fsreveal.fsx"
+#r "FakeLib.dll"
+
+#load "fsreveal.fsx"
 
 open FsReveal
 open Fake
