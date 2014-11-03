@@ -1,128 +1,132 @@
-﻿- title : FsReveal
-- description : Introduction to FsReveal
-- author : Karlkim Suwanmongkol
+- title : Digit Recognizer Dojo
+- description : A Gentle Introduction to Machine Learning
+- author : Steffen Forkmann
 - theme : Night
 - transition : default
 
 ***
 
-### What is FsReveal?
-
-- Generates [reveal.js](http://lab.hakim.se/reveal-js/#/) presentation from [markdown](http://daringfireball.net/projects/markdown/)
-- Utilizes [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) for markdown parsing
+## Digit Recognizer Dojo
+### A Gentle Introduction to Machine Learning
 
 ***
 
-### Reveal.js
+### The Goal
 
-- A framework for easily creating beautiful presentations using HTML.
+- Take a Kaggle data science competition
 
-
-> **Atwood's Law**: any application that can be written in JavaScript, will eventually be written in JavaScript.
-
-***
-
-### FSharp.Formatting
-
-- F# tools for generating documentation (Markdown processor and F# code formatter).
-- It parses markdown and F# script file and generates HTML or PDF.
-- Code syntax highlighting support.
-- It also evaluates your F# code and produce tooltips.
+- Write some code and have fun
+- Write a classifier, from scratch, using F#
+- Learn some Machine Learning concepts
 
 ***
 
-### Syntax Highlighting
+### The format
 
-#### F# (with tooltips)
+- Brief introduction to the problem
+- You code in teams, I help out
 
-    let a = 5
-    let factorial x = [1..x] |> List.reduce (*)
-    let c = factorial a
+***
+
+### Kaggle Digit Recognizer contest
+
+- http://www.kaggle.com/c/digit-recognizer
+- Dataset of hand-written digits
+- Goal = automatically recognize digits
+- Training sample = 50,000 examples
+- Contest = predict 20,000 “unknown” digits
+
+***
+
+### The data "looks like that"
+
+![A Three](images/No3.png)
+![A Zero](images/No0.png)
+
+***
+
+### Real sample
+
+- 28 x 28 pixels
+- Grayscale (0 = black, to 255 = white)
+- Flattened: each record = Number + 784 pixels
+- CSV file
+- Reduced dataset: 5,000 training, 500 validation
+
+***
+
+### Illustration (simplified 4x4 data)
+
+![Encoding](images/Encoding.png)
+
+***
+
+### What’s a classifier?
+
+- "Give me an unknown data point and I will predict what class it belongs to"
+- In this case, classes = 0, 1, 2, … 9
+- Unknown data point = scanned digit, without the class it belongs to
+
+***
+
+### The KNN Classifier
+
+- KNN = K Nearest Neighbors
+- Given an unknown subject to classify,
+- Lookup all the known examples,
+- Find the K closest examples,
+- Take a majority vote,
+- Predict what the majority says
+
+***
+
+### Illustration: 1-nearest neighbor
+
+![1-nearest-neighbort](images/NearestNeighbor.png)
 
 ---
 
-#### C#
+### Illustration: 1-nearest neighbor (2)
 
-    [lang=cs]
-    using System;
-
-    class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("Hello, world!");
-        }
-    }
+![1-nearest-neighbort](images/NearestNeighbor2.png)
 
 ---
 
-#### JavaScript
+### Illustration: 1-nearest neighbor (3)
 
-    [lang=js]
-    function copyWithEvaluation(iElem, elem) {
-        return function (obj) {
-            var newObj = {};
-            for (var p in obj) {
-                var v = obj[p];
-                if (typeof v === "function") {
-                    v = v(iElem, elem);
-                }
-                newObj[p] = v;
-            }
-            if (!newObj.exactTiming) {
-                newObj.delay += exports._libraryDelay;
-            }
-            return newObj;
-        };
-    }
+![1-nearest-neighbort](images/NearestNeighbor3.png)
 
-
----
-
-#### Haskell
- 
-    [lang=haskell]
-    recur_count k = 1 : 1 : zipWith recurAdd (recur_count k) (tail (recur_count k))
-            where recurAdd x y = k * x + y
-
-    main = do
-      argv <- getArgs
-      inputFile <- openFile (head argv) ReadMode
-      line <- hGetLine inputFile
-      let [n,k] = map read (words line)
-      printf "%d\n" ((recur_count k) !! (n-1))
-
-*code from [NashFP/rosalind](https://github.com/NashFP/rosalind/blob/master/mark_wutka%2Bhaskell/FIB/fib_ziplist.hs)*
-
----
-
-### SQL
-
-    [lang=sql]
-    select *
-    from
-    (select 1 as Id union all select 2 union all select 3) as X
-    where Id in (@Ids1, @Ids2, @Ids3)
-
-*sql from [Dapper](https://code.google.com/p/dapper-dot-net/)*
 
 ***
 
-**Bayes' Rule in LaTeX**
-
-$ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
+## Questions so far?
 
 ***
 
-### The Reality of a Developer's Life 
+### Your mission
 
-**When I show my boss that I've fixed a bug:**
-  
-![When I show my boss that I've fixed a bug](http://www.topito.com/wp-content/uploads/2013/01/code-07.gif)
-  
-**When your regular expression returns what you expect:**
-  
-![When your regular expression returns what you expect](http://www.topito.com/wp-content/uploads/2013/01/code-03.gif)
-  
-*from [The Reality of a Developer's Life - in GIFs, Of Course](http://server.dzone.com/articles/reality-developers-life-gifs)*
+- Code a 1-nearest-neighbor classifier
 
+- Guided script available at:
+- http://www.github.com/c4fsharp/Dojo-Digits-Recognizer
+
+
+***
+
+### GuidedSample.fsx
+        
+    // <F# QUICK-STARTER> 
+    // Array.map quick-starter:
+    // Array.map takes an array, and transforms it
+    // into another array by applying a function to it.
+    // Example: starting from an array of strings:
+    let strings = [| "Machine"; "Learning"; "with"; "F#"; "is"; "fun" |]
+    
+    // We can transform it into a new array,
+    // containing the length of each string:
+    let lengths = Array.map (fun (s:string) -> s.Length) strings
+    // The exact same operation above can be 
+    // done using the forward pipe operator, 
+    // which makes it look nicer:
+    let lengths2 = strings |> Array.map (fun s -> s.Length)
+    // </F# QUICK-STARTER> 
