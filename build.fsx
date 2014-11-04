@@ -16,7 +16,12 @@ Target "Clean" (fun _ ->
     CleanDirs [outDir]
 )
 
-let generateFor (file:FileInfo) =
+let copyPics() =
+    !! "pics/*.*"
+    |> CopyFiles (outDir @@ "images")
+
+let generateFor (file:FileInfo) =    
+    copyPics()
     let rec tryGenerate trials =
         try
             let outputFileName = file.Name.Replace(file.Extension,".html")
