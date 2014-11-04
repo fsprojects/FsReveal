@@ -1,18 +1,27 @@
+(**
 ### See FsReveal slides in action
 
 - [1st sample](http://fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx)
 - [2nd sample](http://fsreveal.azurewebsites.net/index-md.html) generated from [FsReveal.md](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.md) ([raw](https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md))
 
-### Getting started
+**)
 
-If you want to get start quickly, just checkout the [TryFsReveal branch](https://github.com/fsprojects/FsReveal/tree/TryFsReveal).
+  <div class="well well-small center" id="nuget">
+      The FsReveal can be
+      <a href="https://www.nuget.org/packages/FsReveal">installed from NuGet</a>:
+      <pre>PM> Install-Package FsReveal</pre>
+  </div>
 
-Run `build.cmd KeepRunning` (or `build.sh KeepRunning` on mono) and you can start to edit the slides in the `slides` folder.
-
-Whenever a change is detected the slides are automatically regenerated and updated in the `output` folder.
-Use your favorite webbrowser to view the slides.  
-
-### Contributing and copyright
+  If you want to get start quickly, just checkout the [TryFsReveal branch](https://github.com/fsprojects/FsReveal/tree/TryFsReveal).
+  
+  Run `build.cmd KeepRunning` (or `build.sh KeepRunning` on mono) and you can start to edit the slides in the `slides` folder.
+  
+  Whenever a change is detected the slides are automatically regenerated and updated in the `output` folder.
+  Use your favorite webbrowser to view the slides.  
+   
+(** 
+Contributing and copyright
+--------------------------
 
 The project is hosted on [GitHub][gh] where you can [report issues][issues], fork 
 the project and submit pull requests. If you're adding new public API, please also 
@@ -35,3 +44,4 @@ Logo
   [issues]: https://github.com/fsprojects/FsReveal/issues
   [readme]: https://github.com/fsprojects/FsReveal/blob/master/README.md
   [license]: https://github.com/fsprojects/FsReveal/blob/master/LICENSE.txt  
+*)
