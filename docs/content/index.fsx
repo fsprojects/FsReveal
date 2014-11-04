@@ -4,7 +4,7 @@
 - [1st sample](http://fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx)
 - [2nd sample](http://fsreveal.azurewebsites.net/index-md.html) generated from [FsReveal.md](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.md) ([raw](https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md))
 
-***
+**)
 
   <div class="well well-small center" id="nuget">
       The FsReveal can be
