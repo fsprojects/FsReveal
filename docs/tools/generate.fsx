@@ -8,7 +8,7 @@ let referenceBinaries = [ "FsReveal.dll" ]
 // Web site location for the generated documentation
 let website = "/FsReveal"
 
-let githubLink = "http://github.com/kimsk/FsReveal"
+let githubLink = "http://github.com/fsprojects/FsReveal"
 
 // Specify more information about your project
 let info =
