@@ -1,18 +1,18 @@
 (**
 ### See FsReveal slides in action
 
-- [1st sample](http://fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/kimsk/FsReveal/blob/master/src/presentations/FsReveal.fsx)
-- [2nd sample](http://fsreveal.azurewebsites.net/index-md.html) generated from [FsReveal.md](https://github.com/kimsk/FsReveal/blob/master/src/presentations/FsReveal.md) ([raw](https://raw.githubusercontent.com/kimsk/FsReveal/master/src/presentations/FsReveal.md))
+- [1st sample](http://fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx)
+- [2nd sample](http://fsreveal.azurewebsites.net/index-md.html) generated from [FsReveal.md](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.md) ([raw](https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md))
 
 ***
 
   <div class="well well-small center" id="nuget">
       The FsReveal can be
       <a href="https://www.nuget.org/packages/FsReveal">installed from NuGet</a>:
-      <pre>PM> Install-Package FsReveal -Pre</pre>
+      <pre>PM> Install-Package FsReveal</pre>
   </div>
 
-  If you want to get start quickly, just look at [Script.fsx](https://github.com/kimsk/FsReveal/blob/TryFsReveal/TryFsReveal/Script.fsx) in [TryFsReveal project](https://github.com/kimsk/FsReveal/tree/TryFsReveal).
+  If you want to get start quickly, just look at [Script.fsx](https://github.com/fsprojects/FsReveal/blob/TryFsReveal/TryFsReveal/Script.fsx) in [TryFsReveal project](https://github.com/fsprojects/FsReveal/tree/TryFsReveal).
   
   Or follow the quick sample on how to generate reveal.js slides using FsReveal below.
 
@@ -53,9 +53,9 @@ Logo
 - [Presentation icon](http://thenounproject.com/term/presentation/47356/) by [Milky](http://thenounproject.com/Milky/)
 
 
-  [content]: https://github.com/kimsk/FsReveal/tree/master/docs/content
-  [gh]: https://github.com/kimsk/FsReveal
-  [issues]: https://github.com/kimsk/FsReveal/issues
-  [readme]: https://github.com/kimsk/FsReveal/blob/master/README.md
-  [license]: https://github.com/kimsk/FsReveal/blob/master/LICENSE.txt  
+  [content]: https://github.com/fsprojects/FsReveal/tree/master/docs/content
+  [gh]: https://github.com/fsprojects/FsReveal
+  [issues]: https://github.com/fsprojects/FsReveal/issues
+  [readme]: https://github.com/fsprojects/FsReveal/blob/master/README.md
+  [license]: https://github.com/fsprojects/FsReveal/blob/master/LICENSE.txt  
 *)
