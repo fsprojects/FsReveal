@@ -7,7 +7,7 @@
 
 If you want to get start quickly, just checkout the [TryFsReveal branch](https://github.com/fsprojects/FsReveal/tree/TryFsReveal).
 
-Run `build.cmd KeepRunning` (or `build.sh KeepRunning` on mono) and you can start to edit the slides in the `slides` folder.
+Run `build.cmd` (or `build.sh` on mono) and you can start to edit the slides in the `slides` folder.
 
 Whenever a change is detected the slides are automatically regenerated and updated in the `output` folder.
 Use your favorite webbrowser to view the slides.  
