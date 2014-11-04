@@ -178,3 +178,4 @@ nuget/*.nupkg
 .paket/paket.exe
 output
 paket-files
+release.cmd
