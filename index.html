@@ -32,87 +32,39 @@
       <div class="row">
         <div class="span9" id="main">
           
-<table class="pre"><tr><td class="lines"><pre class="fssnip">
-<span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
-<span class="l">11: </span>
-<span class="l">12: </span>
-<span class="l">13: </span>
-<span class="l">14: </span>
-<span class="l">15: </span>
-<span class="l">16: </span>
-<span class="l">17: </span>
-<span class="l">18: </span>
-<span class="l">19: </span>
-<span class="l">20: </span>
-<span class="l">21: </span>
-<span class="l">22: </span>
-<span class="l">23: </span>
-<span class="l">24: </span>
-<span class="l">25: </span>
-<span class="l">26: </span>
-<span class="l">27: </span>
-<span class="l">28: </span>
-<span class="l">29: </span>
-<span class="l">30: </span>
-<span class="l">31: </span>
-<span class="l">32: </span>
-<span class="l">33: </span>
-<span class="l">34: </span>
-<span class="l">35: </span>
-<span class="l">36: </span>
-<span class="l">37: </span>
-</pre>
-</td>
-<td class="snippet"><pre class="fssnip">
-## <span class="i">See</span> <span class="i">FsReveal</span> <span class="i">slides</span> <span class="k">in</span> <span class="i">action</span>
+<h3>See FsReveal slides in action</h3>
 
-<span class="o">-</span> [<span class="n">1st</span> <span class="i">sample</span>](<span class="i">http</span><span class="o">:</span><span class="c">//fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx)</span>
-<span class="o">-</span> [<span class="n">2nd</span> <span class="i">sample</span>](<span class="i">http</span><span class="o">:</span><span class="c">//fsreveal.azurewebsites.net/index-md.html) generated from [FsReveal.md](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.md) ([raw](https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md))</span>
+<ul>
+<li><a href="http://fsreveal.azurewebsites.net/">1st sample</a> generated from <a href="https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx">FsReveal.fsx</a></li>
+<li><a href="http://fsreveal.azurewebsites.net/index-md.html">2nd sample</a> generated from <a href="https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.md">FsReveal.md</a> (<a href="https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md">raw</a>)</li>
+</ul>
 
-## <span class="i">Getting</span> <span class="i">started</span>
+<h3>Getting started</h3>
 
-<span class="i">If</span> <span class="i">you</span> <span class="i">want</span> <span class="k">to</span> <span class="i">get</span> <span class="i">start</span> <span class="i">quickly</span>, <span class="i">just</span> <span class="i">checkout</span> <span class="i">the</span> [<span class="i">TryFsReveal</span> <span class="i">branch</span>](<span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/FsReveal/tree/TryFsReveal).</span>
+<p>If you want to get start quickly, just checkout the <a href="https://github.com/fsprojects/FsReveal/tree/TryFsReveal">TryFsReveal branch</a>.</p>
 
-<span class="i">Run</span> <span class="k">`</span><span class="i">build</span><span class="o">.</span><span class="i">cmd</span> <span class="i">KeepRunning</span><span class="k">`</span> (<span class="k">or</span> <span class="k">`</span><span class="i">build</span><span class="o">.</span><span class="i">sh</span> <span class="i">KeepRunning</span><span class="k">`</span> <span class="i">on</span> <span class="i">mono</span>) <span class="k">and</span> <span class="i">you</span> <span class="i">can</span> <span class="i">start</span> <span class="k">to</span> <span class="i">edit</span> <span class="i">the</span> <span class="i">slides</span> <span class="k">in</span> <span class="i">the</span> <span class="k">`</span><span class="i">slides</span><span class="k">`</span> <span class="i">folder</span><span class="o">.</span>
+<p>Run <code>build.cmd KeepRunning</code> (or <code>build.sh KeepRunning</code> on mono) and you can start to edit the slides in the <code>slides</code> folder.</p>
 
-<span class="i">Whenever</span> <span class="i">a</span> <span class="i">change</span> <span class="i">is</span> <span class="i">detected</span> <span class="i">the</span> <span class="i">slides</span> <span class="i">are</span> <span class="i">automatically</span> <span class="i">regenerated</span> <span class="k">and</span> <span class="i">updated</span> <span class="k">in</span> <span class="i">the</span> <span class="k">`</span><span class="i">output</span><span class="k">`</span> <span class="i">folder</span><span class="o">.</span>
-<span class="i">Use</span> <span class="i">your</span> <span class="i">favorite</span> <span class="i">webbrowser</span> <span class="k">to</span> <span class="i">view</span> <span class="i">the</span> <span class="i">slides</span><span class="o">.</span>  
+<p>Whenever a change is detected the slides are automatically regenerated and updated in the <code>output</code> folder.
+Use your favorite webbrowser to view the slides.</p>
 
-## <span class="i">Contributing</span> <span class="k">and</span> <span class="i">copyright</span>
+<h3>Contributing and copyright</h3>
 
-<span class="i">The</span> <span class="i">project</span> <span class="i">is</span> <span class="i">hosted</span> <span class="i">on</span> [<span class="i">GitHub</span>][<span class="i">gh</span>] <span class="i">where</span> <span class="i">you</span> <span class="i">can</span> [<span class="i">report</span> <span class="i">issues</span>][<span class="i">issues</span>], <span class="i">fork</span> 
-<span class="i">the</span> <span class="i">project</span> <span class="k">and</span> <span class="i">submit</span> <span class="i">pull</span> <span class="i">requests</span><span class="o">.</span> <span class="i">If</span> <span class="i">you&#39;re</span> <span class="i">adding</span> <span class="k">new</span> <span class="k">public</span> <span class="i">API</span>, <span class="i">please</span> <span class="i">also</span> 
-<span class="i">consider</span> <span class="i">adding</span> [<span class="i">samples</span>][<span class="i">content</span>] <span class="i">that</span> <span class="i">can</span> <span class="i">be</span> <span class="i">turned</span> <span class="i">into</span> <span class="i">a</span> <span class="i">documentation</span><span class="o">.</span> <span class="i">You</span> <span class="i">might</span>
-<span class="i">also</span> <span class="i">want</span> <span class="k">to</span> <span class="i">read</span> [<span class="i">library</span> <span class="i">design</span> <span class="i">notes</span>][<span class="i">readme</span>] <span class="k">to</span> <span class="i">understand</span> <span class="i">how</span> <span class="i">it</span> <span class="i">works</span><span class="o">.</span>
+<p>The project is hosted on <a href="https://github.com/fsprojects/FsReveal">GitHub</a> where you can <a href="https://github.com/fsprojects/FsReveal/issues">report issues</a>, fork 
+the project and submit pull requests. If you're adding new public API, please also 
+consider adding <a href="https://github.com/fsprojects/FsReveal/tree/master/docs/content">samples</a> that can be turned into a documentation. You might
+also want to read <a href="https://github.com/fsprojects/FsReveal/blob/master/README.md">library design notes</a> to understand how it works.</p>
 
-<span class="i">The</span> <span class="i">library</span> <span class="i">is</span> <span class="i">available</span> <span class="i">under</span> <span class="i">Public</span> <span class="i">Domain</span> <span class="i">license</span>, <span class="i">which</span> <span class="i">allows</span> <span class="i">modification</span> <span class="k">and</span> 
-<span class="i">redistribution</span> <span class="k">for</span> <span class="i">both</span> <span class="i">commercial</span> <span class="k">and</span> <span class="i">non</span><span class="o">-</span><span class="i">commercial</span> <span class="i">purposes</span><span class="o">.</span> <span class="i">For</span> <span class="i">more</span> <span class="i">information</span> <span class="i">see</span> <span class="i">the</span> 
-[<span class="i">License</span> <span class="i">file</span>][<span class="i">license</span>] <span class="k">in</span> <span class="i">the</span> <span class="i">GitHub</span> <span class="i">repository</span><span class="o">.</span> 
+<p>The library is available under Public Domain license, which allows modification and 
+redistribution for both commercial and non-commercial purposes. For more information see the 
+<a href="https://github.com/fsprojects/FsReveal/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
 
-<span class="i">Logo</span>
-<span class="o">----</span>
+<h2>Logo</h2>
 
-<span class="o">-</span> [<span class="i">ProjectScaffold</span>](<span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/ProjectScaffold/blob/9e28426459007df785432fca4cf8996b0aed90d0/docs/files/img/logo-template.pdn) by Sergey Tihon</span>
-<span class="o">-</span> [<span class="i">Presentation</span> <span class="i">icon</span>](<span class="i">http</span><span class="o">:</span><span class="c">//thenounproject.com/term/presentation/47356/) by [Milky](http://thenounproject.com/Milky/)</span>
-
-
-  [<span class="i">content</span>]<span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/FsReveal/tree/master/docs/content</span>
-  [<span class="i">gh</span>]<span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/FsReveal</span>
-  [<span class="i">issues</span>]<span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/FsReveal/issues</span>
-  [<span class="i">readme</span>]<span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/FsReveal/blob/master/README.md</span>
-  [<span class="i">license</span>]<span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/FsReveal/blob/master/LICENSE.txt  </span></pre>
-</td>
-</tr>
-</table>
+<ul>
+<li><a href="https://github.com/fsprojects/ProjectScaffold/blob/9e28426459007df785432fca4cf8996b0aed90d0/docs/files/img/logo-template.pdn">ProjectScaffold</a> by Sergey Tihon</li>
+<li><p><a href="http://thenounproject.com/term/presentation/47356/">Presentation icon</a> by <a href="http://thenounproject.com/Milky/">Milky</a></p></li>
+</ul>
 
 
         </div>
