@@ -113,7 +113,18 @@
 
 ***
 
-### GuidedSample.fsx
+## GuidedSample.fsx
+### Task definition
+
+    // 2. EXTRACTING COLUMNS
+     
+    // Break each line of the file into an array of string,
+    // separating by commas, using Array.map
+
+---
+    
+## GuidedSample.fsx
+### A little syntax help
         
     // <F# QUICK-STARTER> 
     // Array.map quick-starter:
@@ -125,8 +136,20 @@
     // We can transform it into a new array,
     // containing the length of each string:
     let lengths = Array.map (fun (s:string) -> s.Length) strings
+    
     // The exact same operation above can be 
     // done using the forward pipe operator, 
     // which makes it look nicer:
     let lengths2 = strings |> Array.map (fun s -> s.Length)
     // </F# QUICK-STARTER> 
+    
+---
+    
+## GuidedSample.fsx
+### Now it's your turn
+ 
+    // The following function might help
+    let csvToSplit = "1,2,3,4,5"
+    let splitResult = csvToSplit.Split(',')
+    
+    // [ YOUR CODE GOES HERE! ]
