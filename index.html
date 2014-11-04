@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="FsReveal parses markdown or F# script file and generate reveal.js slides."/>
+    <meta name="author" content="Karlkim Suwanmongkol"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="/FsReveal/content/style.css" />
+    <script type="text/javascript" src="/FsReveal/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/kimsk/FsReveal">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/FsReveal/index.html">FsReveal</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+<h3>See FsReveal slides in action</h3>
+
+<ul>
+<li><a href="http://fsreveal.azurewebsites.net/">1st sample</a> generated from <a href="https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx">FsReveal.fsx</a></li>
+<li><a href="http://fsreveal.azurewebsites.net/index-md.html">2nd sample</a> generated from <a href="https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.md">FsReveal.md</a> (<a href="https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md">raw</a>)</li>
+</ul>
+
+<p>*</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+  <span class="o">&lt;</span><span class="i">div</span> <span class="k">class</span><span class="o">=</span><span class="s">&quot;</span><span class="s">well</span><span class="s"> </span><span class="s">well</span><span class="s">-</span><span class="s">small</span><span class="s"> </span><span class="s">center</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">nuget</span><span class="s">&quot;</span><span class="o">&gt;</span>
+      <span class="i">The</span> <span class="i">FsReveal</span> <span class="i">can</span> <span class="i">be</span>
+      <span class="o">&lt;</span><span class="i">a</span> <span class="i">href</span><span class="o">=</span><span class="s">&quot;</span><span class="s">https</span><span class="s">:</span><span class="s">/</span><span class="s">/</span><span class="s">www</span><span class="s">.</span><span class="s">nuget</span><span class="s">.</span><span class="s">org</span><span class="s">/</span><span class="s">packages</span><span class="s">/</span><span class="s">FsReveal</span><span class="s">&quot;</span><span class="o">&gt;</span><span class="i">installed</span> <span class="i">from</span> <span class="i">NuGet</span><span class="o">&lt;/</span><span class="i">a</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="i">pre</span><span class="o">&gt;</span><span class="i">PM</span><span class="o">&gt;</span> <span class="i">Install</span><span class="o">-</span><span class="i">Package</span> <span class="i">FsReveal</span><span class="o">&lt;/</span><span class="i">pre</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="i">div</span><span class="o">&gt;</span>
+
+  <span class="i">If</span> <span class="i">you</span> <span class="i">want</span> <span class="k">to</span> <span class="i">get</span> <span class="i">start</span> <span class="i">quickly</span>, <span class="i">just</span> <span class="i">checkout</span> <span class="i">the</span> [<span class="i">TryFsReveal</span> <span class="i">branch</span>](<span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/FsReveal/tree/TryFsReveal).</span>
+  
+  <span class="i">Run</span> <span class="k">`</span><span class="i">build</span><span class="o">.</span><span class="i">cmd</span> <span class="i">KeepRunning</span><span class="k">`</span> (<span class="k">or</span> <span class="k">`</span><span class="i">build</span><span class="o">.</span><span class="i">sh</span> <span class="i">KeepRunning</span><span class="k">`</span> <span class="i">on</span> <span class="i">mono</span>) <span class="k">and</span> <span class="i">you</span> <span class="i">can</span> <span class="i">start</span> <span class="k">to</span> <span class="i">edit</span> <span class="i">the</span> <span class="i">slides</span> <span class="k">in</span> <span class="i">the</span> <span class="k">`</span><span class="i">slides</span><span class="k">`</span> <span class="i">folder</span><span class="o">.</span>
+  
+  <span class="i">Whenever</span> <span class="i">a</span> <span class="i">change</span> <span class="i">is</span> <span class="i">detected</span> <span class="i">the</span> <span class="i">slides</span> <span class="i">are</span> <span class="i">automatically</span> <span class="i">regenerated</span> <span class="k">and</span> <span class="i">updated</span> <span class="k">in</span> <span class="i">the</span> <span class="k">`</span><span class="i">output</span><span class="k">`</span> <span class="i">folder</span><span class="o">.</span>
+  <span class="i">Use</span> <span class="i">your</span> <span class="i">favorite</span> <span class="i">webbrowser</span> <span class="k">to</span> <span class="i">view</span> <span class="i">the</span> <span class="i">slides</span><span class="o">.</span>  
+   </pre>
+</td>
+</tr>
+</table>
+
+<h2>Contributing and copyright</h2>
+
+<p>The project is hosted on <a href="https://github.com/fsprojects/FsReveal">GitHub</a> where you can <a href="https://github.com/fsprojects/FsReveal/issues">report issues</a>, fork 
+the project and submit pull requests. If you're adding new public API, please also 
+consider adding <a href="https://github.com/fsprojects/FsReveal/tree/master/docs/content">samples</a> that can be turned into a documentation. You might
+also want to read <a href="https://github.com/fsprojects/FsReveal/blob/master/README.md">library design notes</a> to understand how it works.</p>
+
+<p>The library is available under Public Domain license, which allows modification and 
+redistribution for both commercial and non-commercial purposes. For more information see the 
+<a href="https://github.com/fsprojects/FsReveal/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
+
+<h2>Logo</h2>
+
+<ul>
+<li><a href="https://github.com/fsprojects/ProjectScaffold/blob/9e28426459007df785432fca4cf8996b0aed90d0/docs/files/img/logo-template.pdn">ProjectScaffold</a> by Sergey Tihon</li>
+<li><p><a href="http://thenounproject.com/term/presentation/47356/">Presentation icon</a> by <a href="http://thenounproject.com/Milky/">Milky</a></p></li>
+</ul>
+
+<div class="tip" id="fs1">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
+
+        </div>
+        <div class="span3">
+          <img src="/FsReveal/img/logo-2.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">FsReveal</li>
+            <li><a href="/FsReveal/index.html">Home page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="http://github.com/kimsk/FsReveal">Source Code on GitHub</a></li>
+            <li><a href="http://github.com/kimsk/FsReveal/blob/master/LICENSE.txt">License</a></li>
+            <li><a href="http://github.com/kimsk/FsReveal/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+            
+            
+
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/kimsk/FsReveal"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+  </body>
+  </html>
