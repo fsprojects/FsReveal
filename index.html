@@ -35,8 +35,8 @@
 <h3>See FsReveal slides in action</h3>
 
 <ul>
-<li><a href="http://fsreveal.azurewebsites.net/">1st sample</a> generated from <a href="https://github.com/kimsk/FsReveal/blob/master/src/presentations/FsReveal.fsx">FsReveal.fsx</a></li>
-<li><a href="http://fsreveal.azurewebsites.net/index-md.html">2nd sample</a> generated from <a href="https://github.com/kimsk/FsReveal/blob/master/src/presentations/FsReveal.md">FsReveal.md</a> (<a href="https://raw.githubusercontent.com/kimsk/FsReveal/master/src/presentations/FsReveal.md">raw</a>)</li>
+<li><a href="http://fsreveal.azurewebsites.net/">1st sample</a> generated from <a href="https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx">FsReveal.fsx</a></li>
+<li><a href="http://fsreveal.azurewebsites.net/index-md.html">2nd sample</a> generated from <a href="https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.md">FsReveal.md</a> (<a href="https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md">raw</a>)</li>
 </ul>
 
 <hr />
@@ -44,10 +44,10 @@
 <p><div class="well well-small center" id="nuget">
       The FsReveal can be
       <a href="https://www.nuget.org/packages/FsReveal">installed from NuGet</a>:
-      <pre>PM> Install-Package FsReveal -Pre</pre>
+      <pre>PM> Install-Package FsReveal</pre>
   </div></p>
 
-<p>If you want to get start quickly, just look at <a href="https://github.com/kimsk/FsReveal/blob/TryFsReveal/TryFsReveal/Script.fsx">Script.fsx</a> in <a href="https://github.com/kimsk/FsReveal/tree/TryFsReveal">TryFsReveal project</a>.</p>
+<p>If you want to get start quickly, just look at <a href="https://github.com/fsprojects/FsReveal/blob/TryFsReveal/TryFsReveal/Script.fsx">Script.fsx</a> in <a href="https://github.com/fsprojects/FsReveal/tree/TryFsReveal">TryFsReveal project</a>.</p>
 
 <p>Or follow the quick sample on how to generate reveal.js slides using FsReveal below.</p>
 
@@ -60,7 +60,7 @@
 </td>
 <td class="snippet"><pre class="fssnip">
 <span class="prep">#load</span> <span class="s">@&quot;</span><span class="s">.</span><span class="s">.</span><span class="s">\</span><span class="s">.</span><span class="s">.</span><span class="s">\</span><span class="s">packages</span><span class="s">\</span><span class="s">FsReveal</span><span class="s">\</span><span class="s">fsreveal</span><span class="s">\</span><span class="s">fsreveal</span><span class="s">.</span><span class="s">fsx</span><span class="s">&quot;</span>
-<span class="k">open</span> <span class="i">FsReveal</span></pre>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">FsReveal</span></pre>
 </td>
 </tr>
 </table>
@@ -74,7 +74,7 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">outDir</span> <span class="o">=</span> <span class="s">@&quot;</span><span class="s">c</span><span class="s">:</span><span class="s">\</span><span class="s">output</span><span class="s">&quot;</span></pre>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">outDir</span> <span class="o">=</span> <span class="s">@&quot;</span><span class="s">c</span><span class="s">:</span><span class="s">\</span><span class="s">output</span><span class="s">&quot;</span></pre>
 </td>
 </tr>
 </table>
@@ -86,7 +86,7 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="i">FsReveal</span><span class="o">.</span><span class="i">GenerateOutputFromScriptFile</span> <span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">outDir</span> <span class="s">&quot;</span><span class="s">index</span><span class="s">.</span><span class="s">html</span><span class="s">&quot;</span> <span class="s">&quot;</span><span class="s">input</span><span class="s">.</span><span class="s">fsx</span><span class="s">&quot;</span></pre>
+<span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">FsReveal</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="i">GenerateOutputFromScriptFile</span> <span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="i">outDir</span> <span class="s">&quot;</span><span class="s">index</span><span class="s">.</span><span class="s">html</span><span class="s">&quot;</span> <span class="s">&quot;</span><span class="s">input</span><span class="s">.</span><span class="s">fsx</span><span class="s">&quot;</span></pre>
 </td>
 </tr>
 </table>
@@ -98,21 +98,21 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="i">FsReveal</span><span class="o">.</span><span class="i">GenerateOutputFromMarkdownFile</span> <span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">outDir</span> <span class="s">&quot;</span><span class="s">index</span><span class="s">.</span><span class="s">html</span><span class="s">&quot;</span>  <span class="s">&quot;</span><span class="s">input</span><span class="s">.</span><span class="s">md</span><span class="s">&quot;</span></pre>
+<span onmouseout="hideTip(event, 'fs3', 6)" onmouseover="showTip(event, 'fs3', 6)" class="i">FsReveal</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="i">GenerateOutputFromMarkdownFile</span> <span onmouseout="hideTip(event, 'fs2', 8)" onmouseover="showTip(event, 'fs2', 8)" class="i">outDir</span> <span class="s">&quot;</span><span class="s">index</span><span class="s">.</span><span class="s">html</span><span class="s">&quot;</span>  <span class="s">&quot;</span><span class="s">input</span><span class="s">.</span><span class="s">md</span><span class="s">&quot;</span></pre>
 </td>
 </tr>
 </table>
 
 <h2>Contributing and copyright</h2>
 
-<p>The project is hosted on <a href="https://github.com/kimsk/FsReveal">GitHub</a> where you can <a href="https://github.com/kimsk/FsReveal/issues">report issues</a>, fork 
+<p>The project is hosted on <a href="https://github.com/fsprojects/FsReveal">GitHub</a> where you can <a href="https://github.com/fsprojects/FsReveal/issues">report issues</a>, fork 
 the project and submit pull requests. If you're adding new public API, please also 
-consider adding <a href="https://github.com/kimsk/FsReveal/tree/master/docs/content">samples</a> that can be turned into a documentation. You might
-also want to read <a href="https://github.com/kimsk/FsReveal/blob/master/README.md">library design notes</a> to understand how it works.</p>
+consider adding <a href="https://github.com/fsprojects/FsReveal/tree/master/docs/content">samples</a> that can be turned into a documentation. You might
+also want to read <a href="https://github.com/fsprojects/FsReveal/blob/master/README.md">library design notes</a> to understand how it works.</p>
 
 <p>The library is available under Public Domain license, which allows modification and 
 redistribution for both commercial and non-commercial purposes. For more information see the 
-<a href="https://github.com/kimsk/FsReveal/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
+<a href="https://github.com/fsprojects/FsReveal/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
 
 <h2>Logo</h2>
 
@@ -121,7 +121,11 @@ redistribution for both commercial and non-commercial purposes. For more informa
 <li><p><a href="http://thenounproject.com/term/presentation/47356/">Presentation icon</a> by <a href="http://thenounproject.com/Milky/">Milky</a></p></li>
 </ul>
 
-<div class="tip" id="fs1">val outDir : string<br /><br />Full name: Index.outDir</div>
+<div class="tip" id="fs1">namespace FsReveal</div>
+<div class="tip" id="fs2">val outDir : string<br /><br />Full name: Index.outDir</div>
+<div class="tip" id="fs3">Multiple items<br />namespace FsReveal<br /><br />--------------------<br />type FsReveal =<br />&#160;&#160;static member GenerateOutput : outDir:string -&gt; outFile:string -&gt; presentation:Presentation -&gt; unit<br />&#160;&#160;static member GenerateOutputFromMarkdownFile : outDir:string -&gt; outFile:string -&gt; mdFile:string -&gt; unit<br />&#160;&#160;static member GenerateOutputFromScriptFile : outDir:string -&gt; outFile:string -&gt; fsxFile:string -&gt; unit<br />&#160;&#160;static member GetPresentationFromMarkdown : md:string -&gt; Presentation<br />&#160;&#160;static member GetPresentationFromScriptString : fsx:string -&gt; Presentation<br />&#160;&#160;static member private checkIfFileExistsAndRun : file:string -&gt; f:(unit -&gt; unit) -&gt; unit<br /><br />Full name: FsReveal.FsReveal</div>
+<div class="tip" id="fs4">static member FsReveal.GenerateOutputFromScriptFile : outDir:string -&gt; outFile:string -&gt; fsxFile:string -&gt; unit</div>
+<div class="tip" id="fs5">static member FsReveal.GenerateOutputFromMarkdownFile : outDir:string -&gt; outFile:string -&gt; mdFile:string -&gt; unit</div>
 
         </div>
         <div class="span3">

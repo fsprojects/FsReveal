@@ -45,7 +45,7 @@
 </td>
 <td class="snippet"><pre class="fssnip">
 <span class="prep">#load</span> <span class="s">@&quot;</span><span class="s">.</span><span class="s">.</span><span class="s">\</span><span class="s">.</span><span class="s">.</span><span class="s">\</span><span class="s">packages</span><span class="s">\</span><span class="s">FsReveal</span><span class="s">\</span><span class="s">fsreveal</span><span class="s">\</span><span class="s">fsreveal</span><span class="s">.</span><span class="s">fsx</span><span class="s">&quot;</span>
-<span class="k">open</span> <span class="i">FsReveal</span></pre>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">FsReveal</span></pre>
 </td>
 </tr>
 </table>
@@ -59,7 +59,7 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">outDir</span> <span class="o">=</span> <span class="s">@&quot;</span><span class="s">c</span><span class="s">:</span><span class="s">\</span><span class="s">output</span><span class="s">&quot;</span></pre>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">outDir</span> <span class="o">=</span> <span class="s">@&quot;</span><span class="s">c</span><span class="s">:</span><span class="s">\</span><span class="s">output</span><span class="s">&quot;</span></pre>
 </td>
 </tr>
 </table>
@@ -71,7 +71,7 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="i">FsReveal</span><span class="o">.</span><span class="i">GenerateOutputFromScriptFile</span> <span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">outDir</span> <span class="s">&quot;</span><span class="s">index</span><span class="s">.</span><span class="s">html</span><span class="s">&quot;</span> <span class="s">&quot;</span><span class="s">input</span><span class="s">.</span><span class="s">fsx</span><span class="s">&quot;</span></pre>
+<span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">FsReveal</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="i">GenerateOutputFromScriptFile</span> <span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="i">outDir</span> <span class="s">&quot;</span><span class="s">index</span><span class="s">.</span><span class="s">html</span><span class="s">&quot;</span> <span class="s">&quot;</span><span class="s">input</span><span class="s">.</span><span class="s">fsx</span><span class="s">&quot;</span></pre>
 </td>
 </tr>
 </table>
@@ -83,12 +83,16 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="i">FsReveal</span><span class="o">.</span><span class="i">GenerateOutputFromMarkdownFile</span> <span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">outDir</span> <span class="s">&quot;</span><span class="s">index</span><span class="s">.</span><span class="s">html</span><span class="s">&quot;</span>  <span class="s">&quot;</span><span class="s">input</span><span class="s">.</span><span class="s">md</span><span class="s">&quot;</span></pre>
+<span onmouseout="hideTip(event, 'fs3', 6)" onmouseover="showTip(event, 'fs3', 6)" class="i">FsReveal</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="i">GenerateOutputFromMarkdownFile</span> <span onmouseout="hideTip(event, 'fs2', 8)" onmouseover="showTip(event, 'fs2', 8)" class="i">outDir</span> <span class="s">&quot;</span><span class="s">index</span><span class="s">.</span><span class="s">html</span><span class="s">&quot;</span>  <span class="s">&quot;</span><span class="s">input</span><span class="s">.</span><span class="s">md</span><span class="s">&quot;</span></pre>
 </td>
 </tr>
 </table>
 
-<div class="tip" id="fs1">val outDir : string<br /><br />Full name: Tutorial.outDir</div>
+<div class="tip" id="fs1">namespace FsReveal</div>
+<div class="tip" id="fs2">val outDir : string<br /><br />Full name: Tutorial.outDir</div>
+<div class="tip" id="fs3">Multiple items<br />namespace FsReveal<br /><br />--------------------<br />type FsReveal =<br />&#160;&#160;static member GenerateOutput : outDir:string -&gt; outFile:string -&gt; presentation:Presentation -&gt; unit<br />&#160;&#160;static member GenerateOutputFromMarkdownFile : outDir:string -&gt; outFile:string -&gt; mdFile:string -&gt; unit<br />&#160;&#160;static member GenerateOutputFromScriptFile : outDir:string -&gt; outFile:string -&gt; fsxFile:string -&gt; unit<br />&#160;&#160;static member GetPresentationFromMarkdown : md:string -&gt; Presentation<br />&#160;&#160;static member GetPresentationFromScriptString : fsx:string -&gt; Presentation<br />&#160;&#160;static member private checkIfFileExistsAndRun : file:string -&gt; f:(unit -&gt; unit) -&gt; unit<br /><br />Full name: FsReveal.FsReveal</div>
+<div class="tip" id="fs4">static member FsReveal.GenerateOutputFromScriptFile : outDir:string -&gt; outFile:string -&gt; fsxFile:string -&gt; unit</div>
+<div class="tip" id="fs5">static member FsReveal.GenerateOutputFromMarkdownFile : outDir:string -&gt; outFile:string -&gt; mdFile:string -&gt; unit</div>
 
         </div>
         <div class="span3">
