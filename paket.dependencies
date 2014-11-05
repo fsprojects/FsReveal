@@ -8,3 +8,4 @@ nuget NUnit.Runners
 nuget Nuget.CommandLine
 
 github hakimel/reveal.js:2.6.2
+github forki/FsUnit FsUnit.fs

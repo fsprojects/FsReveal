@@ -1,9 +1,9 @@
 NUGET
   remote: https://nuget.org/api/v2
   specs:
-    FAKE (3.7.2)
+    FAKE (3.8.5)
     FSharp.Compiler.Service (0.0.67)
-    FSharp.Formatting (2.4.34)
+    FSharp.Formatting (2.4.36)
       FSharp.Compiler.Service (0.0.67)
       Microsoft.AspNet.Razor (2.0.30506.0)
       RazorEngine (3.3.0)
@@ -13,8 +13,11 @@ NUGET
     NUnit.Runners (2.6.3)
     RazorEngine (3.3.0)
       Microsoft.AspNet.Razor (>= 2.0.30506.0)
-    SourceLink.Fake (0.4.0)
+    SourceLink.Fake (0.4.2)
 GITHUB
   remote: hakimel/reveal.js
   specs:
     FULLPROJECT (9da952fea30906090446d038430186b11dba7f13)
+  remote: forki/FsUnit
+  specs:
+    FsUnit.fs (a8830b5a70e72a1948592cfa1e43e3c5b0a31b92)
