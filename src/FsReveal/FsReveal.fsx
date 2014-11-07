@@ -1,5 +1,6 @@
 #I @"../../FSharp.Formatting/lib/net40/"
 #I @"../../FSharp.Compiler.Service/lib/net40/"
+#I @"../../RazorEngine/lib/net40/"
 #I @"../lib/net40/"
 #r "FSharp.Compiler.Service.dll"
 #r "FSharp.Literate.dll"
