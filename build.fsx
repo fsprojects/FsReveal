@@ -57,7 +57,7 @@ let startWebServer () =
 
 Target "GenerateSlides" (fun _ ->
     !! "slides/*.md"
-      ++ "slides/*.md"
+      ++ "slides/*.fsx"
     |> Seq.map fileInfo
     |> Seq.iter generateFor
 )
