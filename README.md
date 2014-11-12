@@ -5,7 +5,7 @@ FsReveal brings F# to the [reveal.js][revealjs] web presentation framework.
 ## Features
 
 - Write your slides in [Markdown](http://daringfireball.net/projects/markdown/syntax) or .fsx files
-- Syntax highlighting for most programming languages including C# and F#
+- Syntax highlighting for most programming languages including C#, F# and LaTeX
 - Speaker notes; Shows the current slide, next slide, elapsed time and current time
 - Built in themes
 - Horizontal and vertical slides
