@@ -1,3 +1,6 @@
+### 0.1.1 - 12.11.2014
+* Include Suave
+
 ### 0.1.0 - 12.11.2014
 * GitHub release
 * Use scheme relative urls in template

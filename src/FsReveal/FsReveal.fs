@@ -7,6 +7,12 @@ open System.Text
 open FSharp.Literate
 open FSharp.Markdown
 open FSharp.Markdown.Html
+open Suave
+open Suave.Web
+open Suave.Http
+open Suave.Http.Files
+open System.IO
+open System.Diagnostics
 
 type Slide =
   | Simple of MarkdownParagraph list
@@ -181,3 +187,17 @@ type FsReveal =
           |> FsReveal.GetPresentationFromMarkdown
           |> FsReveal.GenerateOutput outDir outFile
       )       
+
+  static member StartWebServer outDir =
+    let serverConfig = 
+        { default_config with
+            home_folder = Some (Path.Combine(FsRevealHelper.Folder, outDir))
+        }
+
+    let app =
+        Writers.set_header "Cache-Control" "no-cache, no-store, must-revalidate"
+        >>= Writers.set_header "Pragma" "no-cache"
+        >>= Writers.set_header "Expires" "0"
+        >>= browse
+    web_server_async serverConfig app |> snd |> Async.Start
+    Process.Start "http://localhost:8083/input.html" |> ignore
