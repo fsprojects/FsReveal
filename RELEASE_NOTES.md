@@ -1,3 +1,6 @@
+### 0.1.5 - 12.11.2014
+* Bugfix release
+
 ### 0.1.0 - 12.11.2014
 * GitHub release
 * Use scheme relative urls in template
