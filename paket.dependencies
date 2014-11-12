@@ -6,6 +6,7 @@ nuget FSharp.Formatting
 nuget NUnit 
 nuget NUnit.Runners 
 nuget Nuget.CommandLine
+nuget Suave
 
 github hakimel/reveal.js:2.6.2
 github forki/FsUnit FsUnit.fs

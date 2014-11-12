@@ -169,7 +169,8 @@ Target "NuGet" (fun _ ->
                  AccessKey = getBuildParamOrDefault "nugetkey" ""
                  Publish = hasBuildParam "nugetkey"
                  Dependencies = 
-                     ["FSharp.Formatting", GetPackageVersion "packages" "FSharp.Formatting"  ] })
+                     ["FSharp.Formatting", GetPackageVersion "packages" "FSharp.Formatting"
+                      "Suave", GetPackageVersion "packages" "Suave" ] })
         ("nuget/" + project + ".nuspec")
 )
 
