@@ -50,7 +50,7 @@ FsReveal will detect changes to your slides and generate them again for you; you
 - Use the arrow keys to navigate left, right, up and down
 - Press `Esc` to see an overview
 - Press `f` to view in fullscreen
-- Press `s` to see speaker notes. This only works when running your presentation from the web server.
+- Press `s` to see speaker notes.
 
 ## Examples
 
