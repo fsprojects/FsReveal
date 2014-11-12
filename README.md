@@ -15,7 +15,7 @@ FsReveal brings F# to the [reveal.js][revealjs] web presentation framework.
 
 ## Getting Started
 
-Clone or download the [FsReveal repository](https://github.com/fsprojects/FsReveal). Check out GitHub's links to the right if you need some help.
+Clone or [download](https://github.com/fsprojects/FsReveal/archive/master.zip) the [FsReveal repository](https://github.com/fsprojects/FsReveal). Check out GitHub's links to the right if you need some help.
 
 ### Create
 
