@@ -179,3 +179,4 @@ nuget/*.nupkg
 output
 paket-files
 release.cmd
+*.bak
