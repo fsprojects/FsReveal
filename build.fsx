@@ -251,9 +251,6 @@ Target "Release" (fun _ ->
     // release on github
     createClient (getBuildParamOrDefault "github-user" "") (getBuildParamOrDefault "github-pw" "")
     |> createDraft gitOwner gitName release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes 
-    |> uploadFile "./bin/merged/paket.exe"
-    |> uploadFile "./bin/paket.bootstrapper.exe"
-    |> uploadFile ".paket/paket.targets"
     |> releaseDraft
     |> Async.RunSynchronously
 )
