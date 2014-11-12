@@ -1,4 +1,7 @@
-### 0.0.7 - 19.11.2014
+### 0.0.8 - 12.11.2014
+* Switching branches
+
+### 0.0.7 - 09.11.2014
 * Fix packages reference in fsreveal.fsx 
 * Use scheme relative urls in template
  
