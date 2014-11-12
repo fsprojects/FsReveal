@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>index</title>
+    <title>FsReveal
+</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="FsReveal parses markdown or F# script file and generate reveal.js slides."/>
     <meta name="author" content="Karlkim Suwanmongkol"/>
@@ -32,18 +33,26 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h2>See FsReveal slides in action</h2>
+<h1>FsReveal</h1>
+
+<p>FsReveal brings F# to the [reveal.js][revealjs] web presentation framework.</p>
+
+<h2>Features</h2>
 
 <ul>
-<li><a href="http://fsreveal.azurewebsites.net/">1st sample</a> generated from <a href="https://github.com/fsprojects/FsReveal/blob/develop/src/presentations/FsReveal.fsx">FsReveal.fsx</a></li>
-<li><a href="http://fsreveal.azurewebsites.net/index-md.html">2nd sample</a> generated from <a href="https://github.com/fsprojects/FsReveal/blob/develop/src/presentations/FsReveal.md">FsReveal.md</a></li>
+<li>Write your slides in <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> or .fsx files</li>
+<li>Syntax highlighting for most programming languages including C# and F#</li>
+<li>Speaker notes; Shows the current slide, next slide, elapsed time and current time</li>
+<li>Built in themes</li>
+<li>Horizontal and vertical slides</li>
+<li>Built in slide transitions using CSS 3D transforms</li>
+<li>Slide overview</li>
+<li>Works on mobile browsers. Swipe your way through the presentation.</li>
 </ul>
 
 <h2>Getting Started</h2>
 
-<h3>Get</h3>
-
-<p>Clone or download this repo. Check out GitHub's links to the right if you need some help.</p>
+<p>Clone or <a href="https://github.com/fsprojects/FsReveal/archive/master.zip">download</a> the <a href="https://github.com/fsprojects/FsReveal">FsReveal repository</a>. Check out GitHub's links to the right if you need some help.</p>
 
 <h3>Create</h3>
 
@@ -53,7 +62,7 @@
 
 <h3>Build</h3>
 
-<p>Open a console/terminal and <code>cd</code> into the FsReveal folder.</p>
+<p>Open a console/terminal in the FsReveal folder.</p>
 
 <p>If you're using Windows run</p>
 
@@ -81,8 +90,35 @@
 
 <p>This will download all of the packages that FsReveal needs to create your slides.</p>
 
-<p>Whenever a change is detected the slides are automatically regenerated and updated in the <code>output</code> folder.
-Use your favorite webbrowser to view the slides.</p>
+<p>Your slides are then generated and saved to the <code>output</code> folder.</p>
+
+<p>A web server will start automatically and your presentation will be opened in your browser.</p>
+
+<p>FsReveal will detect changes to your slides and generate them again for you; you just need to refresh your browser.</p>
+
+<blockquote>
+  <p>We're working on auto refreshing the browser for you.</p>
+</blockquote>
+
+<h3>Use</h3>
+
+<ul>
+<li>Use the arrow keys to navigate left, right, up and down</li>
+<li>Press <code>Esc</code> to see an overview</li>
+<li>Press <code>f</code> to view in fullscreen</li>
+<li>Press <code>s</code> to see speaker notes.</li>
+</ul>
+
+<h2>Examples</h2>
+
+<p>Check out what others have created. Submit a PR if you have something to add to the list.</p>
+
+<ul>
+<li>[Markdown example][md-example] by [@kimsk][kimsk-twitter] [(source)][md-example-source]</li>
+<li>[.fsx example][fsx-example] by [@kimsk][kimsk-twitter] [(source)][fsx-example-source]</li>
+<li>[RPG F# Workshop][rpg-fsharp-workshop] by [@troykershaw][troykershaw-twitter] [(source)][rpg-fsharp-workshop-source]</li>
+<li>[F# on the Web - 0 to production in 12 weeks][fsharp-on-the-web] by [@panesofglass][panesofglass-twitter] [(source)][fsharp-on-the-web-source]</li>
+</ul>
 
 <h2>Contributing and copyright</h2>
 
