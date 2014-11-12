@@ -1,3 +1,6 @@
+### 0.0.9 - 12.11.2014
+* GitHub release
+
 ### 0.0.8 - 12.11.2014
 * Switching branches
 
