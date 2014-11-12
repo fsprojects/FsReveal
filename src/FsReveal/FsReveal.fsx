@@ -27,7 +27,7 @@ open System.Diagnostics
 let StartWebServer outDir =
     let serverConfig = 
         { default_config with
-            home_folder = Some (Path.Combine(FsRevealHelper.Folder, outDir))
+            home_folder = Some (Path.Combine(FsReveal.FsRevealHelper.Folder, outDir))
         }
 
     let app =
