@@ -5,7 +5,7 @@ FsReveal brings F# to the [reveal.js][revealjs] web presentation framework.
 ## Features
 
 - Write your slides in [Markdown](http://daringfireball.net/projects/markdown/syntax) or .fsx files
-- Syntax highlighting for most programming languages including C# and F#
+- Syntax highlighting for most programming languages including C#, F# and LaTeX
 - Speaker notes; Shows the current slide, next slide, elapsed time and current time
 - Built in themes
 - Horizontal and vertical slides
@@ -16,6 +16,11 @@ FsReveal brings F# to the [reveal.js][revealjs] web presentation framework.
 ## Getting Started
 
 Clone or [download](https://github.com/fsprojects/FsReveal/archive/master.zip) the [FsReveal repository](https://github.com/fsprojects/FsReveal). Check out GitHub's links to the right if you need some help.
+
+### Prerequisites
+If you are using Linux or OS X, [you need to install Mono](http://www.mono-project.com/download/ "Install Mono").
+
+Windows users don't need to install anything.
 
 ### Create
 
