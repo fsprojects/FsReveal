@@ -17,6 +17,9 @@ FsReveal brings F# to the [reveal.js][revealjs] web presentation framework.
 
 Clone or [download](https://github.com/fsprojects/FsReveal/archive/master.zip) the [FsReveal repository](https://github.com/fsprojects/FsReveal). Check out GitHub's links to the right if you need some help.
 
+### Prerequisites
+You're going to need F#. There are some great installation instructions on [fsharp.org](http://fsharp.org "F# Website"), click on the `Use` menu to get a guide for your environment.
+
 ### Create
 
 Open `slides/input.md` in your favourite text editor.
