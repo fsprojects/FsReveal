@@ -183,3 +183,4 @@ paket-files
 docs/content/license.md
 docs/content/release-notes.md
 output/
+src/reveal.js
