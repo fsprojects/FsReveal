@@ -1,7 +1,7 @@
 ﻿- title : FsReveal
 - description : Introduction to FsReveal
 - author : Karlkim Suwanmongkol
-- theme : Night
+- theme : night
 - transition : default
 
 ***
