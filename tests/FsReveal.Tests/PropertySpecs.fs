@@ -1,4 +1,4 @@
-module FsReveal.PropertiesSpecs
+module FsReveal.PropertySpecs
 
 open FsReveal
 open NUnit.Framework

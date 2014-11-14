@@ -8,9 +8,15 @@ open FSharp.Literate
 open FSharp.Markdown
 open FSharp.Markdown.Html
 
-type Slide =
+type SlideData =
   | Simple of MarkdownParagraph list
   | Nested of MarkdownParagraph list list
+
+type Slide = 
+  {
+    Properties: (string * string) list
+    SlideData: SlideData
+  }
 
 type Presentation = 
   {
@@ -83,24 +89,35 @@ module internal Misc =
       | [ListBlock(_, spans)] -> getProperties spans
       | x -> failwithf "Invalid Presentation properties: %A" x
 
-    let wrappedInSection paragraphs = InlineBlock("<section>")::paragraphs@[InlineBlock("</section>")]
+    let wrappedInSection properties paragraphs = 
+        let attributes = 
+            properties 
+            |> Seq.map (fun (k,v) -> sprintf "%s=\"%s\"" k v)
+            
+        InlineBlock(sprintf "<section %s>" (String.Join(" ",attributes))) :: paragraphs @ [InlineBlock("</section>")]
 
-    let getParagraphsFromSlide = function
+    let getParagraphsFromSlide slide =
+      match slide.SlideData with
       | Simple(paragraphs) ->
-          wrappedInSection paragraphs        
+          wrappedInSection slide.Properties paragraphs        
       | Nested(listOfParagraphs) -> 
           listOfParagraphs         
-          |> List.collect (wrappedInSection)
-          |> wrappedInSection
+          |> List.collect (wrappedInSection slide.Properties)
+          |> wrappedInSection slide.Properties
 
     let slides = 
       sections.Tail
       |> List.map (fun s -> 
           // sub-section is separated by ---
           let result = splitBy (HorizontalRule('-')) s
-          match result with
-          | [slide] -> Simple(slide)
-          | _ -> Nested(result)
+          {Properties =       
+              match s with
+              | ListBlock(_, spans) :: _ -> getProperties spans
+              | _ -> []
+           SlideData =
+              match result with
+              | [slide] -> Simple(slide)
+              | _ -> Nested(result) }
         )
     
     let paragraphs = List.collect (getParagraphsFromSlide) slides

@@ -1,5 +1,5 @@
-### 0.1.5 - 12.11.2014
-* Bugfix release
+### 0.1.6 - 14.11.2014
+* Allow to add slide properties
 
 ### 0.1.0 - 12.11.2014
 * GitHub release
