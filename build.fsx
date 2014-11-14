@@ -38,7 +38,9 @@ let generateFor (file:FileInfo) =
             | _ -> ()
         with 
         | exn when trials > 0 -> tryGenerate (trials - 1)
-        | exn -> tracefn "Could not generate slides for %s" file.FullName
+        | exn -> 
+            traceImportant <| sprintf "Could not generate slides for %s:" file.FullName
+            traceImportant exn.Message
 
     tryGenerate 3
 
