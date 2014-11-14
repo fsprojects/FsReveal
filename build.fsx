@@ -24,7 +24,7 @@ Target "Clean" (fun _ ->
 )
 
 let copyPics() =
-    !! "pics/*.*"
+    !! "slides/images/*.*"
     |> CopyFiles (outDir @@ "images")
 
 let generateFor (file:FileInfo) =    
