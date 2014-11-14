@@ -73,13 +73,13 @@ module internal Misc =
         match c with
         | [Span(l)] -> 
           match l with
-          | [Literal(v)] -> 
+          | [Literal(v)] when v.Contains(":") -> 
               let colonPos = v.IndexOf(':')
               let key = v.Substring(0, colonPos).Trim()
               let value = v.Substring(colonPos + 1).Trim()
               (key, value)
-          | _ -> failwith "Invalid Presentation Property."
-        | _ -> failwith "Invalid Presentation Property."
+          | _ -> failwithf "Invalid Presentation property: %A" l
+        | _ -> failwithf "Invalid Presentation property: %A" c
       )
   
     // main section is separated by ***
@@ -112,7 +112,10 @@ module internal Misc =
           let result = splitBy (HorizontalRule('-')) s
           let properties,data =
               match s with
-              | ListBlock(_, spans) :: data -> getProperties spans,[data]
+              | ListBlock(_, spans) :: data -> 
+                  try
+                    getProperties spans,[data]
+                  with _ -> [],[s]
               | data -> [],[data]
 
           {Properties = properties 
