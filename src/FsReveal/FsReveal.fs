@@ -110,12 +110,14 @@ module internal Misc =
       |> List.map (fun s -> 
           // sub-section is separated by ---
           let result = splitBy (HorizontalRule('-')) s
-          {Properties =       
+          let properties,data =
               match s with
-              | ListBlock(_, spans) :: _ -> getProperties spans
-              | _ -> []
+              | ListBlock(_, spans) :: data -> getProperties spans,[data]
+              | data -> [],[data]
+
+          {Properties = properties 
            SlideData =
-              match result with
+              match data with
               | [slide] -> Simple(slide)
               | _ -> Nested(result) }
         )
