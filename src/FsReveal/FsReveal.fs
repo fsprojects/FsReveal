@@ -81,7 +81,7 @@ module internal Misc =
     let properties = 
       match sections.Head with
       | [ListBlock(_, spans)] -> getProperties spans
-      | _ -> failwith "Invalid Presentation Properties."
+      | x -> failwithf "Invalid Presentation properties: %A" x
 
     let wrappedInSection paragraphs = InlineBlock("<section>")::paragraphs@[InlineBlock("</section>")]
 
