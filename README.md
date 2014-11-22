@@ -80,10 +80,10 @@ Check out what others have created. Submit a PR if you have something to add to 
 [panesofglass-twitter]: https://twitter.com/panesofglass "@panesofglass on Twitter"
 
 [fsx-example]: http://fsreveal.azurewebsites.net/ ".fsx example"
-[fsx-example-source]: https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx ".fsx example source"
+[fsx-example-source]: https://github.com/fsprojects/FsReveal/blob/develop/src/presentations/FsReveal.fsx ".fsx example source"
 
 [md-example]: http://fsreveal.azurewebsites.net/index-md.html "Markdown example"
-[md-example-source]: https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md "Markdown example source"
+[md-example-source]: https://raw.githubusercontent.com/fsprojects/FsReveal/develop/src/presentations/FsReveal.md "Markdown example source"
 
 [rpg-fsharp-workshop]: http://troykershaw.github.io/RpgFsharpWorkshop "RPG F# Workshop" 
 [rpg-fsharp-workshop-source]: https://github.com/troykershaw/RpgFsharpWorkshop "RPG F# Workshop source"
