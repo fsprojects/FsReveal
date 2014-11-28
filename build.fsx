@@ -51,7 +51,7 @@ let generateFor (file:FileInfo) =
 let handleWatcherEvents (e:FileSystemEventArgs) =
     let fi = fileInfo e.FullPath 
     traceImportant fi.Name
-    match fi.Attributes.HasFlag FileAttributes.Hidden with
+    match fi.Attributes.HasFlag FileAttributes.Hidden || fi.Attributes.HasFlag FileAttributes.Directory with
             | true -> ()
             | _ -> generateFor fi
 
