@@ -27,22 +27,26 @@ let copyPics() =
     !! "slides/images/*.*"
     |> CopyFiles (outDir @@ "images")
 
-let generateFor (file:FileInfo) =    
-    copyPics()
-    let rec tryGenerate trials =
-        try
-            let outputFileName = file.Name.Replace(file.Extension,".html")
-            match file.Extension with   
-            | ".md" ->  FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file.FullName
-            | ".fsx" -> FsReveal.GenerateOutputFromScriptFile outDir outputFileName file.FullName
-            | _ -> ()
-        with 
-        | exn when trials > 0 -> tryGenerate (trials - 1)
-        | exn -> 
-            traceImportant <| sprintf "Could not generate slides for %s:" file.FullName
-            traceImportant exn.Message
+let generateFor (file:FileInfo) = 
+    try
+        copyPics()
+        let rec tryGenerate trials =
+            try
+                let outputFileName = file.Name.Replace(file.Extension,".html")
+                match file.Extension with   
+                | ".md" ->  FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file.FullName
+                | ".fsx" -> FsReveal.GenerateOutputFromScriptFile outDir outputFileName file.FullName
+                | _ -> ()
+            with 
+            | exn when trials > 0 -> tryGenerate (trials - 1)
+            | exn -> 
+                traceImportant <| sprintf "Could not generate slides for: %s" file.FullName
+                traceImportant exn.Message
 
-    tryGenerate 3
+        tryGenerate 3
+    with
+    | :? FileNotFoundException as exn ->
+        traceImportant <| sprintf "Could not copy file: %s" exn.FileName
 
 let handleWatcherEvents (e:FileSystemEventArgs) =
     let fi = fileInfo e.FullPath 
