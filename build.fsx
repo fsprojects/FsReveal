@@ -44,6 +44,13 @@ let generateFor (file:FileInfo) =
 
     tryGenerate 3
 
+let handleWatcherEvents (e:FileSystemEventArgs) =
+    let fi = fileInfo e.FullPath 
+    traceImportant fi.Name
+    match fi.Attributes.HasFlag FileAttributes.Hidden with
+            | true -> ()
+            | _ -> generateFor fi
+
 let startWebServer () =
     let serverConfig = 
         { default_config with
@@ -67,9 +74,10 @@ Target "GenerateSlides" (fun _ ->
 Target "KeepRunning" (fun _ ->
     use watcher = new FileSystemWatcher(DirectoryInfo("slides").FullName,"*.*")
     watcher.EnableRaisingEvents <- true
-    watcher.Changed.Add(fun e -> fileInfo e.FullPath |> generateFor)
-    watcher.Created.Add(fun e -> fileInfo e.FullPath |> generateFor)
-    watcher.Renamed.Add(fun e -> fileInfo e.FullPath |> generateFor)
+    watcher.IncludeSubdirectories <- true
+    watcher.Changed.Add(handleWatcherEvents)
+    watcher.Created.Add(handleWatcherEvents)
+    watcher.Renamed.Add(handleWatcherEvents)
 
     startWebServer ()
 
