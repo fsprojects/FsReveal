@@ -90,3 +90,14 @@ Check out what others have created. Submit a PR if you have something to add to 
 
 [fsharp-on-the-web]: http://panesofglass.github.io/TodoBackendFSharp "F# on the Web - 0 to production in 12 weeks"
 [fsharp-on-the-web-source]: https://github.com/panesofglass/TodoBackendFSharp "F# on the Web source"
+
+### Maintainer(s)
+
+- [@kimsk](https://github.com/kimsk)
+- [@forki](https://github.com/forki)
+- [@troykershaw](https://github.com/troykershaw)
+- [@agross](https://github.com/agross)
+- [@shishkin](https://github.com/shishkin)
+- [@ilkerde](https://github.com/ilkerde)
+
+The default maintainer account for projects under "fsprojects" is [@fsgit](https://github.com/fsgit) - F# Community Project Incubation Space (repo management)
