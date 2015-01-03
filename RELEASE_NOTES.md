@@ -1,3 +1,6 @@
+### 0.1.9 - 03.01.2015
+* Updated FSharp.Formatting engine
+
 ### 0.1.8 - 14.11.2014
 * Allow to add slide properties
 
