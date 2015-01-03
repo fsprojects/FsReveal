@@ -64,7 +64,7 @@ let startWebServer () =
         Writers.set_header "Cache-Control" "no-cache, no-store, must-revalidate"
         >>= Writers.set_header "Pragma" "no-cache"
         >>= Writers.set_header "Expires" "0"
-        >>= browse
+        >>= browse'
     web_server_async serverConfig app |> snd |> Async.Start
     Process.Start "http://localhost:8083/input.html" |> ignore
 
