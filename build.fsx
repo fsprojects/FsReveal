@@ -1,7 +1,7 @@
 #I @"packages/FsReveal/fsreveal/"
 #I @"packages/FAKE/tools/"
 #I @"packages/RazorEngine/lib/net40/"
-#I @"packages/Suave/lib/"
+#I @"packages/Suave/lib/net40"
 
 #r "FakeLib.dll"
 #r "suave.dll"
@@ -64,7 +64,7 @@ let startWebServer () =
         Writers.set_header "Cache-Control" "no-cache, no-store, must-revalidate"
         >>= Writers.set_header "Pragma" "no-cache"
         >>= Writers.set_header "Expires" "0"
-        >>= browse
+        >>= browse'
     web_server_async serverConfig app |> snd |> Async.Start
     Process.Start "http://localhost:8083/input.html" |> ignore
 
