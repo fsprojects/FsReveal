@@ -27,22 +27,33 @@ let copyPics() =
     !! "slides/images/*.*"
     |> CopyFiles (outDir @@ "images")
 
-let generateFor (file:FileInfo) =    
-    copyPics()
-    let rec tryGenerate trials =
-        try
-            let outputFileName = file.Name.Replace(file.Extension,".html")
-            match file.Extension with   
-            | ".md" ->  FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file.FullName
-            | ".fsx" -> FsReveal.GenerateOutputFromScriptFile outDir outputFileName file.FullName
-            | _ -> ()
-        with 
-        | exn when trials > 0 -> tryGenerate (trials - 1)
-        | exn -> 
-            traceImportant <| sprintf "Could not generate slides for %s:" file.FullName
-            traceImportant exn.Message
+let generateFor (file:FileInfo) = 
+    try
+        copyPics()
+        let rec tryGenerate trials =
+            try
+                let outputFileName = file.Name.Replace(file.Extension,".html")
+                match file.Extension with   
+                | ".md" ->  FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file.FullName
+                | ".fsx" -> FsReveal.GenerateOutputFromScriptFile outDir outputFileName file.FullName
+                | _ -> ()
+            with 
+            | exn when trials > 0 -> tryGenerate (trials - 1)
+            | exn -> 
+                traceImportant <| sprintf "Could not generate slides for: %s" file.FullName
+                traceImportant exn.Message
 
-    tryGenerate 3
+        tryGenerate 3
+    with
+    | :? FileNotFoundException as exn ->
+        traceImportant <| sprintf "Could not copy file: %s" exn.FileName
+
+let handleWatcherEvents (e:FileSystemEventArgs) =
+    let fi = fileInfo e.FullPath 
+    traceImportant fi.Name
+    match fi.Attributes.HasFlag FileAttributes.Hidden || fi.Attributes.HasFlag FileAttributes.Directory with
+            | true -> ()
+            | _ -> generateFor fi
 
 let startWebServer () =
     let serverConfig = 
@@ -67,9 +78,10 @@ Target "GenerateSlides" (fun _ ->
 Target "KeepRunning" (fun _ ->
     use watcher = new FileSystemWatcher(DirectoryInfo("slides").FullName,"*.*")
     watcher.EnableRaisingEvents <- true
-    watcher.Changed.Add(fun e -> fileInfo e.FullPath |> generateFor)
-    watcher.Created.Add(fun e -> fileInfo e.FullPath |> generateFor)
-    watcher.Renamed.Add(fun e -> fileInfo e.FullPath |> generateFor)
+    watcher.IncludeSubdirectories <- true
+    watcher.Changed.Add(handleWatcherEvents)
+    watcher.Created.Add(handleWatcherEvents)
+    watcher.Renamed.Add(handleWatcherEvents)
 
     startWebServer ()
 
