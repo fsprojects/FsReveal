@@ -9,7 +9,7 @@ NUGET
       Microsoft.AspNet.Razor (2.0.30506)
       RazorEngine (3.3.0)
     FsPickler (1.0.6)
-    FsReveal (0.2.0)
+    FsReveal (0.2.1)
       FSharp.Formatting (>= 2.5.0)
     Microsoft.AspNet.Razor (2.0.30506)
     RazorEngine (3.3.0)
