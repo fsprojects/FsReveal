@@ -1,3 +1,6 @@
+### 0.1.9 - 14.11.2014
+* First copy reveal.js then overwrite with slides
+
 ### 0.1.8 - 14.11.2014
 * Allow to add slide properties
 

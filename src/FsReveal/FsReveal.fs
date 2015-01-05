@@ -154,6 +154,17 @@ type FsReveal =
       Directory.CreateDirectory outDir |> ignore
       printfn "Create %s.." outDir
 
+    let revealJsDir = FsRevealHelper.Folder @@ "../reveal.js"
+    printfn "Copy reveal.js files from %s to %s" revealJsDir outDir 
+    copyFiles revealJsDir outDir
+
+    // delete overhead
+    File.Delete(outDir @@ "index.html")
+    File.Delete(outDir @@ "README.md")
+
+    let di = DirectoryInfo(outDir @@ "test")
+    di.Delete(true)
+
     let doc = Literate.FormatLiterateNodes presentation.Document 
   
     let htmlSlides = Literate.WriteHtml doc
@@ -174,10 +185,6 @@ type FsReveal =
       .Replace("{tooltips}", toolTips) |> ignore
 
     File.WriteAllText (outDir @@ outFile, output.ToString())
-
-    let revealJsDir = (FsRevealHelper.Folder @@ "../reveal.js")
-    printfn "Copy reveal.js files from %s to %s" revealJsDir outDir 
-    copyFiles revealJsDir outDir 
 
   
   static member private checkIfFileExistsAndRun file f =
