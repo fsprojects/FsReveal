@@ -8,8 +8,16 @@
 
 #load "fsreveal.fsx"
 
+// Git configuration (used for publishing documentation in gh-pages branch)
+// The profile where the project is posted
+let gitOwner = "myGitUser"
+let gitHome = "https://github.com/" + gitOwner
+// The name of the project on GitHub
+let gitName = "MyProject"
+
 open FsReveal
 open Fake
+open Fake.Git
 open System.IO
 open System.Diagnostics
 open Suave
@@ -66,7 +74,7 @@ let startWebServer () =
         >>= Writers.set_header "Expires" "0"
         >>= browse'
     web_server_async serverConfig app |> snd |> Async.Start
-    Process.Start "http://localhost:8083/input.html" |> ignore
+    Process.Start "http://localhost:8083/index.html" |> ignore
 
 Target "GenerateSlides" (fun _ ->
     !! "slides/*.md"
@@ -93,8 +101,23 @@ Target "KeepRunning" (fun _ ->
     watcher.Dispose()
 )
 
+Target "ReleaseSlides" (fun _ ->
+    let tempDocsDir = "temp/gh-pages"
+    CleanDir tempDocsDir
+    Repository.cloneSingleBranch "" (gitHome + "/" + gitName + ".git") "gh-pages" tempDocsDir
+
+    fullclean tempDocsDir
+    CopyRecursive "output" tempDocsDir true |> tracefn "%A"
+    StageAll tempDocsDir
+    Git.Commit.Commit tempDocsDir "Update generated slides"
+    Branches.push tempDocsDir
+)
+
 "Clean"
   ==> "GenerateSlides"
   ==> "KeepRunning"
 
+"GenerateSlides"
+  ==> "ReleaseSlides"
+  
 RunTargetOrDefault "KeepRunning"
