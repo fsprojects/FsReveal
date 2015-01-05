@@ -1,5 +1,6 @@
-### 0.1.9 - 14.11.2014
+### 0.2.0 - 05.01.2015
 * First copy reveal.js then overwrite with slides
+* Update all dependencies
 
 ### 0.1.8 - 14.11.2014
 * Allow to add slide properties
