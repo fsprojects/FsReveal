@@ -13,26 +13,31 @@ let md = """
 
 ***
 
-### Section 1
+### Slide 1
 
 ***
 
-### Section 2
+### Slide 2
 
 ---
 
-#### Section 2.1
+#### Slide 2.1
 
 ---
 
-#### Section 2.2
+#### Sldie 2.2
 
 ***
 
-### Section 3"""
+### Slide 3"""
 
 [<Test>]
 let ``can generate sections from markdown`` () =
   let slides = (md |> FsReveal.GetPresentationFromMarkdown).Slides
 
   slides.Length |> shouldEqual 3
+  let slide = slides |> Seq.skip 1 |> Seq.head 
+  match slide.SlideData with
+  | SlideData.Nested x -> ()
+  | _ -> failwith "subslides not parsed"
+ 

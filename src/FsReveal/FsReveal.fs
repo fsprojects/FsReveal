@@ -116,12 +116,12 @@ module internal Misc =
                   try
                     getProperties spans,[data]
                   with _ -> [],[s]
-              | data -> [],[data]
+              | _ -> [],[s]
 
           {Properties = properties 
            SlideData =
               match data with
-              | [slide] -> Simple(slide)
+              | [[slide]] -> Simple([slide])
               | _ -> Nested(result) }
         )
     

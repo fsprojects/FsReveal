@@ -1,3 +1,6 @@
+### 0.2.1 - 05.01.2015
+* BUGFIX: Detect subslides
+
 ### 0.2.0 - 05.01.2015
 * First copy reveal.js then overwrite with slides
 * Update all dependencies
