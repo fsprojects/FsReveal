@@ -1,7 +1,7 @@
 NUGET
   remote: https://nuget.org/api/v2
   specs:
-    FAKE (3.13.0)
+    FAKE (3.13.2)
     FSharp.Compiler.Service (0.0.81)
     FSharp.Core (3.1.2.1)
     FSharp.Formatting (2.5.0)
@@ -14,6 +14,6 @@ NUGET
     Microsoft.AspNet.Razor (2.0.30506)
     RazorEngine (3.3.0)
       Microsoft.AspNet.Razor (>= 2.0.30506.0)
-    Suave (0.20.2)
+    Suave (0.21.0)
       FSharp.Core (>= 3.1.2.1)
       FsPickler (>= 1.0.6)
