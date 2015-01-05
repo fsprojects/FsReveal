@@ -57,6 +57,14 @@ FsReveal will detect changes to your slides and generate them again for you; you
 - Press `f` to view in fullscreen
 - Press `s` to see speaker notes.
 
+### Deployment
+
+GitHub allows to host your slides. In order to deploy your slides make sure you have a `gh-pages` branch. 
+If it doesn't exist, then just create and push it.
+After that you can release your software by simply running:
+     
+    $ build ReleaseSlides
+
 ## Examples
 
 Check out what others have created. Submit a PR if you have something to add to the list.
