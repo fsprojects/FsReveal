@@ -23,7 +23,6 @@ let info =
 // --------------------------------------------------------------------------------------
 
 #I "../../packages/FSharp.Formatting/lib/net40"
-#I "../../packages/RazorEngine/lib/net40"
 #I "../../packages/FSharp.Compiler.Service/lib/net40"
 #r "../../packages/FAKE/tools/NuGet.Core.dll"
 #r "../../packages/FAKE/tools/FakeLib.dll"
