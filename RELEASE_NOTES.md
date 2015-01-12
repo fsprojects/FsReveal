@@ -1,3 +1,6 @@
+### 0.2.2 - 12.01.2015
+* Use FSharp.Formatting 2.6
+
 ### 0.2.1 - 05.01.2015
 * BUGFIX: Detect subslides
 
