@@ -7,6 +7,6 @@ nuget NUnit
 nuget NUnit.Runners 
 nuget Nuget.CommandLine
 
-github hakimel/reveal.js:2.6.2
+github hakimel/reveal.js:3.0.0
 github forki/FsUnit FsUnit.fs
 github fsharp/FAKE modules/Octokit/Octokit.fsx
