@@ -1,6 +1,5 @@
 #I @"packages/FsReveal/fsreveal/"
 #I @"packages/FAKE/tools/"
-#I @"packages/RazorEngine/lib/net40/"
 #I @"packages/Suave/lib/net40"
 
 #r "FakeLib.dll"
