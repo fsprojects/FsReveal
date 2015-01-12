@@ -32,8 +32,11 @@ Target "Clean" (fun _ ->
 )
 
 let copyPics() =
-    !! "slides/images/*.*"
-    |> CopyFiles (outDir @@ "images")
+    try
+      !! "slides/images/*.*"
+      |> CopyFiles (outDir @@ "images")
+    with
+    | exn -> traceImportant <| sprintf "Could not copy picture: %s" exn.Message    
 
 let generateFor (file:FileInfo) = 
     try
@@ -58,7 +61,7 @@ let generateFor (file:FileInfo) =
 
 let handleWatcherEvents (e:FileSystemEventArgs) =
     let fi = fileInfo e.FullPath 
-    traceImportant fi.Name
+    traceImportant <| sprintf "%s was changed." fi.Name
     match fi.Attributes.HasFlag FileAttributes.Hidden || fi.Attributes.HasFlag FileAttributes.Directory with
             | true -> ()
             | _ -> generateFor fi
