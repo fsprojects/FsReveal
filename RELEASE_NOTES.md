@@ -1,4 +1,4 @@
-### 0.3.2 - unreleased
+### 0.3.2 - 25.02.215
 * Use FSharp.Formatting 2.7.4 and update to .NET 4.5
 * Update default F# Formatting CSS (to support type/DU/module distinctions)
 * Fix issues with processing (and evaluating) fsx scripts
