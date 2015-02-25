@@ -18,6 +18,7 @@
   </metadata>
   <files>    
     <file src="..\bin\FsReveal.*" target="lib/net40" />
+    <file src="..\bin\FSharp.Compiler.Interactive.Settings.dll" target="lib/net40" />
     <file src="..\paket-files\hakimel\reveal.js\**\*.*" target="reveal.js" />
     <file src="..\src\FsReveal\style.css" target="reveal.js\fsharp.formatting\styles\style.css"/>
     <file src="..\src\FsReveal\tips.js" target="reveal.js\fsharp.formatting\styles\tips.js"/>

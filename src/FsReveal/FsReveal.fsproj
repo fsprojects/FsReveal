@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>FsReveal</RootNamespace>
     <AssemblyName>FsReveal</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
     <Name>FsReveal</Name>
     <TargetFrameworkProfile />
@@ -35,6 +35,10 @@
     <DocumentationFile>..\..\bin\FsReveal.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FSharp.Compiler.Interactive.Settings">
+      <HintPath>..\..\lib\FSharp.Compiler.Interactive.Settings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>False</Private>
@@ -127,6 +131,17 @@
         </Reference>
         <Reference Include="System.Web.Razor">
           <HintPath>..\..\packages\FSharp.Formatting\lib\net40\System.Web.Razor.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3')) Or ($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch')">
+      <ItemGroup>
+        <Reference Include="FSharpVSPowerTools.Core">
+          <HintPath>..\..\packages\FSharpVSPowerTools.Core\lib\net45\FSharpVSPowerTools.Core.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
