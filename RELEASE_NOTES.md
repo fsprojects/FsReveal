@@ -1,3 +1,8 @@
+### 0.3.2 - unreleased
+* Use FSharp.Formatting 2.7.4 and update to .NET 4.5
+* Update default F# Formatting CSS (to support type/DU/module distinctions)
+* Fix issues with processing (and evaluating) fsx scripts
+
 ### 0.3.1 - 12.01.2015
 * Use reveal.js 3.0.0
 

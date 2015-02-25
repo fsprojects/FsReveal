@@ -1,24 +1,37 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Gudea:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Open+Sans:400,600,700);
 
 /*-------------------------------------------------------------------------- 
   Formatting for F# code snippets 
 /*--------------------------------------------------------------------------*/
 
-/* identifier */
+/* strings --- and stlyes for other string related formats */
+span.s { color:#E0E268; }
+/* printf formatters */
+span.pf { color:#E0C57F; }
+/* escaped chars */
+span.e { color:#EA8675; }
+
+/* identifiers --- and styles for more specific identifier types */
 span.i { color:#d1d1d1; }
-/* string */
-span.s { color:#d4b43c; }
+/* type or module */
+span.t { color:#43AEC6; }
+/* function */
+span.f { color:#e1e1e1; }
+/* DU case or active pattern */
+span.p { color:#4ec9b0; }
+
 /* keywords */
-span.k { color:#4e98dc; }
+span.k { color:#FAB11D; }
 /* comment */
-span.c { color:#96C71D; }
+span.c { color:#808080; }
 /* operators */
 span.o { color:#af75c1; }
 /* numbers */
 span.n { color:#96C71D; }
 /* line number */
 span.l { color:#80b0b0; }
-
+/* mutable var or ref cell */
+span.v { color:#d1d1d1; font-weight: bold; }
 /* inactive code */
 span.inactive { color:#808080; }
 /* preprocessor */
@@ -37,7 +50,7 @@ span.omitted {
 div.tip {
 	background:#475b5f;
     border-radius:4px;
-    font:11pt 'Droid Sans', arial, sans-serif;
+    font:16pt 'Droid Sans', arial, sans-serif;
 	padding:6px 8px 6px 8px;
 	display:none;
     color:#d1d1d1;
@@ -53,7 +66,7 @@ table.pre, pre.fssnip, pre {
   border:1px solid #d8d8d8;
   border-collapse:separate;
   white-space:pre;
-  font: 22px 'Droid Sans Mono',consolas,monospace;
+  font: 22pt 'Droid Sans Mono',consolas,monospace;
   width:90%;
   margin:10px 20px 20px 20px;
   background-color:#212d30;
@@ -66,7 +79,6 @@ table.pre pre {
   margin:0px;
   border-radius:0px;
   width: 100%;
-  font: 22px 'Droid Sans Mono',consolas,monospace;
 }
 table.pre td {
   padding:0px;
@@ -77,17 +89,12 @@ table.pre td.lines {
   width:30px;
 }
 
-table.pre code {
-    font-size: 20px;
-    background-color:#212d30;
-}
-
 /*-------------------------------------------------------------------------- 
   Formatting for page & standard document content
 /*--------------------------------------------------------------------------*/
 
 body {
-  font-family: Gudea, serif;
+  font-family: 'Open Sans', serif;
   padding-top: 0px;
   padding-bottom: 40px;
 }
@@ -99,6 +106,10 @@ pre {
 /* Format the heading - nicer spacing etc. */
 .masthead {
   overflow: hidden;
+}
+.masthead .muted a {
+  text-decoration:none;
+  color:#999999;
 }
 .masthead ul, .masthead li {
   margin-bottom:0px;
@@ -140,10 +151,10 @@ td.title, thead {
 /* Change font sizes for headings etc. */
 #main h1 { font-size: 26pt; margin:10px 0px 15px 0px; font-weight:400; }
 #main h2 { font-size: 20pt; margin:20px 0px 0px 0px; font-weight:400; }
-#main h3 { font-size: 14pt; margin:15px 0px 0px 0px; font-weight:400; }
-#main p  { font-size: 12pt; margin:5px 0px 15px 0px; }
-#main ul { font-size: 12pt; margin-top:10px; }
-#main li { font-size: 12pt; margin: 5px 0px 5px 0px; }
+#main h3 { font-size: 14pt; margin:15px 0px 0px 0px; font-weight:600; }
+#main p  { font-size: 11pt; margin:5px 0px 15px 0px; }
+#main ul { font-size: 11pt; margin-top:10px; }
+#main li { font-size: 11pt; margin: 5px 0px 5px 0px; }
 #main strong { font-weight:700; }
 
 /*-------------------------------------------------------------------------- 
@@ -165,6 +176,30 @@ td.title, thead {
   font-size:12pt;
   margin:10px 0px 0px 0px;
 }
+.github-link {
+  float:right;
+  text-decoration:none;
+}
+.github-link img {
+  border-style:none;
+  margin-left:10px;
+}
+.github-link .hover { display:none; }
+.github-link:hover .hover { display:block; }
+.github-link .normal { display: block; }
+.github-link:hover .normal { display: none; }
+
+/*-------------------------------------------------------------------------- 
+  Links 
+/*--------------------------------------------------------------------------*/
+
+h1 a, h1 a:hover, h1 a:focus,
+h2 a, h2 a:hover, h2 a:focus,
+h3 a, h3 a:hover, h3 a:focus,
+h4 a, h4 a:hover, h4 a:focus,
+h5 a, h5 a:hover, h5 a:focus,
+h6 a, h6 a:hover, h6 a:focus { color : inherit; text-decoration : inherit; outline:none }
+
 /*-------------------------------------------------------------------------- 
   Additional formatting for the homepage 
 /*--------------------------------------------------------------------------*/
@@ -184,13 +219,4 @@ td.title, thead {
   border-style:none;
   color: #e0e0e0;
   margin-top:15px;
-}
-
-/* Hide snippets on the home page snippet & nicely format table */
-#hp-snippet td.lines {
-  display: none;
-}
-#hp-snippet .table {
-  width:80%;
-  margin-left:30px;
 }
