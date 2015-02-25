@@ -24,7 +24,7 @@ open Suave.Web
 open Suave.Http
 open Suave.Http.Files
 
-let outDir = "output"
+let outDir = __SOURCE_DIRECTORY__ @@ "output"
 
 Target "Clean" (fun _ ->
     CleanDirs [outDir]
@@ -32,7 +32,7 @@ Target "Clean" (fun _ ->
 
 let copyPics() =
     try
-      !! "slides/images/*.*"
+      !! (__SOURCE_DIRECTORY__ @@ "slides/images/*.*")
       |> CopyFiles (outDir @@ "images")
     with
     | exn -> traceImportant <| sprintf "Could not copy picture: %s" exn.Message    
@@ -79,14 +79,14 @@ let startWebServer () =
     Process.Start "http://localhost:8083/index.html" |> ignore
 
 Target "GenerateSlides" (fun _ ->
-    !! "slides/*.md"
-      ++ "slides/*.fsx"
+    !! (__SOURCE_DIRECTORY__ @@ "slides/*.md")
+      ++ (__SOURCE_DIRECTORY__ @@ "slides/*.fsx")
     |> Seq.map fileInfo
     |> Seq.iter generateFor
 )
 
 Target "KeepRunning" (fun _ ->
-    use watcher = new FileSystemWatcher(DirectoryInfo("slides").FullName,"*.*")
+    use watcher = new FileSystemWatcher(DirectoryInfo(__SOURCE_DIRECTORY__ @@ "slides").FullName,"*.*")
     watcher.EnableRaisingEvents <- true
     watcher.IncludeSubdirectories <- true
     watcher.Changed.Add(handleWatcherEvents)
@@ -104,7 +104,7 @@ Target "KeepRunning" (fun _ ->
 )
 
 Target "ReleaseSlides" (fun _ ->
-    let tempDocsDir = "temp/gh-pages"
+    let tempDocsDir = __SOURCE_DIRECTORY__ @@ "temp/gh-pages"
     CleanDir tempDocsDir
     Repository.cloneSingleBranch "" (gitHome + "/" + gitName + ".git") "gh-pages" tempDocsDir
 
