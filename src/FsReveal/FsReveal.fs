@@ -31,7 +31,6 @@ type FsReveal =
         printfn "Copy reveal.js files from %s to %s" revealJsDir outDir
         copyFiles revealJsDir outDir
         // delete overhead
-        File.Delete(outDir @@ "index.html")
         File.Delete(outDir @@ "README.md")
         let di = DirectoryInfo(outDir @@ "test")
         if di.Exists then
