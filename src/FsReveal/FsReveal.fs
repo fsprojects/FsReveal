@@ -61,3 +61,11 @@ type FsReveal =
             |> File.ReadAllText
             |> FsReveal.GetPresentationFromMarkdown
             |> FsReveal.GenerateOutput outDir outFile)
+
+    static member GenerateFromFile outDir fileName =
+        let file = FileInfo fileName
+        let outputFileName = file.Name.Replace(file.Extension,".html")
+        match file.Extension with   
+        | ".md" -> FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file.FullName
+        | ".fsx" -> FsReveal.GenerateOutputFromScriptFile outDir outputFileName file.FullName
+        | _ -> ()
