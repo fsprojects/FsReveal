@@ -48,6 +48,8 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain.fs" />
+    <Compile Include="Misc.fs" />
     <Compile Include="FsReveal.fs" />
     <None Include="template.html" />
     <None Include="FsReveal.fsx" />

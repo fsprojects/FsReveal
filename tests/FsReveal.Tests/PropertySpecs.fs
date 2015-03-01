@@ -32,17 +32,17 @@ let md = """
 ### Section 3"""
 
 [<Test>]
-let ``can read properties from markdown`` () =  
-  let properties = (md |> FsReveal.GetPresentationFromMarkdown).Properties
-
-  properties |> Seq.find (fun (k,_) -> k = "title")
-  |> shouldEqual ("title", "FsReveal")
-  
-  properties |> Seq.find (fun (k,_) -> k = "description")
-  |> shouldEqual ("description", "Introduction to FsReveal")
-
-  properties |> Seq.find (fun (k,_) -> k = "theme")
-  |> shouldEqual ("theme", "Night")
-
-  properties |> Seq.find (fun (k,_) -> k = "transition")
-  |> shouldEqual ("transition", "default")
+let ``can read properties from markdown``() = 
+    let properties = (md |> FsReveal.GetPresentationFromMarkdown).Properties
+    properties
+    |> Seq.find (fun (k, _) -> k = "title")
+    |> shouldEqual ("title", "FsReveal")
+    properties
+    |> Seq.find (fun (k, _) -> k = "description")
+    |> shouldEqual ("description", "Introduction to FsReveal")
+    properties
+    |> Seq.find (fun (k, _) -> k = "theme")
+    |> shouldEqual ("theme", "Night")
+    properties
+    |> Seq.find (fun (k, _) -> k = "transition")
+    |> shouldEqual ("transition", "default")
