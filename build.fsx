@@ -67,15 +67,15 @@ let handleWatcherEvents (e:FileSystemEventArgs) =
 
 let startWebServer () =
     let serverConfig = 
-        { default_config with
-           home_folder = Some (System.IO.Path.Combine(__SOURCE_DIRECTORY__, outDir))
+        { defaultConfig with
+           homeFolder = Some (System.IO.Path.Combine(__SOURCE_DIRECTORY__, outDir))
         }
     let app =
-        Writers.set_header "Cache-Control" "no-cache, no-store, must-revalidate"
-        >>= Writers.set_header "Pragma" "no-cache"
-        >>= Writers.set_header "Expires" "0"
-        >>= browse'
-    web_server_async serverConfig app |> snd |> Async.Start
+        Writers.setHeader "Cache-Control" "no-cache, no-store, must-revalidate"
+        >>= Writers.setHeader "Pragma" "no-cache"
+        >>= Writers.setHeader "Expires" "0"
+        >>= browseHome
+    startWebServerAsync serverConfig app |> snd |> Async.Start
     Process.Start "http://localhost:8083/index.html" |> ignore
 
 Target "GenerateSlides" (fun _ ->
