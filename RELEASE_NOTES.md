@@ -1,5 +1,5 @@
-### 0.3.3 - 01.03.2015
-* Update to reveal.js 3.0.0
+### 0.3.4 - 01.03.2015
+* Fix CSS and don't delete index.html
 
 ### 0.3.2 - 26.02.2015
 * Use FSharp.Formatting 2.7.4 and update to .NET 4.5
