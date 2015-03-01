@@ -43,11 +43,7 @@ let generateFor (file:FileInfo) =
         copyPics()
         let rec tryGenerate trials =
             try
-                let outputFileName = file.Name.Replace(file.Extension,".html")
-                match file.Extension with   
-                | ".md" -> FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file.FullName
-                | ".fsx" -> FsReveal.GenerateOutputFromScriptFile outDir outputFileName file.FullName
-                | _ -> ()
+                FsReveal.GenerateFromFile outDir file.FullName                
             with 
             | exn when trials > 0 -> tryGenerate (trials - 1)
             | exn -> 
