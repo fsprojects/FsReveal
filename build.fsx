@@ -25,6 +25,7 @@ open Suave.Http
 open Suave.Http.Files
 
 let outDir = __SOURCE_DIRECTORY__ @@ "output"
+let slidesDir = __SOURCE_DIRECTORY__ @@ "slides"
 
 Target "Clean" (fun _ ->
     CleanDirs [outDir]
@@ -32,7 +33,7 @@ Target "Clean" (fun _ ->
 
 let copyPics() =
     try
-      !! (__SOURCE_DIRECTORY__ @@ "slides/images/*.*")
+      !! (slidesDir @@ "images/*.*")
       |> CopyFiles (outDir @@ "images")
     with
     | exn -> traceImportant <| sprintf "Could not copy picture: %s" exn.Message    
@@ -44,7 +45,7 @@ let generateFor (file:FileInfo) =
             try
                 let outputFileName = file.Name.Replace(file.Extension,".html")
                 match file.Extension with   
-                | ".md" ->  FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file.FullName
+                | ".md" -> FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file.FullName
                 | ".fsx" -> FsReveal.GenerateOutputFromScriptFile outDir outputFileName file.FullName
                 | _ -> ()
             with 
@@ -68,7 +69,7 @@ let handleWatcherEvents (e:FileSystemEventArgs) =
 let startWebServer () =
     let serverConfig = 
         { defaultConfig with
-           homeFolder = Some (System.IO.Path.Combine(__SOURCE_DIRECTORY__, outDir))
+           homeFolder = Some (FullName outDir)
         }
     let app =
         Writers.setHeader "Cache-Control" "no-cache, no-store, must-revalidate"
@@ -79,14 +80,14 @@ let startWebServer () =
     Process.Start "http://localhost:8083/index.html" |> ignore
 
 Target "GenerateSlides" (fun _ ->
-    !! (__SOURCE_DIRECTORY__ @@ "slides/*.md")
-      ++ (__SOURCE_DIRECTORY__ @@ "slides/*.fsx")
+    !! (slidesDir @@ "*.md")
+      ++ (slidesDir @@ "*.fsx")
     |> Seq.map fileInfo
     |> Seq.iter generateFor
 )
 
 Target "KeepRunning" (fun _ ->
-    use watcher = new FileSystemWatcher(DirectoryInfo(__SOURCE_DIRECTORY__ @@ "slides").FullName,"*.*")
+    use watcher = new FileSystemWatcher(FullName slidesDir,"*.*")
     watcher.EnableRaisingEvents <- true
     watcher.IncludeSubdirectories <- true
     watcher.Changed.Add(handleWatcherEvents)
@@ -109,7 +110,7 @@ Target "ReleaseSlides" (fun _ ->
     Repository.cloneSingleBranch "" (gitHome + "/" + gitName + ".git") "gh-pages" tempDocsDir
 
     fullclean tempDocsDir
-    CopyRecursive "output" tempDocsDir true |> tracefn "%A"
+    CopyRecursive outDir tempDocsDir true |> tracefn "%A"
     StageAll tempDocsDir
     Git.Commit.Commit tempDocsDir "Update generated slides"
     Branches.push tempDocsDir
