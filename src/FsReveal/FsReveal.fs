@@ -23,18 +23,16 @@ type FsReveal =
         |> getPresentation
     
     static member GenerateOutput outDir outFile presentation = 
-        if Directory.Exists outDir then printfn "%s exists.." outDir
-        else 
+        if Directory.Exists outDir |> not then 
             Directory.CreateDirectory outDir |> ignore
-            printfn "Create %s.." outDir
+            printfn "Creating %s.." outDir
         let revealJsDir = FsRevealHelper.Folder @@ "../reveal.js"
         printfn "Copy reveal.js files from %s to %s" revealJsDir outDir
         copyFiles revealJsDir outDir
         // delete overhead
         File.Delete(outDir @@ "README.md")
         let di = DirectoryInfo(outDir @@ "test")
-        if di.Exists then
-            di.Delete(true)
+        if di.Exists then di.Delete(true)
         let doc = Literate.FormatLiterateNodes presentation.Document
         let htmlSlides = Literate.WriteHtml doc
         let toolTips = doc.FormattedTips
