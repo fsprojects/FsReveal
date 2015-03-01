@@ -34,7 +34,8 @@ type FsReveal =
         File.Delete(outDir @@ "index.html")
         File.Delete(outDir @@ "README.md")
         let di = DirectoryInfo(outDir @@ "test")
-        di.Delete(true)
+        if di.Exists then
+            di.Delete(true)
         let doc = Literate.FormatLiterateNodes presentation.Document
         let htmlSlides = Literate.WriteHtml doc
         let toolTips = doc.FormattedTips

@@ -20,10 +20,11 @@ let ensureDirectory path =
 /// Copy all files from source to target
 let rec copyFiles source target = 
     ensureDirectory target
-    for f in Directory.GetDirectories(source) do
-        copyFiles f (target @@ Path.GetFileName(f))
-    for f in Directory.GetFiles(source) do
-        File.Copy(f, (target @@ Path.GetFileName(f)), true)
+    if Directory.Exists(source) then
+        for f in Directory.GetDirectories(source) do
+            copyFiles f (target @@ Path.GetFileName(f))
+        for f in Directory.GetFiles(source) do
+            File.Copy(f, (target @@ Path.GetFileName(f)), true)
 
 /// Split a list into chunks using the specified separator
 /// This takes a list and returns a list of lists (chunks)
