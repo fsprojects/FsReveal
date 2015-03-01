@@ -28,7 +28,7 @@ type FsReveal =
             printfn "Creating %s.." outDir
         let revealJsDir = FsRevealHelper.Folder @@ "../reveal.js"
         printfn "Copy reveal.js files from %s to %s" revealJsDir outDir
-        copyFiles revealJsDir outDir
+        copyFiles (fun f -> f.ToLower().Contains("index.html")) revealJsDir outDir
         // delete overhead
         File.Delete(outDir @@ "README.md")
         let di = DirectoryInfo(outDir @@ "test")

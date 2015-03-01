@@ -1,4 +1,4 @@
-### 0.4.1 - 01.03.2015
+### 0.4.2 - 01.03.2015
 * BUGFIX: Fixed CSS in Reveal.js 3.0
 * BUGFIX: Don't delete index.html
 * Use FSharp.Formatting 2.7.4 and update to .NET 4.5

@@ -18,13 +18,14 @@ let ensureDirectory path =
     if not dir.Exists then dir.Create()
 
 /// Copy all files from source to target
-let rec copyFiles source target = 
+let rec copyFiles filter source target = 
     ensureDirectory target
     if Directory.Exists(source) then
         for f in Directory.GetDirectories(source) do
-            copyFiles f (target @@ Path.GetFileName(f))
+            copyFiles filter f (target @@ Path.GetFileName(f))
         for f in Directory.GetFiles(source) do
-            File.Copy(f, (target @@ Path.GetFileName(f)), true)
+            if not <| filter f then
+                File.Copy(f, (target @@ Path.GetFileName(f)), true)
 
 /// Split a list into chunks using the specified separator
 /// This takes a list and returns a list of lists (chunks)
