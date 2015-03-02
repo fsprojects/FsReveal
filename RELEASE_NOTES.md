@@ -1,11 +1,10 @@
-### 0.4.3 - 02.03.2015
-* BUGFIX: Fixed CSS in Reveal.js 3.0
-* BUGFIX: Don't delete index.html
+### 0.5.0 - 02.03.2015
 * Use FSharp.Formatting 2.7.4 and update to .NET 4.5
 * Update default F# Formatting CSS (to support type/DU/module distinctions)
 * Fix issues with processing (and evaluating) fsx scripts
-* Use reveal.js 3.0.0
-
+* Use reveal.js 3.0.0 - https://github.com/hakimel/reveal.js/releases/tag/3.0.0
+* BUGFIX: Don't delete index.html
+* 
 ### 0.2.2 - 12.01.2015
 * Use FSharp.Formatting 2.6
 

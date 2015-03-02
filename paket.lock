@@ -17,7 +17,7 @@ NUGET
     NuGet.CommandLine (2.8.3)
     NUnit (2.6.4)
     NUnit.Runners (2.6.4)
-    Octokit (0.7.1)
+    Octokit (0.7.2)
       Microsoft.Net.Http
     SourceLink.Fake (0.4.2)
 GITHUB
