@@ -12,7 +12,7 @@
 let gitOwner = "myGitUser"
 let gitHome = "https://github.com/" + gitOwner
 // The name of the project on GitHub
-let gitName = "MyProject"
+let gitProjectName = "MyProject"
 
 open FsReveal
 open Fake
@@ -101,9 +101,11 @@ Target "KeepRunning" (fun _ ->
 )
 
 Target "ReleaseSlides" (fun _ ->
+    if gitOwner = "myGitUser" || gitProjectName = "MyProject" then
+        failwith "You need to specify the gitOwner and gitProjectName in build.fsx"
     let tempDocsDir = __SOURCE_DIRECTORY__ @@ "temp/gh-pages"
     CleanDir tempDocsDir
-    Repository.cloneSingleBranch "" (gitHome + "/" + gitName + ".git") "gh-pages" tempDocsDir
+    Repository.cloneSingleBranch "" (gitHome + "/" + gitProjectName + ".git") "gh-pages" tempDocsDir
 
     fullclean tempDocsDir
     CopyRecursive outDir tempDocsDir true |> tracefn "%A"
