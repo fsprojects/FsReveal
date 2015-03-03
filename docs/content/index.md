@@ -28,6 +28,14 @@ Open `slides/input.md` in your favourite text editor.
 
 This is the source for your entire presentation. Inside you will find an example presentation that demonstrates how to use FsReveal.
 
+#### Images
+
+Put images into the slides/images folder.
+
+### Styling
+
+Create a custom stylesheet in `slides/custom.css`.
+
 ### Build
 
 Open a console/terminal in the FsReveal folder.
