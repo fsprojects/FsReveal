@@ -1,4 +1,4 @@
-﻿- title : FsReveal
+- title : FsReveal
 - description : Introduction to FsReveal
 - author : Karlkim Suwanmongkol
 - theme : night
@@ -10,6 +10,8 @@
 
 - Generates [reveal.js](http://lab.hakim.se/reveal-js/#/) presentation from [markdown](http://daringfireball.net/projects/markdown/)
 - Utilizes [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) for markdown parsing
+
+![FsReveal](images/logo.png)
 
 ***
 
