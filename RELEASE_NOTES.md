@@ -1,3 +1,6 @@
+### 0.5.1 - 03.03.2015
+* Allow to use a custom css file - https://github.com/fsprojects/FsReveal/pull/45
+
 ### 0.5.0 - 02.03.2015
 * Use FSharp.Formatting 2.7.4 and update to .NET 4.5
 * Update default F# Formatting CSS (to support type/DU/module distinctions)
