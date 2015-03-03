@@ -31,6 +31,14 @@ Target "Clean" (fun _ ->
     CleanDirs [outDir]
 )
 
+let copyStylesheet() =
+    try
+        let cssFile = (slidesDir @@ "custom.css")
+        if (fileExists cssFile) then
+            CopyFile (outDir @@ "css" @@ (fileInfo cssFile).Name) cssFile
+    with
+    | exn -> traceImportant <| sprintf "Could not copy stylesheet: %s" exn.Message
+
 let copyPics() =
     try
       !! (slidesDir @@ "images/*.*")
@@ -51,6 +59,8 @@ let generateFor (file:FileInfo) =
                 traceImportant exn.Message
 
         tryGenerate 3
+
+        copyStylesheet()
     with
     | :? FileNotFoundException as exn ->
         traceImportant <| sprintf "Could not copy file: %s" exn.FileName
