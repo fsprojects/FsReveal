@@ -7,11 +7,7 @@
 printfn "copy FSharp.Compiler.Interactive.Settings ..." 
 let targetFCIS = __SOURCE_DIRECTORY__ + "/../../FAKE/tools/FSharp.Compiler.Interactive.Settings.dll"
 if not (System.IO.File.Exists(targetFCIS)) then
-  System.IO.File.Copy(__SOURCE_DIRECTORY__ + "/../lib/net40/FSharp.Compiler.Interactive.Settings.dll", targetFCIS) 
-
-printfn "load FSharp.Formatting ..." 
-printfn "load FSharp.Compiler.Service ..."
-printfn "load FsReveal.dll"
+  System.IO.File.Copy(__SOURCE_DIRECTORY__ + "/../lib/net40/FSharp.Compiler.Interactive.Settings.dll", targetFCIS)
 
 FsReveal.FsRevealHelper.Folder <- __SOURCE_DIRECTORY__
 printfn "Set FsReveal folder to %s" FsReveal.FsRevealHelper.Folder
