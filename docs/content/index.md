@@ -69,9 +69,12 @@ FsReveal will detect changes to your slides and generate them again for you; you
 
 GitHub allows to host your slides. In order to deploy your slides make sure you have a `gh-pages` branch. 
 If it doesn't exist, then just create and push it.
+You'll need to edit build.fsx in order to modify gitOwner and gitProjectName appropriately.
 After that you can release your software by simply running:
      
     $ build ReleaseSlides
+    
+
 
 ## Examples
 
