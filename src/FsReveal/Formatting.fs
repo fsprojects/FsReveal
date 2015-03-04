@@ -4,6 +4,17 @@ open FsReveal
 open FSharp.Literate
 open System.Text
 open System.IO
+open System
+
+let replaceSpeakerNotes (text : string []) = 
+    text |> Array.map (fun line -> 
+                if line.StartsWith("' ") then "<aside class=\"notes\">" + line.Substring(2) + "</aside>"
+                else line)
+
+let preprocessing (text : string []) = 
+    text 
+    |> replaceSpeakerNotes
+    |> fun s -> String.Join(Environment.NewLine,s)
     
 /// Generates a HTML page from a presentation
 let GenerateHTML (template:string) presentation =

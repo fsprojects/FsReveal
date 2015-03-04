@@ -13,16 +13,21 @@ module FsRevealHelper =
     let mutable Folder = __SOURCE_DIRECTORY__
 
 type FsReveal = 
+    static member GetPresentationFromScriptString(text : string) = 
+        normalizeLineBreaks(text).Split('\n') |> FsReveal.GetPresentationFromScriptLines
+    static member GetPresentationFromMarkdown(text : string) = 
+        normalizeLineBreaks(text).Split('\n') |> FsReveal.GetPresentationFromMarkdownLines
     
-    static member GetPresentationFromScriptString fsx = 
+    static member GetPresentationFromScriptLines lines = 
+        let fsx = Formatting.preprocessing lines
         let fsi = FsiEvaluator()
         Literate.ParseScriptString(fsx, fsiEvaluator = fsi) |> getPresentation
     
-    static member GetPresentationFromMarkdown md = 
-        md
+    static member GetPresentationFromMarkdownLines lines = 
+        Formatting.preprocessing lines
         |> Literate.ParseMarkdownString
         |> getPresentation
-
+    
     static member GenerateOutput outDir outFile presentation = 
         if Directory.Exists outDir |> not then 
             Directory.CreateDirectory outDir |> ignore
@@ -48,21 +53,21 @@ type FsReveal =
     static member GenerateOutputFromScriptFile outDir outFile fsxFile = 
         FsReveal.checkIfFileExistsAndRun fsxFile (fun () -> 
             fsxFile
-            |> File.ReadAllText
-            |> FsReveal.GetPresentationFromScriptString
+            |> File.ReadAllLines
+            |> FsReveal.GetPresentationFromScriptLines
             |> FsReveal.GenerateOutput outDir outFile)
     
     static member GenerateOutputFromMarkdownFile outDir outFile mdFile = 
         FsReveal.checkIfFileExistsAndRun mdFile (fun () -> 
             mdFile
-            |> File.ReadAllText
-            |> FsReveal.GetPresentationFromMarkdown
+            |> File.ReadAllLines
+            |> FsReveal.GetPresentationFromMarkdownLines
             |> FsReveal.GenerateOutput outDir outFile)
-
-    static member GenerateFromFile outDir fileName =
+    
+    static member GenerateFromFile outDir fileName = 
         let file = FileInfo fileName
-        let outputFileName = file.Name.Replace(file.Extension,".html")
-        match file.Extension with   
+        let outputFileName = file.Name.Replace(file.Extension, ".html")
+        match file.Extension with
         | ".md" -> FsReveal.GenerateOutputFromMarkdownFile outDir outputFileName file.FullName
         | ".fsx" -> FsReveal.GenerateOutputFromScriptFile outDir outputFileName file.FullName
         | _ -> ()
