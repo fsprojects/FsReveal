@@ -4,7 +4,7 @@ FsReveal allows you to write beautiful slides in Markdown and brings F# to the [
 
 ## Features
 
-- Write your slides in [Markdown](http://daringfireball.net/projects/markdown/syntax) or .fsx files
+- Write your slides in [Markdown](formatting.html) or .fsx files
 - Syntax highlighting for most programming languages including C#, F# and LaTeX
 - Speaker notes; Shows the current slide, next slide, elapsed time and current time
 - Built in themes
@@ -13,68 +13,10 @@ FsReveal allows you to write beautiful slides in Markdown and brings F# to the [
 - Slide overview
 - Works on mobile browsers. Swipe your way through the presentation.
 
-## Getting Started
+## Getting started
 
-Clone or [download](https://github.com/fsprojects/FsReveal/archive/master.zip) the [FsReveal repository](https://github.com/fsprojects/FsReveal). Check out GitHub's links to the right if you need some help.
-
-### Prerequisites
-If you are using Linux or OS X, [you need to install Mono](http://www.mono-project.com/download/ "Install Mono").
-
-Windows users don't need to install anything.
-
-### Create
-
-Open `slides/input.md` in your favourite text editor.
-
-This is the source for your entire presentation. Inside you will find an example presentation that demonstrates how to use FsReveal.
-
-#### Images
-
-Put images into the slides/images folder.
-
-### Styling
-
-Create a custom stylesheet in `slides/custom.css`.
-
-### Build
-
-Open a console/terminal in the FsReveal folder.
-
-If you're using Windows run 
-    
-    build.cmd
-    
-If you're using a Mac run
-
-    ./build.sh
-    
-This will download all of the packages that FsReveal needs to create your slides.
-
-Your slides are then generated and saved to the `output` folder.
-
-A web server will start automatically and your presentation will be opened in your browser.
-
-FsReveal will detect changes to your slides and generate them again for you; you just need to refresh your browser.
-
-> We're working on auto refreshing the browser for you.
-
-### Use
-
-- Use the arrow keys to navigate left, right, up and down
-- Press `Esc` to see an overview
-- Press `f` to view in fullscreen
-- Press `s` to see speaker notes.
-
-### Deployment
-
-GitHub allows to host your slides. In order to deploy your slides make sure you have a `gh-pages` branch. 
-If it doesn't exist, then just create and push it.
-You'll need to edit build.fsx in order to modify gitOwner and gitProjectName appropriately.
-After that you can release your software by simply running:
-     
-    $ build ReleaseSlides
-    
-
+* Read the [getting started tutorial](getting-started.html)
+* Checkout the [formatting docs](getting-started.html) to learn how to style your slides.
 
 ## Examples
 
@@ -92,15 +34,9 @@ the project and submit pull requests on the develop branch. If you're adding new
 consider adding [samples][content] that can be turned into a documentation. You might
 also want to read [library design notes][readme] to understand how it works.
 
-The library is available under Public Domain license, which allows modification and 
+The library is available under MIT license, which allows modification and 
 redistribution for both commercial and non-commercial purposes. For more information see the 
 [License file][license] in the GitHub repository. 
-
-Logo
-----
-
-- [ProjectScaffold](https://github.com/fsprojects/ProjectScaffold/blob/9e28426459007df785432fca4cf8996b0aed90d0/docs/files/img/logo-template.pdn) by Sergey Tihon
-- [Presentation icon](http://thenounproject.com/term/presentation/47356/) by [Milky](http://thenounproject.com/Milky/)
 
 
   [content]: https://github.com/fsprojects/FsReveal/tree/develop/docs/content
