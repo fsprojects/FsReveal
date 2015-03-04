@@ -6,6 +6,8 @@ open FsUnit
 
 let testTemplate ="{slides}"
 
+let normalizeLineBreaks (text:string) = text.Replace("\r\n","\n").Replace("\n","\n")
+
 let md = """
 - title : FsReveal
 
@@ -58,4 +60,5 @@ let expectedOutput = """<section >
 let ``can generate sections from markdown``() = 
     let presentation = FsReveal.GetPresentationFromMarkdown md
     Formatting.GenerateHTML testTemplate presentation
-    |> shouldEqual expectedOutput
+    |> normalizeLineBreaks
+    |> shouldEqual (normalizeLineBreaks expectedOutput)
