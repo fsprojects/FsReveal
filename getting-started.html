@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FsReveal - Getting Started
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="FsReveal parses markdown or F# script file and generate reveal.js slides."/>
+    <meta name="author" content="Karlkim Suwanmongkol"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="./content/style.css" />
+    <script type="text/javascript" src="./content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/fsprojects/FsReveal">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="./index.html">FsReveal</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+<h1><a name="FsReveal-Getting-Started" class="anchor" href="#FsReveal-Getting-Started">FsReveal - Getting Started</a></h1>
+
+<p>Clone or <a href="https://github.com/fsprojects/FsReveal/archive/master.zip">download</a> the <a href="https://github.com/fsprojects/FsReveal">FsReveal repository</a>.</p>
+
+<h2><a name="Prerequisites" class="anchor" href="#Prerequisites">Prerequisites</a></h2>
+
+<p>If you are using Linux or OS X, <a href="http://www.mono-project.com/download/" title="Install Mono">you need to install Mono</a>.</p>
+
+<p>Windows users don't need to install anything.</p>
+
+<h2><a name="Edit-your-slides" class="anchor" href="#Edit-your-slides">Edit your slides</a></h2>
+
+<p>Open <code>slides/input.md</code> in your favourite text editor.</p>
+
+<p>This is the source for your entire presentation. Inside you will find an example presentation that demonstrates how to use FsReveal.</p>
+
+<h2><a name="Build" class="anchor" href="#Build">Build</a></h2>
+
+<p>Open a console/terminal in the FsReveal folder.</p>
+
+<p>If you're using Windows run</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">build</span><span class="o">.</span><span class="i">cmd</span>
+</pre>
+</td>
+</tr>
+</table>
+
+<p>If you're using a Mac run</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">.</span><span class="o">/</span><span class="i">build</span><span class="o">.</span><span class="i">sh</span>
+</pre>
+</td>
+</tr>
+</table>
+
+<p>This will download all of the packages that FsReveal needs to create your slides.</p>
+
+<p>Your slides are then generated and saved to the <code>output</code> folder.</p>
+
+<p>A web server will start automatically and your presentation will be opened in your browser.</p>
+
+<p>FsReveal will detect changes to your slides and generate them again for you; you just need to refresh your browser.</p>
+
+<blockquote>
+  <p>We're working on auto refreshing the browser for you.</p>
+</blockquote>
+
+<h2><a name="Use" class="anchor" href="#Use">Use</a></h2>
+
+<ul>
+<li>Use the arrow keys to navigate left, right, up and down</li>
+<li>Press <code>Esc</code> to see an overview</li>
+<li>Press <code>f</code> to view in fullscreen</li>
+<li>Press <code>s</code> to see speaker notes.</li>
+</ul>
+
+<h2><a name="Deployment" class="anchor" href="#Deployment">Deployment</a></h2>
+
+<p>GitHub allows to host your slides. In order to deploy your slides make sure you have a <code>gh-pages</code> branch. 
+If it doesn't exist, then just create and push it.
+You'll need to edit build.fsx in order to modify gitOwner and gitProjectName appropriately.
+After that you can release your software by simply running:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">$</span> <span class="i">build</span> <span class="i">ReleaseSlides</span>
+</pre>
+</td>
+</tr>
+</table>
+
+
+        </div>
+        <div class="span3">
+          <img src="./img/logo-2.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">FsReveal</li>
+            <li><a href="./index.html">Home page</a></li>
+            <li><a href="./getting-started.html">Getting Started</a></li>
+            <li><a href="./formatting.html">Formatting docs</a></li>
+            <li class="divider"></li>            
+            <li><a href="http://github.com/fsprojects/FsReveal">Source Code on GitHub</a></li>
+            <li><a href="./license.html">License</a></li>
+            <li><a href="./release-notes.html">Release Notes</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/fsprojects/FsReveal"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+  </body>
+  </html>
