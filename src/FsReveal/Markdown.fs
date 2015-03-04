@@ -32,7 +32,7 @@ let getPresentation (doc : LiterateDocument) =
     let properties = 
         match sections.Head with
         | [ ListBlock(_, spans) ] -> getProperties spans
-        | x -> failwithf "Invalid Presentation properties: %A" x
+        | x -> failwithf "Missing Presentation properties in: %A" x
     
     let wrappedInSection properties paragraphs = 
         let attributes = properties |> Seq.map (fun (k, v) -> sprintf "%s=\"%s\"" k v)

@@ -9,6 +9,7 @@ open FSharp.Markdown
 open FSharp.Markdown.Html
 
 module FsRevealHelper = 
+    // used to change the working directory
     let mutable Folder = __SOURCE_DIRECTORY__
 
 type FsReveal = 
@@ -21,7 +22,7 @@ type FsReveal =
         md
         |> Literate.ParseMarkdownString
         |> getPresentation
-    
+
     static member GenerateOutput outDir outFile presentation = 
         if Directory.Exists outDir |> not then 
             Directory.CreateDirectory outDir |> ignore
@@ -33,16 +34,12 @@ type FsReveal =
         File.Delete(outDir @@ "README.md")
         let di = DirectoryInfo(outDir @@ "test")
         if di.Exists then di.Delete(true)
-        let doc = Literate.FormatLiterateNodes presentation.Document
-        let htmlSlides = Literate.WriteHtml doc
-        let toolTips = doc.FormattedTips
         let relative subdir = FsRevealHelper.Folder @@ subdir
-        printfn "Apply template : %s" (relative "template.html")
-        let output = StringBuilder(File.ReadAllText(relative "template.html"))
-        // replace properties
-        presentation.Properties |> List.iter (fun (k, v) -> output.Replace(sprintf "{%s}" k, v) |> ignore)
-        output.Replace("{slides}", htmlSlides).Replace("{tooltips}", toolTips) |> ignore
-        File.WriteAllText(outDir @@ outFile, output.ToString())
+        let templateFileName = relative "template.html"
+        let template = File.ReadAllText(templateFileName)
+        printfn "Apply template : %s" templateFileName
+        let output = Formatting.GenerateHTML template presentation
+        File.WriteAllText(outDir @@ outFile, output)
     
     static member private checkIfFileExistsAndRun file f = 
         if File.Exists file then f()

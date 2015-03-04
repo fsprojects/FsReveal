@@ -4,6 +4,31 @@ open FsReveal
 open NUnit.Framework
 open FsUnit
 
+let emptyMD = """
+***
+
+### Section 1
+
+***
+
+### Section 2
+
+---
+
+#### Section 2.1
+
+---
+
+#### Section 2.2
+
+***
+
+### Section 3"""
+
+[<Test>]
+let ``can show error on empty properties``() = 
+    shouldFail(fun () -> emptyMD |> FsReveal.GetPresentationFromMarkdown |> ignore)
+
 let md = """
 - title : FsReveal
 - description : Introduction to FsReveal

@@ -51,6 +51,7 @@
     <Compile Include="Domain.fs" />
     <Compile Include="Misc.fs" />
     <Compile Include="Markdown.fs" />
+    <Compile Include="Formatting.fs" />
     <Compile Include="FsReveal.fs" />
     <None Include="template.html" />
     <None Include="FsReveal.fsx" />
