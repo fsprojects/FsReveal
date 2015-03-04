@@ -1,7 +1,7 @@
 NUGET
   remote: https://nuget.org/api/v2
   specs:
-    FAKE (3.17.14)
+    FAKE (3.18.0)
     FSharp.Compiler.Service (0.0.85)
     FSharp.Core (3.1.2.1)
     FSharp.Formatting (2.7.4)
@@ -9,8 +9,8 @@ NUGET
       FSharpVSPowerTools.Core (>= 1.7.0)
     FSharpVSPowerTools.Core (1.7.0)
       FSharp.Compiler.Service (>= 0.0.81)
-    FsPickler (1.0.12)
-    FsReveal (0.5.1)
+    FsPickler (1.0.13)
+    FsReveal (0.5.2)
       FSharp.Formatting (>= 2.7.4)
       FSharpVSPowerTools.Core (>= 1.7.0)
     Suave (0.25.0)
