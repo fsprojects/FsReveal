@@ -28,7 +28,7 @@ Slides are always started with a `***` marker:
 
 ## Vertical slides
 
-Slides can be nested inside of each other. Use `---` to indicate anested slide:
+Slides can be nested inside of each other. Use `---` to indicate a nested slide:
 
     [lang=markdown]
     ***
