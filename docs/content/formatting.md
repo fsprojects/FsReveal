@@ -4,7 +4,7 @@ FsReveal uses [Markdown](http://daringfireball.net/projects/markdown/syntax) as 
 Whenever the following markdown formatting tips don't work you can always use HTML.   
 This page gives you an overview about cases.
 
-### Slides
+## Slides
 
 Slides are always started with a `***` marker:
 
@@ -26,6 +26,27 @@ Slides are always started with a `***` marker:
   	* bullet point 2
   	* bullet point 3
 
+## Vertical slides
+
+Slides can be nested inside of each other. Use `---` to indicate anested slide:
+
+    [lang=markdown]
+    ***
+  
+  	### My first slide
+  
+  	* bullet point 1
+  	* bullet point 2
+  	* bullet point 3
+  
+  	---
+  
+  	### My first nested slide
+  
+  	* bullet point 1
+  	* bullet point 2
+  	* bullet point 3
+
 ## Images
 
 You can put images into the `slides/images` folder and use them with the following syntax:
@@ -37,7 +58,7 @@ You can put images into the `slides/images` folder and use them with the followi
   
   	![an alternative text](images/logo.png)
 
-### Speaker notes
+## Speaker notes
 
 Speaker notes are prefixed with a `'` marker:
 
