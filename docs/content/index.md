@@ -1,6 +1,6 @@
 # FsReveal
 
-FsReveal allows you to write beautiful slides in Markdown and brings F# to the [reveal.js][revealjs] web presentation framework.
+FsReveal allows you to write beautiful slides in Markdown and brings C# and F# to the [reveal.js][revealjs] web presentation framework.
 
 ## Features
 
