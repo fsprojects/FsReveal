@@ -39,7 +39,7 @@
 Whenever the following markdown formatting tips don't work you can always use HTML. <br />
 This page gives you an overview about cases.</p>
 
-<h3><a name="Slides" class="anchor" href="#Slides">Slides</a></h3>
+<h2><a name="Slides" class="anchor" href="#Slides">Slides</a></h2>
 
 <p>Slides are always started with a <code>***</code> marker:</p>
 
@@ -61,6 +61,27 @@ This page gives you an overview about cases.</p>
 * bullet point 3
 </pre></td></tr></table>
 
+<h2><a name="Vertical-slides" class="anchor" href="#Vertical-slides">Vertical slides</a></h2>
+
+<p>Slides can be nested inside of each other. Use <code>---</code> to indicate anested slide:</p>
+
+<table class="pre"><tr><td><pre lang="markdown">***
+
+### My first slide
+
+* bullet point 1
+* bullet point 2
+* bullet point 3
+
+---
+
+### My first nested slide
+
+* bullet point 1
+* bullet point 2
+* bullet point 3
+</pre></td></tr></table>
+
 <h2><a name="Images" class="anchor" href="#Images">Images</a></h2>
 
 <p>You can put images into the <code>slides/images</code> folder and use them with the following syntax:</p>
@@ -72,7 +93,7 @@ This page gives you an overview about cases.</p>
 ![an alternative text](images/logo.png)
 </pre></td></tr></table>
 
-<h3><a name="Speaker-notes" class="anchor" href="#Speaker-notes">Speaker notes</a></h3>
+<h2><a name="Speaker-notes" class="anchor" href="#Speaker-notes">Speaker notes</a></h2>
 
 <p>Speaker notes are prefixed with a <code>'</code> marker:</p>
 
