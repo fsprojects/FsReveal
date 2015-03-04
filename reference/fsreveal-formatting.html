@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Presentation - FsReveal</title>
+    <title>Formatting - FsReveal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Karlkim Suwanmongkol"/>
@@ -35,27 +35,49 @@
 
 
 
-<h1>Presentation</h1>
+<h1>Formatting</h1>
 <div class="xmldoc">
 </div>
-  <h3>Record Fields</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
-            Document
+          <code onmouseout="hideTip(event, '1', 1)" onmouseover="showTip(event, '1', 1)">
+            GenerateHTML template presentation
           </code>
-          <div class="tip" id="13">
-            <strong>Signature:</strong> LiterateDocument<br />
+          <div class="tip" id="1">
+            <strong>Signature:</strong> template:string -&gt; presentation:Presentation -&gt; string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/FsReveal/tree/master/src/FsReveal/Domain.fs#L22-22" class="github-link">
+            <a href="http://github.com/fsprojects/FsReveal/tree/master/src/FsReveal/Formatting.fs#L20-20" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Generates a HTML page from a presentation</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '2', 2)" onmouseover="showTip(event, '2', 2)">
+            preprocessing text
+          </code>
+          <div class="tip" id="2">
+            <strong>Signature:</strong> text:string [] -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/FsReveal/tree/master/src/FsReveal/Formatting.fs#L14-14" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -65,33 +87,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
-            Properties
+          <code onmouseout="hideTip(event, '3', 3)" onmouseover="showTip(event, '3', 3)">
+            replaceSpeakerNotes text
           </code>
-          <div class="tip" id="14">
-            <strong>Signature:</strong> (string * string) list<br />
+          <div class="tip" id="3">
+            <strong>Signature:</strong> text:string [] -&gt; string []<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/FsReveal/tree/master/src/FsReveal/Domain.fs#L20-20" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
-            Slides
-          </code>
-          <div class="tip" id="15">
-            <strong>Signature:</strong> Slide list<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/FsReveal/tree/master/src/FsReveal/Domain.fs#L21-21" class="github-link">
+            <a href="http://github.com/fsprojects/FsReveal/tree/master/src/FsReveal/Formatting.fs#L9-9" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
