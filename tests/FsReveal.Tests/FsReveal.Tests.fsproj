@@ -71,6 +71,7 @@
     <Compile Include="PropertySpecs.fs" />
     <Compile Include="SlidePropertySpecs.fs" />
     <Compile Include="SectionsSpecs.fs" />
+    <Compile Include="SpeakerNotesSpecs.fs" />
     <Content Include="Index.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

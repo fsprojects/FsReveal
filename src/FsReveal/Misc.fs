@@ -12,6 +12,8 @@ open FSharp.Markdown.Html
 /// Correctly combine two paths
 let (@@) a b = Path.Combine(a, b)
 
+let normalizeLineBreaks (text:string) = text.Replace("\r\n","\n").Replace("\n","\n")
+
 /// Ensure that directory exists
 let ensureDirectory path = 
     let dir = DirectoryInfo(path)
