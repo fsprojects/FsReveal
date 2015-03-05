@@ -6,10 +6,20 @@ open System.Text
 open System.IO
 open System
 
-let replaceSpeakerNotes (text : string []) = 
-    text |> Array.map (fun line -> 
-                if line.StartsWith("' ") then "<aside class=\"notes\">" + line.Substring(2) + "</aside>"
-                else line)
+let (|SpeakerNote|OtherLine|) (line : string) =
+    if line.StartsWith("' ") then SpeakerNote (line.Substring(2) + "<br/>")
+    else OtherLine line
+
+let replaceSpeakerNotes text =
+    let rec loop inNotes = function
+        | (SpeakerNote note) :: lines -> 
+            if inNotes then note::(loop true lines)
+            else "<aside class=\"notes\">"::note::(loop true lines)
+        | (OtherLine line) :: lines -> 
+            if inNotes then "</aside>"::line::(loop false lines)
+            else line::(loop false lines)
+        | _ -> []
+    text |> Array.toList |> loop false
 
 let preprocessing (text : string []) = 
     text 

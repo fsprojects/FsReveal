@@ -35,8 +35,10 @@ let expectedOutput = """<section >
 
 <p>Normal Text</p>
 
-<aside class="notes">Oh hey, these are some notes.</aside>
-<aside class="notes">And some more</aside>
+<aside class="notes">
+Oh hey, these are some notes.<br/>
+And some more<br/>
+</aside>
 
 </section>
 
@@ -56,6 +58,7 @@ let expectedOutput = """<section >
 
 
 """
+
 [<Test>]
 let ``can generate sections from markdown``() = 
     let presentation = FsReveal.GetPresentationFromMarkdown md
