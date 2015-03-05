@@ -1,8 +1,7 @@
-### 0.5.3 - 04.03.2015
+### 0.6.0 - 05.03.2015
 * Simpler way of defining speaker notes in markdown - https://github.com/fsprojects/FsReveal/pull/48
-
-### 0.5.1 - 03.03.2015
 * Allow to use a custom css file - https://github.com/fsprojects/FsReveal/pull/45
+* Use FsReveal for demos in the FsReveal docs - http://fsprojects.github.io/FsReveal/formatting.html
 
 ### 0.5.0 - 02.03.2015
 * Use FSharp.Formatting 2.7.4 and update to .NET 4.5
