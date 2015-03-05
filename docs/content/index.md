@@ -16,7 +16,7 @@ FsReveal allows you to write beautiful slides in Markdown and brings C# and F# t
 ## Getting started
 
 * Read the [getting started tutorial](getting-started.html)
-* Checkout the [formatting docs](getting-started.html) to learn how to style your slides.
+* Checkout the [formatting docs](formatting.html) to learn how to style your slides.
 
 ## Examples
 
