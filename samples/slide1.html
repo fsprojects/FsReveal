@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>FsReveal</title>
-    <meta name="description" content="Introduction to FsReveal">
-    <meta name="author" content="Karlkim Suwanmongkol">
+    <title>Sample1</title>
+    <meta name="description" content="{description}">
+    <meta name="author" content="{author}">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -14,7 +14,7 @@
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="css/theme/{theme}.css" id="theme">
     <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/style.css" />
     <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/deedle.css" />
     <link type="text/css" rel="stylesheet" href="css/custom.css" />
@@ -44,14 +44,13 @@
 
 <section >
 
-<h3>What is FsReveal?</h3>
+<h3>My first slide</h3>
 
 <ul>
-<li>Generates <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a> presentation from <a href="http://daringfireball.net/projects/markdown/">markdown</a></li>
-<li>Utilizes <a href="https://github.com/tpetricek/FSharp.Formatting">FSharp.Formatting</a> for markdown parsing</li>
+<li>bullet point 1</li>
+<li>bullet point 2</li>
+<li>bullet point 3</li>
 </ul>
-
-<p><img src="images/logo.png" alt="FsReveal" /></p>
 
 </section>
 
@@ -61,15 +60,15 @@
 
 <section >
 
-<h3>Reveal.js</h3>
+<h3>My second slide</h3>
+
+<h4>A subtitle</h4>
 
 <ul>
-<li>A framework for easily creating beautiful presentations using HTML.</li>
+<li>bullet point 1</li>
+<li>bullet point 2</li>
+<li>bullet point 3</li>
 </ul>
-
-<blockquote>
-  <p><strong>Atwood's Law</strong>: any application that can be written in JavaScript, will eventually be written in JavaScript.</p>
-</blockquote>
 
 </section>
 
@@ -91,7 +90,7 @@
             history: true,
             center: true,
 
-            transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+            transition: '{transition}', // default/cube/page/concave/zoom/linear/fade/none
 
             // Parallax scrolling
             // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
