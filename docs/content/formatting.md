@@ -26,6 +26,8 @@ Slides are always started with a `***` marker:
   	* bullet point 2
   	* bullet point 3
 
+<a href="samples/slide1" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a>
+
 ## Vertical slides
 
 Slides can be nested inside of each other. Use `---` to indicate a nested slide:
@@ -46,6 +48,8 @@ Slides can be nested inside of each other. Use `---` to indicate a nested slide:
   	* bullet point 1
   	* bullet point 2
   	* bullet point 3
+
+<a href="samples/slide2" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a>
 
 ## Images
 
