@@ -96,7 +96,7 @@ Whenever the following markdown formatting tips don't work you can always use HT
 ![an alternative text](images/logo.png)
 </pre></td></tr></table>
 
-<a href="samples/slides-with-images" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/slides-with-images" target="_blank">demo</a> and use see how the image is rendered.
+<a href="samples/slides-with-images" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/slides-with-images" target="_blank">demo</a> and see how the image is rendered.
 
 <h2><a name="Speaker-notes" class="anchor" href="#Speaker-notes">Speaker notes</a></h2>
 
@@ -116,9 +116,35 @@ Whenever the following markdown formatting tips don't work you can always use HT
 
 <a href="samples/speaker-notes" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/speaker-notes" target="_blank">demo</a> and press the <b>s</b> key to see the speaker notes.
 
-<h2><a name="Styling" class="anchor" href="#Styling">Styling</a></h2>
+<h2><a name="Custom-stylesheets" class="anchor" href="#Custom-stylesheets">Custom stylesheets</a></h2>
 
 <p>Create a custom stylesheet in <code>slides/custom.css</code> and then you can use these CSS classes in your slides.</p>
+
+<h2><a name="Slide-properties" class="anchor" href="#Slide-properties">Slide properties</a></h2>
+
+<p>Slide properties allow you to customize things like the background of a slide:</p>
+
+<table class="pre"><tr><td><pre lang="markdown">***
+- data-background : #dddddd
+
+### My first slide
+
+* bullet point 1
+* bullet point 2
+* bullet point 3
+
+***
+- data-background : images/smalllogo.png
+- data-background-repeat : repeat
+
+### Second slide
+
+* bullet point 1
+* bullet point 2
+* bullet point 3
+</pre></td></tr></table>
+
+<a href="samples/slide-properties" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/slide-properties" target="_blank">demo</a> see the effect of the slide properties.
 
 
         </div>
