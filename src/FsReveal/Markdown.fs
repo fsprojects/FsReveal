@@ -57,11 +57,20 @@ let getPresentation (doc : LiterateDocument) =
         match slide.SlideData with
         | Simple(paragraphs) -> wrappedInSection slide.Properties paragraphs
         | Nested(listOfParagraphs) -> 
-            let x = 
-                listOfParagraphs
-                |> List.collect (wrappedInSection slide.Properties)
-            x
-            //|> wrappedInSection slide.Properties
+            let inner = 
+                [for paragraphs in listOfParagraphs ->
+                    [for p in paragraphs do
+                        match p with
+                        | HorizontalRule('-') ->
+                            let attributes = properties |> Seq.map (fun kv -> sprintf "%s=\"%s\"" kv.Key kv.Value)
+                            yield InlineBlock("</section>") 
+                            yield InlineBlock(sprintf "<section %s>" (String.Join(" ", attributes)))
+                        | _ -> yield p
+                      ]]
+
+            inner    
+            |> List.collect (wrappedInSection slide.Properties)
+            
     
     let extractSlide paragraphs = 
         // sub-section is separated by ---
