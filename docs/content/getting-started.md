@@ -12,7 +12,8 @@ Windows users don't need to install anything.
 
 Open `slides/input.md` in your favourite text editor.
 
-This is the source for your entire presentation. Inside you will find an example presentation that demonstrates how to use FsReveal.
+This is the source for your entire presentation. Inside the file you will find an example presentation that demonstrates how to use FsReveal.
+You can also read the <a href="formatting.html">formatting docs</a> to learn about FsReveal's Markdown format.
 
 ## Build
 
@@ -34,7 +35,7 @@ A web server will start automatically and your presentation will be opened in yo
 
 FsReveal will detect changes to your slides and generate them again for you; you just need to refresh your browser.
 
-> We're working on auto refreshing the browser for you.
+> We're working on auto refreshing the browser for you (see [#35](https://github.com/fsprojects/FsReveal/issues/35)).
 
 ## Use
 
