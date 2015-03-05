@@ -29,8 +29,6 @@ Normal Text
 
 let expectedOutput = """<section >
 
-<section >
-
 <h3>Slide 1</h3>
 
 <p>Normal Text</p>
@@ -42,17 +40,11 @@ And some more<br/>
 
 </section>
 
-</section>
-
-<section >
-
 <section >
 
 <h3>Slide 2</h3>
 
 <p>Normal Text</p>
-
-</section>
 
 </section>
 

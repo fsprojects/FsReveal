@@ -61,7 +61,7 @@ You can put images into the `slides/images` folder and use them with the followi
   
   	![an alternative text](images/logo.png)
 
-<a href="samples/slides-with-images" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/slides-with-images" target="_blank">demo</a> and use see how the image is rendered.
+<a href="samples/slides-with-images" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/slides-with-images" target="_blank">demo</a> and see how the image is rendered.
 
 ## Speaker notes
 
@@ -81,7 +81,33 @@ Speaker notes are prefixed with a `'` marker:
 
 <a href="samples/speaker-notes" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/speaker-notes" target="_blank">demo</a> and press the <b>s</b> key to see the speaker notes.
 
-## Styling
+## Custom stylesheets
 
 Create a custom stylesheet in `slides/custom.css` and then you can use these CSS classes in your slides.
 
+## Slide properties
+
+Slide properties allow you to customize things like the background of a slide:
+
+    [lang=markdown]
+	***
+	- data-background : #441111
+  
+	### My first slide
+
+	* bullet point 1
+	* bullet point 2
+	* bullet point 3
+
+	***
+	- data-background : images/smalllogo.png
+	- data-background-repeat : repeat
+	- data-background-size : 100px
+
+	### Second slide
+
+	* bullet point 1
+	* bullet point 2
+	* bullet point 3
+
+<a href="samples/slide-properties" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/slide-properties" target="_blank">demo</a> see the effect of the slide properties.

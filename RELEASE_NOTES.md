@@ -1,4 +1,7 @@
 ### 0.6.0 - 05.03.2015
+* Fix slide properties
+
+### 0.6.0 - 05.03.2015
 * Simpler way of defining speaker notes in markdown - https://github.com/fsprojects/FsReveal/pull/48
 * Allow to use a custom css file - https://github.com/fsprojects/FsReveal/pull/45
 * Use FsReveal for demos in the FsReveal docs - http://fsprojects.github.io/FsReveal/formatting.html

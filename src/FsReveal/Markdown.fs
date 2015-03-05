@@ -49,17 +49,19 @@ let getPresentation (doc : LiterateDocument) =
             |> add "transition" "default"
         properties,slideData
     
-    let wrappedInSection properties paragraphs = 
-        let attributes = properties |> Map.map (fun k v -> sprintf "%s=\"%s\"" k v)
+    let wrappedInSection (properties:Map<_,_>) paragraphs = 
+        let attributes = properties |> Seq.map (fun kv -> sprintf "%s=\"%s\"" kv.Key kv.Value)
         InlineBlock(sprintf "<section %s>" (String.Join(" ", attributes))) :: paragraphs @ [ InlineBlock("</section>") ]
     
     let getParagraphsFromSlide slide = 
         match slide.SlideData with
         | Simple(paragraphs) -> wrappedInSection slide.Properties paragraphs
         | Nested(listOfParagraphs) -> 
-            listOfParagraphs
-            |> List.collect (wrappedInSection slide.Properties)
-            |> wrappedInSection slide.Properties
+            let x = 
+                listOfParagraphs
+                |> List.collect (wrappedInSection slide.Properties)
+            x
+            //|> wrappedInSection slide.Properties
     
     let extractSlide paragraphs = 
         // sub-section is separated by ---
@@ -76,7 +78,7 @@ let getPresentation (doc : LiterateDocument) =
           SlideData = 
               match data with
               | [ [ slide ] ] -> Simple([ slide ])
-              | _ -> Nested(result) }
+              | _ -> Nested(data) }
     
     let slides = List.map extractSlide slideData
     let paragraphs = List.collect getParagraphsFromSlide slides
