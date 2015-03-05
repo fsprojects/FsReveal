@@ -41,6 +41,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "slides", "slides", "{F77011BE-03C0-4CF1-8398-B730548F7700}"
 	ProjectSection(SolutionItems) = preProject
 		docs\slides\slide1.md = docs\slides\slide1.md
+		docs\slides\slide2.md = docs\slides\slide2.md
 	EndProjectSection
 EndProject
 Global

@@ -1,7 +1,3 @@
-- title : Sample1
-- theme : night
-- transition : default
-
 ***
   
 ### My first slide

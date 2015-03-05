@@ -33,6 +33,6 @@ let GenerateHTML (template:string) presentation =
     let toolTips = doc.FormattedTips    
     let output = StringBuilder(template)
     // replace properties
-    presentation.Properties |> List.iter (fun (k, v) -> output.Replace(sprintf "{%s}" k, v) |> ignore)
+    presentation.Properties |> Map.iter (fun k v -> output.Replace(sprintf "{%s}" k, v) |> ignore)
     output.Replace("{slides}", htmlSlides).Replace("{tooltips}", toolTips) |> ignore
     output.ToString()

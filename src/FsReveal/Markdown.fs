@@ -29,13 +29,28 @@ let getPresentation (doc : LiterateDocument) =
     // main section is separated by ***
     let sections = splitBy (HorizontalRule('*')) doc.Paragraphs
     
-    let properties = 
-        match sections.Head with
-        | [ ListBlock(_, spans) ] -> getProperties spans
-        | x -> failwithf "Missing Presentation properties in: %A" x
+    let properties,slideData =
+        let map,slideData =
+            match sections.Head with
+            | [ ListBlock(_, spans) ] -> getProperties spans |> Map.ofList,sections.Tail
+            | x -> Map.empty,sections
+
+        let add key v map =
+            match Map.tryFind key map with
+            | None -> Map.add key v map
+            | _ -> map
+
+        let properties = 
+            map
+            |> add "title" "Presentation"
+            |> add "description" ""
+            |> add "author" "unkown"
+            |> add "theme" "night"
+            |> add "transition" "default"
+        properties,slideData
     
     let wrappedInSection properties paragraphs = 
-        let attributes = properties |> Seq.map (fun (k, v) -> sprintf "%s=\"%s\"" k v)
+        let attributes = properties |> Map.map (fun k v -> sprintf "%s=\"%s\"" k v)
         InlineBlock(sprintf "<section %s>" (String.Join(" ", attributes))) :: paragraphs @ [ InlineBlock("</section>") ]
     
     let getParagraphsFromSlide slide = 
@@ -57,13 +72,13 @@ let getPresentation (doc : LiterateDocument) =
                     getProperties spans, [ data ]
                 with _ -> [], [ paragraphs ]
             | _ -> [], [ paragraphs ]
-        { Properties = properties
+        { Properties = properties |> Map.ofList
           SlideData = 
               match data with
               | [ [ slide ] ] -> Simple([ slide ])
               | _ -> Nested(result) }
     
-    let slides = sections.Tail |> List.map extractSlide
+    let slides = List.map extractSlide slideData
     let paragraphs = List.collect getParagraphsFromSlide slides
     { Properties = properties
       Slides = slides

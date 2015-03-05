@@ -30,12 +30,8 @@ let md = """
 let ``can read properties from slides``() = 
     let doc = md |> FsReveal.GetPresentationFromMarkdown
     let slideProperties = doc.Slides.[0].Properties
-    slideProperties
-    |> Seq.find (fun (k, _) -> k = "background")
-    |> shouldEqual ("background", "image.png")
-    slideProperties
-    |> Seq.find (fun (k, _) -> k = "background-repeat")
-    |> shouldEqual ("background-repeat", "repeat")
+    slideProperties.["background"] |> shouldEqual "image.png"
+    slideProperties.["background-repeat"] |> shouldEqual "repeat"
 
 let md2 = """
 - title : FsReveal

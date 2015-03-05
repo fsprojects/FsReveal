@@ -13,10 +13,10 @@ type SlideData =
     | Nested of MarkdownParagraph list list
 
 type Slide = 
-    { Properties : (string * string) list
+    { Properties : Map<string,string>
       SlideData : SlideData }
 
 type Presentation = 
-    { Properties : (string * string) list
+    { Properties : Map<string,string>
       Slides : Slide list
       Document : LiterateDocument }
