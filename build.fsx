@@ -69,6 +69,8 @@ let buildDir = "bin"
 // Read additional information from the release notes document
 let release = LoadReleaseNotes "RELEASE_NOTES.md"
 
+let outDir = "./docs/output"
+
 let genFSAssemblyInfo (projectPath) =
     let projectName = System.IO.Path.GetFileNameWithoutExtension(projectPath)
     let basePath = "src/" + projectName
@@ -107,7 +109,7 @@ Target "Clean" (fun _ ->
 )
 
 Target "CleanDocs" (fun _ ->
-    CleanDirs ["docs/output"]
+    CleanDirs [outDir]
 )
 
 // --------------------------------------------------------------------------------------
@@ -205,6 +207,12 @@ Target "GenerateHelp" (fun _ ->
 )
 
 
+Target "GenerateSlides" (fun _ ->
+    if executeFSIWithArgs "docs/tools" "createSlides.fsx" [] [] then
+        traceImportant "Slides generated"    
+)
+
+
 Target "KeepRunning" (fun _ ->    
     use watcher = new FileSystemWatcher(DirectoryInfo("docs/content").FullName,"*.*")
     watcher.EnableRaisingEvents <- true
@@ -283,6 +291,7 @@ Target "All" DoNothing
 "CleanDocs"
   ==> "GenerateHelp"
   ==> "GenerateReferenceDocs"
+  ==> "GenerateSlides"
   ==> "GenerateDocs"
 
 "GenerateHelp"

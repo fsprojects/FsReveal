@@ -9,5 +9,7 @@ let targetFCIS = __SOURCE_DIRECTORY__ + "/../../FAKE/tools/FSharp.Compiler.Inter
 if not (System.IO.File.Exists(targetFCIS)) then
   System.IO.File.Copy(__SOURCE_DIRECTORY__ + "/../lib/net40/FSharp.Compiler.Interactive.Settings.dll", targetFCIS)
 
-FsReveal.FsRevealHelper.Folder <- __SOURCE_DIRECTORY__
-printfn "Set FsReveal folder to %s" FsReveal.FsRevealHelper.Folder
+FsReveal.FsRevealHelper.RevealJsFolder <- System.IO.Path.Combine(__SOURCE_DIRECTORY__,"/../reveal.js")
+printfn "Set FsReveal folder to %s" FsReveal.FsRevealHelper.RevealJsFolder
+
+FsReveal.FsRevealHelper.TemplateFile <- System.IO.Path.Combine(__SOURCE_DIRECTORY__,"template.html")
