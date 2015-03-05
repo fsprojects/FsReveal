@@ -1,8 +1,7 @@
 # FsReveal - Formatting
 
 FsReveal uses [Markdown](http://daringfireball.net/projects/markdown/syntax) as source for your slides and renders these as HTML pages.
-Whenever the following markdown formatting tips don't work you can always use HTML.   
-This page gives you an overview about cases.
+Whenever the following markdown formatting tips don't work you can always use HTML.
 
 ## Slides
 
