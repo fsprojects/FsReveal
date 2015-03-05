@@ -1,4 +1,4 @@
-### 0.5.2 - 04.03.2015
+### 0.5.3 - 04.03.2015
 * Simpler way of defining speaker notes in markdown - https://github.com/fsprojects/FsReveal/pull/48
 
 ### 0.5.1 - 03.03.2015

@@ -26,7 +26,7 @@ Slides are always started with a `***` marker:
   	* bullet point 2
   	* bullet point 3
 
-<a href="samples/slide1" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a>
+<a href="samples/simple-slides" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp; Open the <a href="samples/simple-slides" target="_blank">demo</a> and use the arrow keys to navigate through the slides.
 
 ## Vertical slides
 
@@ -49,7 +49,7 @@ Slides can be nested inside of each other. Use `---` to indicate a nested slide:
   	* bullet point 2
   	* bullet point 3
 
-<a href="samples/slide2" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a>
+<a href="samples/vertical-slides" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/vertical-slides" target="_blank">demo</a> and use the <b>Space</b> key to navigate through all slides.
 
 ## Images
 
@@ -61,6 +61,8 @@ You can put images into the `slides/images` folder and use them with the followi
   	### My first slide
   
   	![an alternative text](images/logo.png)
+
+<a href="samples/slides-with-images" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/slides-with-images" target="_blank">demo</a> and use see how the image is rendered.
 
 ## Speaker notes
 
@@ -77,6 +79,8 @@ Speaker notes are prefixed with a `'` marker:
  
     ' this is a speaker note
 	' and here we have another one
+
+<a href="samples/speaker-notes" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/speaker-notes" target="_blank">demo</a> and press the <b>s</b> key to see the speaker notes.
 
 ## Styling
 
