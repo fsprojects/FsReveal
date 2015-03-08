@@ -57,6 +57,7 @@ let getPresentation (doc : LiterateDocument) =
         match slide.SlideData with
         | Simple(paragraphs) -> wrappedInSection slide.Properties paragraphs
         | Nested(listOfParagraphs) -> 
+            let containsMoreThan1Slide = ref false
             let inner = 
                 [for paragraphs in listOfParagraphs ->
                     [for p in paragraphs do
@@ -65,11 +66,13 @@ let getPresentation (doc : LiterateDocument) =
                             let attributes = properties |> Seq.map (fun kv -> sprintf "%s=\"%s\"" kv.Key kv.Value)
                             yield InlineBlock("</section>") 
                             yield InlineBlock(sprintf "<section %s>" (String.Join(" ", attributes)))
+                            containsMoreThan1Slide := true
                         | _ -> yield p
                       ]]
 
             inner    
             |> List.collect (wrappedInSection slide.Properties)
+            |> fun x -> if !containsMoreThan1Slide then wrappedInSection slide.Properties x else x
             
     
     let extractSlide paragraphs = 
