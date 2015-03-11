@@ -1,3 +1,6 @@
+### 0.7.0 - 11.03.2015
+* BREAKING API: Use optional parameters and allow speechifying FSI evaluator - https://github.com/fsprojects/FsReveal/pull/51
+
 ### 0.6.3 - 08.03.2015
 * Fix slide properties
 
