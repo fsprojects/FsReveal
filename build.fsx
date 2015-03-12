@@ -158,22 +158,17 @@ Target "SourceLink" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Build a NuGet package
 
-Target "NuGet" (fun _ ->
-    NuGet (fun p -> 
-        { p with Authors = authors
-                 Project = project
-                 Summary = summary
-                 Description = description
-                 Version = release.NugetVersion
-                 ReleaseNotes = toLines release.Notes
-                 Tags = tags
-                 OutputPath = "bin"
-                 AccessKey = getBuildParamOrDefault "nugetkey" ""
-                 Publish = hasBuildParam "nugetkey"
-                 Dependencies = 
-                     ["FSharp.Formatting", GetPackageVersion "packages" "FSharp.Formatting"
-                      "FSharpVSPowerTools.Core", GetPackageVersion "packages" "FSharpVSPowerTools.Core"] })
-        ("nuget/" + project + ".nuspec")
+Target "NuGet" (fun _ ->    
+    Paket.Pack (fun p -> 
+        { p with 
+            Version = release.NugetVersion
+            ReleaseNotes = toLines release.Notes })
+)
+
+Target "PublishNuGet" (fun _ ->
+    Paket.Push (fun p -> 
+        { p with 
+            ToolPath = "bin/merged/paket.exe" }) 
 )
 
 // --------------------------------------------------------------------------------------
@@ -301,6 +296,7 @@ Target "All" DoNothing
   ==> "Release"
 
 "BuildPackage"
+  ==> "PublishNuGet"
   ==> "Release"
 
 RunTargetOrDefault "All"

@@ -54,7 +54,7 @@
     <Compile Include="Formatting.fs" />
     <Compile Include="FsReveal.fs" />
     <None Include="template.html" />
-    <None Include="FsReveal.fsx" />
+    <None Include="fsreveal.fsx" />
     <None Include="paket.references" />
   </ItemGroup>
   <PropertyGroup>
