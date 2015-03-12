@@ -36,12 +36,14 @@ type FsReveal private() =
 
     static let getPresentationFromScriptLines fsxFile fsiEvaluator lines = 
         let fsx = Formatting.preprocessing lines
-        Literate.ParseScriptString(fsx, ?path=Option.map Path.GetFullPath fsxFile, ?fsiEvaluator = fsiEvaluator)
+        let fsi = match fsiEvaluator with None -> FsiEvaluator() :> IFsiEvaluator | Some fsi -> fsi
+        Literate.ParseScriptString(fsx, ?path=Option.map Path.GetFullPath fsxFile, fsiEvaluator = fsi) 
         |> getPresentation
     
     static let getPresentationFromMarkdownLines mdFile fsiEvaluator lines = 
         let md = Formatting.preprocessing lines
-        Literate.ParseMarkdownString(md, ?path=Option.map Path.GetFullPath mdFile, ?fsiEvaluator = fsiEvaluator) 
+        let fsi = match fsiEvaluator with None -> FsiEvaluator() :> IFsiEvaluator | Some fsi -> fsi
+        Literate.ParseMarkdownString(md, ?path=Option.map Path.GetFullPath mdFile, fsiEvaluator = fsi) 
         |> getPresentation
 
     static let checkIfFileExistsAndRun file f = 
