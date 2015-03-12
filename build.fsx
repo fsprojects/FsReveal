@@ -32,10 +32,10 @@ Target "Clean" (fun _ ->
 )
 
 let fsiEvaluator = 
-  let evaluator = FSharp.Literate.FsiEvaluator()
-  evaluator.EvaluationFailed.Add(fun err -> 
-    traceImportant <| sprintf "Evaluating F# snippet failed:\n%s\nThe snippet evaluated:\n%s" err.StdErr err.Text )
-  evaluator 
+    let evaluator = FSharp.Literate.FsiEvaluator()
+    evaluator.EvaluationFailed.Add(fun err -> 
+        traceImportant <| sprintf "Evaluating F# snippet failed:\n%s\nThe snippet evaluated:\n%s" err.StdErr err.Text )
+    evaluator 
 
 let copyStylesheet() =
     try
