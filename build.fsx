@@ -31,6 +31,12 @@ Target "Clean" (fun _ ->
     CleanDirs [outDir]
 )
 
+let fsiEvaluator = 
+  let evaluator = FSharp.Literate.FsiEvaluator()
+  evaluator.EvaluationFailed.Add(fun err -> 
+    traceImportant <| sprintf "Evaluating F# snippet failed:\n%s\nThe snippet evaluated:\n%s" err.StdErr err.Text )
+  evaluator 
+
 let copyStylesheet() =
     try
         CopyFile (outDir @@ "css\custom.css") (slidesDir @@ "custom.css")
@@ -49,7 +55,7 @@ let generateFor (file:FileInfo) =
         copyPics()
         let rec tryGenerate trials =
             try
-                FsReveal.GenerateFromFile outDir file.FullName                
+                FsReveal.GenerateFromFile(file.FullName, outDir, fsiEvaluator = fsiEvaluator)
             with 
             | exn when trials > 0 -> tryGenerate (trials - 1)
             | exn -> 
