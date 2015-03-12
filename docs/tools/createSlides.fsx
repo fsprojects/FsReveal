@@ -1,6 +1,6 @@
 #I @"../../bin/"
 #r "FsReveal.dll"
-
+#r "FSharp.Literate.dll"
 #r "../../packages/FAKE/tools/FakeLib.dll"
 open Fake
 open System.IO
@@ -36,7 +36,7 @@ let generateFor (file:FileInfo) =
         copyPics()
         let rec tryGenerate trials =
             try
-                FsReveal.GenerateFromFile outDir file.FullName                
+                FsReveal.GenerateFromFile(file.FullName, outDir)
             with 
             | exn when trials > 0 -> tryGenerate (trials - 1)
             | exn -> 
