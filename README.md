@@ -86,11 +86,11 @@ Check out what others have created. Submit a PR if you have something to add to 
 [troykershaw-twitter]: https://twitter.com/troykershaw "@troykershaw on Twitter"
 [panesofglass-twitter]: https://twitter.com/panesofglass "@panesofglass on Twitter"
 
-[fsx-example]: http://fsreveal.azurewebsites.net/ ".fsx example"
-[fsx-example-source]: https://github.com/fsprojects/FsReveal/blob/develop/src/presentations/FsReveal.fsx ".fsx example source"
+[fsx-example]: http://kimsk.github.io/fsreveal-sample-fsx/FsReveal.html#/ ".fsx example"
+[fsx-example-source]: https://github.com/kimsk/fsreveal-sample-fsx/blob/master/slides/FsReveal.fsx ".fsx example source"
 
-[md-example]: http://fsreveal.azurewebsites.net/index-md.html "Markdown example"
-[md-example-source]: https://raw.githubusercontent.com/fsprojects/FsReveal/develop/src/presentations/FsReveal.md "Markdown example source"
+[md-example]: http://kimsk.github.io/fsreveal-sample-md/FsReveal.html#/ "Markdown example"
+[md-example-source]: https://github.com/kimsk/fsreveal-sample-md/blob/master/slides/FsReveal.md "Markdown example source"
 
 [rpg-fsharp-workshop]: http://troykershaw.github.io/RpgFsharpWorkshop "RPG F# Workshop" 
 [rpg-fsharp-workshop-source]: https://github.com/troykershaw/RpgFsharpWorkshop "RPG F# Workshop source"
