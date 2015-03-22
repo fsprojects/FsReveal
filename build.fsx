@@ -166,9 +166,7 @@ Target "NuGet" (fun _ ->
 )
 
 Target "PublishNuGet" (fun _ ->
-    Paket.Push (fun p -> 
-        { p with 
-            ToolPath = "bin/merged/paket.exe" }) 
+    Paket.Push id
 )
 
 // --------------------------------------------------------------------------------------

@@ -1,3 +1,6 @@
+### 0.7.1 - 22.03.2015
+* Update docs
+
 ### 0.7.0 - 11.03.2015
 * BREAKING API: Use optional parameters and allow speechifying FSI evaluator - https://github.com/fsprojects/FsReveal/pull/51
 
