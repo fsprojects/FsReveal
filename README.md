@@ -69,6 +69,7 @@ FsReveal will detect changes to your slides and generate them again for you; you
 - Press `Esc` to see an overview
 - Press `f` to view in fullscreen
 - Press `s` to see speaker notes.
+- Press `b` or `.` to pause the presentation. 
 
 ## Examples
 
