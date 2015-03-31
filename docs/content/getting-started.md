@@ -1,6 +1,7 @@
 # FsReveal - Getting Started
 
 Clone or [download](https://github.com/fsprojects/FsReveal/archive/master.zip) the [FsReveal repository](https://github.com/fsprojects/FsReveal).
+The NuGet package alone is not enough.
 
 ## Prerequisites
 

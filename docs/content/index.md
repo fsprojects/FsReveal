@@ -22,10 +22,10 @@ FsReveal allows you to write beautiful slides in Markdown and brings C# and F# t
 
 Check out what others have created. Submit a PR if you have something to add to the list.
 
-- [Markdown example][md-example] by [@kimsk][kimsk-twitter] [(source)][md-example-source]
-- [.fsx example][fsx-example] by [@kimsk][kimsk-twitter] [(source)][fsx-example-source]
 - [RPG F# Workshop][rpg-fsharp-workshop] by [@troykershaw][troykershaw-twitter] [(source)][rpg-fsharp-workshop-source]
 - [F# on the Web - 0 to production in 12 weeks][fsharp-on-the-web] by [@panesofglass][panesofglass-twitter] [(source)][fsharp-on-the-web-source]
+
+More samples can be found in the [formatting docs](http://fsprojects.github.io/FsReveal/formatting.html).
 
 ## Contributing and copyright
 
@@ -50,12 +50,6 @@ redistribution for both commercial and non-commercial purposes. For more informa
   [kimsk-twitter]: https://twitter.com/kimsk "@kimsk on Twitter"
   [troykershaw-twitter]: https://twitter.com/troykershaw "@troykershaw on Twitter"
   [panesofglass-twitter]: https://twitter.com/panesofglass "@panesofglass on Twitter"
-  
-  [fsx-example]: http://fsreveal.azurewebsites.net/ ".fsx example"
-  [fsx-example-source]: https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx ".fsx example source"
-  
-  [md-example]: http://fsreveal.azurewebsites.net/index-md.html "Markdown example"
-  [md-example-source]: https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md "Markdown example source"
   
   [rpg-fsharp-workshop]: http://troykershaw.github.io/RpgFsharpWorkshop "RPG F# Workshop" 
   [rpg-fsharp-workshop-source]: https://github.com/troykershaw/RpgFsharpWorkshop "RPG F# Workshop source"
