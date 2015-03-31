@@ -9,8 +9,7 @@ _Inspried by two great works:_
 
 #### See FsReveal slides in action
 
-- [1st sample](http://fsreveal.azurewebsites.net/) generated from [FsReveal.fsx](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.fsx)
-- [2nd sample](http://fsreveal.azurewebsites.net/index-md.html) generated from [FsReveal.md](https://github.com/fsprojects/FsReveal/blob/master/src/presentations/FsReveal.md) ([raw](https://raw.githubusercontent.com/fsprojects/FsReveal/master/src/presentations/FsReveal.md))
- 
+- [1st sample](http://kimsk.github.io/fsreveal-sample-fsx/FsReveal.html#/) generated from [FsReveal.fsx](https://github.com/kimsk/fsreveal-sample-fsx/blob/master/slides/FsReveal.fsx)
+- [2nd sample](http://kimsk.github.io/fsreveal-sample-md/FsReveal.html#/) generated from [FsReveal.md](https://github.com/kimsk/fsreveal-sample-md/blob/master/slides/FsReveal.md) ([raw](https://raw.githubusercontent.com/kimsk/fsreveal-sample-md/master/slides/FsReveal.md))
 
 
