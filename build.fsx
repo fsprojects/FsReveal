@@ -45,8 +45,7 @@ let copyStylesheet() =
 
 let copyPics() =
     try
-      !! (slidesDir @@ "images/*.*")
-      |> CopyFiles (outDir @@ "images")
+      CopyDir (outDir @@ "images") (slidesDir @@ "images") (fun f -> true)
     with
     | exn -> traceImportant <| sprintf "Could not copy picture: %s" exn.Message    
 
