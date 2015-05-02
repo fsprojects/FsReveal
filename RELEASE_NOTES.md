@@ -1,3 +1,6 @@
+### 0.7.3 - 02.05.2015
+* Using latest dependencies and fixed FSharp.Formatting
+
 ### 0.7.2 - 22.03.2015
 * BUGFIX: Fixing dependencies
 
