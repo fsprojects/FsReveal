@@ -68,12 +68,13 @@ let generateFor (file:FileInfo) =
     | :? FileNotFoundException as exn ->
         traceImportant <| sprintf "Could not copy file: %s" exn.FileName
 
-let handleWatcherEvents (e:FileSystemEventArgs) =
-    let fi = fileInfo e.FullPath 
-    traceImportant <| sprintf "%s was changed." fi.Name
-    match fi.Attributes.HasFlag FileAttributes.Hidden || fi.Attributes.HasFlag FileAttributes.Directory with
-            | true -> ()
-            | _ -> generateFor fi
+let handleWatcherEvents (events:FileChange seq) =
+    for e in events do
+        let fi = fileInfo e.FullPath
+        traceImportant <| sprintf "%s was changed." fi.Name
+        match fi.Attributes.HasFlag FileAttributes.Hidden || fi.Attributes.HasFlag FileAttributes.Directory with
+        | true -> ()
+        | _ -> generateFor fi
 
 let startWebServer () =
     let serverConfig = 
@@ -95,21 +96,17 @@ Target "GenerateSlides" (fun _ ->
     |> Seq.iter generateFor
 )
 
-Target "KeepRunning" (fun _ ->
-    use watcher = new FileSystemWatcher(FullName slidesDir,"*.*")
-    watcher.EnableRaisingEvents <- true
-    watcher.IncludeSubdirectories <- true
-    watcher.Changed.Add(handleWatcherEvents)
-    watcher.Created.Add(handleWatcherEvents)
-    watcher.Renamed.Add(handleWatcherEvents)
-
+Target "KeepRunning" (fun _ ->    
+    use watcher = !! (slidesDir + "/**/*.*") |> WatchChanges (fun changes ->
+         handleWatcherEvents changes
+    )
+    
     startWebServer ()
 
     traceImportant "Waiting for slide edits. Press any key to stop."
 
     System.Console.ReadKey() |> ignore
 
-    watcher.EnableRaisingEvents <- false
     watcher.Dispose()
 )
 
