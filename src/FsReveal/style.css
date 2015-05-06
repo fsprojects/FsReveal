@@ -49,11 +49,12 @@ span.omitted {
 /* tool tip */
 div.tip {
 	background:#475b5f;
-  border-radius:4px;
-  font:11pt 'Droid Sans', arial, sans-serif;
+    border-radius:4px;
+    font:16pt 'Droid Sans', arial, sans-serif;
 	padding:6px 8px 6px 8px;
 	display:none;
-  color:#d1d1d1;
+    color:#d1d1d1;
+    z-index: 2;
 }
 table.pre pre {
   padding:0px;
@@ -65,7 +66,7 @@ table.pre, pre.fssnip, pre {
   border:1px solid #d8d8d8;
   border-collapse:separate;
   white-space:pre;
-  font: 9pt 'Droid Sans Mono',consolas,monospace;
+  font: 22pt 'Droid Sans Mono',consolas,monospace;
   width:90%;
   margin:10px 20px 20px 20px;
   background-color:#212d30;
