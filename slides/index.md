@@ -84,7 +84,8 @@
 #### Haskell
  
     [lang=haskell]
-    recur_count k = 1 : 1 : zipWith recurAdd (recur_count k) (tail (recur_count k))
+    recur_count k = 1 : 1 : 
+        zipWith recurAdd (recur_count k) (tail (recur_count k))
             where recurAdd x y = k * x + y
 
     main = do
