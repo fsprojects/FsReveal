@@ -22,7 +22,7 @@ NUGET
 GITHUB
   remote: hakimel/reveal.js
   specs:
-    FULLPROJECT (20d858deb888fe0ec0ba92a919c8a0526ac52a2e)
+    FULLPROJECT (eff2265bbd6d892ae2316edff748754b4b0c4798)
   remote: forki/FsUnit
   specs:
     FsUnit.fs (81d27fd09575a32c4ed52eadb2eeac5f365b8348)
