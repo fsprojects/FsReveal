@@ -86,8 +86,7 @@ let handleWatcherEvents (events:FileChange seq) =
 
 let echo (webSocket : WebSocket) =
   fun cx -> socket {
-    let loop = ref true
-    while !loop do
+    while true do
       let! refreshed =
         Control.Async.AwaitEvent(refreshEvent.Publish)
         |> Suave.Sockets.SocketOp.ofAsync 
