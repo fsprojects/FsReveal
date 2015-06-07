@@ -84,7 +84,7 @@ let handleWatcherEvents (events:FileChange seq) =
         | _ -> generateFor fi
     refreshEvent.Trigger()
 
-let echo (webSocket : WebSocket) =
+let socketHandler (webSocket : WebSocket) =
   fun cx -> socket {
     while true do
       let! refreshed =
@@ -100,7 +100,7 @@ let startWebServer () =
         }
     let app =
       choose [
-        Applicatives.path "/websocket" >>= handShake echo
+        Applicatives.path "/websocket" >>= handShake socketHandler
         Writers.setHeader "Cache-Control" "no-cache, no-store, must-revalidate"
         >>= Writers.setHeader "Pragma" "no-cache"
         >>= Writers.setHeader "Expires" "0"
