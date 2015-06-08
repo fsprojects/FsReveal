@@ -1,3 +1,15 @@
+### 0.9.0 - 08.06.2015
+* Auto-Update slides in Edit mode - https://github.com/fsprojects/FsReveal/pull/73
+
+### 0.8.0 - 01.06.2015
+* Using reveal.js 3.1
+
+### 0.7.7 - 06.05.2015
+* Fix package
+
+### 0.7.3 - 02.05.2015
+* Using latest dependencies and fixed FSharp.Formatting
+
 ### 0.7.2 - 22.03.2015
 * BUGFIX: Fixing dependencies
 
