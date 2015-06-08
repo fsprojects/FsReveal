@@ -6,6 +6,6 @@ nuget FSharp.Formatting
 nuget NUnit 
 nuget NUnit.Runners
 
-github hakimel/reveal.js:3.1.0
+github kfuglsang/reveal.js:highlightjs-86
 github forki/FsUnit FsUnit.fs
 github fsharp/FAKE modules/Octokit/Octokit.fsx
