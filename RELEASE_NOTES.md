@@ -1,3 +1,6 @@
+### 0.9.0 - 08.06.2015
+* Auto-Update slides in Edit mode - https://github.com/fsprojects/FsReveal/pull/73
+
 ### 0.8.0 - 01.06.2015
 * Using reveal.js 3.1
 
