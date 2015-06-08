@@ -34,9 +34,7 @@ Your slides are then generated and saved to the `output` folder.
 
 A web server will start automatically and your presentation will be opened in your browser.
 
-FsReveal will detect changes to your slides and generate them again for you; you just need to refresh your browser.
-
-> We're working on auto refreshing the browser for you (see [#35](https://github.com/fsprojects/FsReveal/issues/35)).
+FsReveal will detect changes to your slides and generate them again for you. It even refreshes the browser.
 
 ## Use
 

@@ -5,6 +5,7 @@ FsReveal allows you to write beautiful slides in Markdown and brings C# and F# t
 ## Features
 
 - Write your slides in [Markdown](formatting.html) or .fsx files
+- Automatically updates the browser in edit mode on every save
 - Syntax highlighting for most programming languages including C#, F# and LaTeX
 - Speaker notes; Shows the current slide, next slide, elapsed time and current time
 - Built in themes
