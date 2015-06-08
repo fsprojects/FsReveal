@@ -12,7 +12,7 @@ tags
 files
     ../bin/FsReveal.* ==> lib/net40
     ../bin/FSharp.Compiler.Interactive.Settings.dll ==> lib/net40
-    ../paket-files/hakimel/reveal.js/**/*.* ==> reveal.js
+    ../paket-files/kfuglsang/reveal.js/**/*.* ==> reveal.js
     ../src/FsReveal/style.css ==> reveal.js/fsharp.formatting/styles
     ../src/FsReveal/tips.js ==> reveal.js/fsharp.formatting/styles
     ../src/FsReveal/deedle.css ==> reveal.js/fsharp.formatting/styles
