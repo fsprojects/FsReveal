@@ -9,6 +9,7 @@ and brings F# to the [reveal.js][revealjs] web presentation framework.
 ## Features
 
 - Write your slides in [Markdown](http://daringfireball.net/projects/markdown/syntax) or .fsx files
+- Automatically updates the browser in edit mode on every save
 - Syntax highlighting for most programming languages including C#, F# and LaTeX
 - Speaker notes; Shows the current slide, next slide, elapsed time and current time
 - Built in themes
