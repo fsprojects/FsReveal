@@ -1,3 +1,6 @@
+### 0.10.0 - 08.06.2015
+* Use latest hihglight.js in separate fork
+
 ### 0.9.0 - 08.06.2015
 * Auto-Update slides in Edit mode - https://github.com/fsprojects/FsReveal/pull/73
 

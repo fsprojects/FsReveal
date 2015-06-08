@@ -10,7 +10,7 @@ open FsReveal
 let root = Path.Combine(__SOURCE_DIRECTORY__,"../../")
 let slidesDir = root @@ "/docs/slides"
 let outDir = root @@ "/docs/output/samples/"
-FsReveal.FsRevealHelper.RevealJsFolder <- Path.Combine(root,"paket-files/kfuglsang/reveal.js")
+FsReveal.FsRevealHelper.RevealJsFolder <- Path.Combine(root,"paket-files/fsprojects/reveal.js")
 FsReveal.FsRevealHelper.TemplateFile <- Path.Combine(root,"src/FsReveal/template.html")
 
 let targetFCIS = Path.Combine(root,@"packages/FAKE/tools/FSharp.Compiler.Interactive.Settings.dll")

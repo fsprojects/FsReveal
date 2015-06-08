@@ -20,9 +20,9 @@ NUGET
       Microsoft.Net.Http
     SourceLink.Fake (0.5.0)
 GITHUB
-  remote: kfuglsang/reveal.js
+  remote: fsprojects/reveal.js
   specs:
-    FULLPROJECT (0563835fc00ce2c255cad0e4a089f559cdd48964)
+    FULLPROJECT (920b5893d4ece930b2fb60409445a425e8ce94e3)
   remote: forki/FsUnit
   specs:
     FsUnit.fs (81d27fd09575a32c4ed52eadb2eeac5f365b8348)
