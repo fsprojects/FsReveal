@@ -10,7 +10,7 @@ NUGET
     FSharpVSPowerTools.Core (1.8.0)
       FSharp.Compiler.Service (>= 0.0.87)
     FsPickler (1.2.9)
-    FsReveal (0.9.0)
+    FsReveal (0.10.0)
       FSharp.Formatting (>= 2.7.5)
     Suave (0.28.1)
       FSharp.Core (>= 3.1.2.1)
