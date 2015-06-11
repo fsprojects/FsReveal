@@ -1,4 +1,4 @@
-### 0.10.0 - 08.06.2015
+### 0.10.1 - 11.06.2015
 * Use latest hihglight.js in separate fork
 
 ### 0.9.0 - 08.06.2015
