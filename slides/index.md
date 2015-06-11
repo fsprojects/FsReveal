@@ -109,6 +109,26 @@
 
 *sql from [Dapper](https://code.google.com/p/dapper-dot-net/)*
 
+---
+
+### C/AL
+
+    [lang=cal]
+    PROCEDURE FizzBuzz(n : Integer) r_Text : Text[1024];
+    VAR
+      l_Text : Text[1024];
+    BEGIN
+      r_Text := '';
+      l_Text := FORMAT(n);
+
+      IF (n MOD 3 = 0) OR (STRPOS(l_Text,'3') > 0) THEN
+        r_Text := 'Fizz';
+      IF (n MOD 5 = 0) OR (STRPOS(l_Text,'5') > 0) THEN
+        r_Text := r_Text + 'Buzz';
+      IF r_Text = '' THEN
+        r_Text := l_Text;
+    END;
+
 ***
 
 **Bayes' Rule in LaTeX**
