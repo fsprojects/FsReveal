@@ -1,11 +1,7 @@
-### 0.10.5 - 14.06.2015
-* Do not double-format already highlighted code
-
-### 0.10.1 - 11.06.2015
-* Use latest hihglight.js in separate fork
-
-### 0.9.0 - 08.06.2015
+### 1.0.0 - 14.06.2015
+* Use highlight.js 8.6 from our own fork - allows 125 languages and 63 styles
 * Auto-Update slides in Edit mode - https://github.com/fsprojects/FsReveal/pull/73
+* Do not double-format already highlighted code
 
 ### 0.8.0 - 01.06.2015
 * Using reveal.js 3.1
