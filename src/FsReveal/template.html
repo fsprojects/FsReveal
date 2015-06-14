@@ -54,6 +54,8 @@
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
     <script>
+        // Add the nohighlight class and data-noescape attribute to code elements that have already been formatted by FSharp.Formatting
+        $('pre.highlighted code').addClass('nohighlight').attr('data-noescape', '');
 
         // Full list of configuration options available here:
         // https://github.com/hakimel/reveal.js#configuration
