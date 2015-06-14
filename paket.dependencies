@@ -3,3 +3,12 @@ source https://nuget.org/api/v2
 nuget FsReveal
 nuget FAKE
 nuget Suave
+nuget FAKE
+nuget SourceLink.Fake
+nuget FSharp.Formatting
+nuget NUnit 
+nuget NUnit.Runners
+
+github fsprojects/reveal.js:master
+github forki/FsUnit FsUnit.fs
+github fsharp/FAKE modules/Octokit/Octokit.fsx

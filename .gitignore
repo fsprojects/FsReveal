@@ -182,3 +182,13 @@ release.cmd
 *.bak
 *.orig
 docs
+release.cmd
+localpackages/
+paket-files
+*.orig
+.paket/paket.exe
+docs/content/license.md
+docs/content/release-notes.md
+output/
+src/reveal.js
+*.bak
