@@ -15,3 +15,25 @@ NUGET
     Suave (0.29.0)
       FSharp.Core (>= 3.1.2.1)
       FsPickler (>= 1.2.5)
+    Microsoft.Bcl (1.1.10)
+      Microsoft.Bcl.Build (>= 1.0.14)
+    Microsoft.Bcl.Build (1.0.21)
+    Microsoft.Net.Http (2.2.29)
+      Microsoft.Bcl (>= 1.1.10)
+      Microsoft.Bcl.Build (>= 1.0.14)
+    NUnit (2.6.4)
+    NUnit.Runners (2.6.4)
+    Octokit (0.12.0)
+      Microsoft.Net.Http
+    SourceLink.Fake (0.5.0)
+GITHUB
+  remote: fsprojects/reveal.js
+  specs:
+    FULLPROJECT (920b5893d4ece930b2fb60409445a425e8ce94e3)
+  remote: forki/FsUnit
+  specs:
+    FsUnit.fs (81d27fd09575a32c4ed52eadb2eeac5f365b8348)
+  remote: fsharp/FAKE
+  specs:
+    modules/Octokit/Octokit.fsx (8df5fa084bd2447427f295d3b35a131910aa054c)
+      Octokit
