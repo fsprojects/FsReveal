@@ -9,13 +9,13 @@ then
   	exit $exit_code
   fi
 
-  .paket/paket.exe restore -v
+  .paket/paket.exe restore
   exit_code=$?
   if [ $exit_code -ne 0 ]; then
   	exit $exit_code
   fi
 
-  packages/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO build.fsx 
+  packages/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO build.fsx
 else
   # use mono
   mono .paket/paket.bootstrapper.exe
@@ -24,10 +24,10 @@ else
   	exit $exit_code
   fi
 
-  mono .paket/paket.exe restore -v
+  mono .paket/paket.exe restore
   exit_code=$?
   if [ $exit_code -ne 0 ]; then
   	exit $exit_code
   fi
-  mono packages/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO build.fsx 
+  mono packages/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO build.fsx
 fi
