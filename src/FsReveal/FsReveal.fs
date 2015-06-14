@@ -33,6 +33,7 @@ type FsReveal private() =
         printfn "Apply template : %s" FsRevealHelper.TemplateFile
         let output = Formatting.GenerateHTML template presentation
         File.WriteAllText(outDir @@ outFile, output)
+        copyFiles (fun f -> f.ToLower().Contains(".css")) (__SOURCE_DIRECTORY__ @@ "css") (outDir @@ "css")
 
     static let getPresentationFromScriptLines fsxFile fsiEvaluator lines = 
         let fsx = Formatting.preprocessing lines
