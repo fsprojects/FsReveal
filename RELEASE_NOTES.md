@@ -1,4 +1,4 @@
-### 0.10.4 - 14.06.2015
+### 0.10.5 - 14.06.2015
 * Do not double-format already highlighted code
 
 ### 0.10.1 - 11.06.2015

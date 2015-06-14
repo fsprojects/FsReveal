@@ -18,5 +18,6 @@ files
     ../src/FsReveal/deedle.css ==> reveal.js/fsharp.formatting/styles
     ../src/FsReveal/template.html ==> fsreveal
     ../src/FsReveal/fsreveal.fsx ==> fsreveal
+    ../src/FsReveal/fsreveal.css ==> fsreveal
 dependencies
     FSharp.Formatting >= 2.7.5
