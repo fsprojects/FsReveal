@@ -35,7 +35,12 @@ type FsReveal private() =
         let output = Formatting.GenerateHTML template presentation
         File.WriteAllText(outDir @@ outFile, output)
         printfn "Copy fsreveal.css style from %s to %s" FsRevealHelper.StyleFile (outDir @@ "css")
-        File.Copy(FsRevealHelper.StyleFile, (outDir @@ "css" @@ "fsreveal.css"), true)
+        let cssDir = outDir @@ "css" 
+        if Directory.Exists cssDir |> not then 
+            Directory.CreateDirectory cssDir |> ignore
+            printfn "Creating %s.." cssDir
+
+        File.Copy(FsRevealHelper.StyleFile, cssDir @@ "fsreveal.css", true)
 
     static let getPresentationFromScriptLines fsxFile fsiEvaluator lines = 
         let fsx = Formatting.preprocessing lines
