@@ -1,3 +1,6 @@
+### 0.10.2 - 14.06.2015
+* Do not double-format already highlighted code
+
 ### 0.10.1 - 11.06.2015
 * Use latest hihglight.js in separate fork
 
