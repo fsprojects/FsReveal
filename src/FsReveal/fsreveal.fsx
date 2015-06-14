@@ -13,3 +13,4 @@ FsReveal.FsRevealHelper.RevealJsFolder <- System.IO.Path.Combine(__SOURCE_DIRECT
 printfn "Set FsReveal folder to %s" FsReveal.FsRevealHelper.RevealJsFolder
 
 FsReveal.FsRevealHelper.TemplateFile <- System.IO.Path.Combine(__SOURCE_DIRECTORY__,"template.html")
+FsReveal.FsRevealHelper.StyleFile <- System.IO.Path.Combine(__SOURCE_DIRECTORY__,"fsreveal.css")

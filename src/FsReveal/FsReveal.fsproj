@@ -34,29 +34,6 @@
     <WarningLevel>3</WarningLevel>
     <DocumentationFile>..\..\bin\FsReveal.xml</DocumentationFile>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="FSharp.Compiler.Interactive.Settings">
-      <HintPath>..\..\lib\FSharp.Compiler.Interactive.Settings.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Domain.fs" />
-    <Compile Include="Misc.fs" />
-    <Compile Include="Markdown.fs" />
-    <Compile Include="Formatting.fs" />
-    <Compile Include="FsReveal.fs" />
-    <None Include="template.html" />
-    <None Include="fsreveal.fsx" />
-    <None Include="paket.references" />
-  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
@@ -152,4 +129,30 @@
       </ItemGroup>
     </When>
   </Choose>
+  <ItemGroup>
+    <Compile Include="Domain.fs" />
+    <Compile Include="Misc.fs" />
+    <Compile Include="Markdown.fs" />
+    <Compile Include="Formatting.fs" />
+    <Compile Include="FsReveal.fs" />
+    <None Include="template.html" />
+    <None Include="fsreveal.fsx" />
+    <None Include="paket.references" />
+    <Content Include="fsreveal.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.Compiler.Interactive.Settings">
+      <HintPath>..\..\lib\FSharp.Compiler.Interactive.Settings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
 </Project>
