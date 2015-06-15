@@ -1,3 +1,6 @@
+### 1.0.1 - 15.06.2015
+* Fix CSS around cde
+
 ### 1.0.0 - 14.06.2015
 * Use highlight.js 8.6 from our own fork - allows 125 languages and 63 styles
 * Auto-Update slides in Edit mode - https://github.com/fsprojects/FsReveal/pull/73
