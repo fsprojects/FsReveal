@@ -4,4 +4,7 @@
 	word-wrap: break-word;
 	overflow: visible;
 	max-height: none;
+	box-shadow:none;
+	background: transparent;
+	color: inherit;
 }
