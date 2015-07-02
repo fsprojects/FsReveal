@@ -11,7 +11,7 @@ Windows users don't need to install anything.
 
 ## Edit your slides
 
-Open `slides/input.md` in your favourite text editor.
+Open `slides/index.md` in your favourite text editor.
 
 This is the source for your entire presentation. Inside the file you will find an example presentation that demonstrates how to use FsReveal.
 You can also read the <a href="formatting.html">formatting docs</a> to learn about FsReveal's Markdown format.
