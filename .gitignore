@@ -182,3 +182,4 @@ release.cmd
 *.bak
 *.orig
 docs
+.fake/
