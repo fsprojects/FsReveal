@@ -129,6 +129,11 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="FSharp.Formatting.Common">
+          <HintPath>..\..\packages\FSharp.Formatting\lib\net40\FSharp.Formatting.Common.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="FSharp.Literate">
           <HintPath>..\..\packages\FSharp.Formatting\lib\net40\FSharp.Literate.dll</HintPath>
           <Private>True</Private>
