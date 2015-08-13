@@ -183,3 +183,4 @@ release.cmd
 *.orig
 docs
 .fake/
+FSharp.Formatting.svclog
