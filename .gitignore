@@ -186,3 +186,4 @@ output/
 src/reveal.js
 *.bak
 .fake
+docs/tools/FSharp.Formatting.svclog
