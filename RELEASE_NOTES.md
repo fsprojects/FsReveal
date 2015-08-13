@@ -1,3 +1,20 @@
+### 1.0.3 - 13.08.2015
+* Updated all dependencies
+
+### 1.0.2 - 15.06.2015
+* Fix CSS around cde
+
+### 1.0.0 - 14.06.2015
+* Use highlight.js 8.6 from our own fork - allows 125 languages and 63 styles
+* Auto-Update slides in Edit mode - https://github.com/fsprojects/FsReveal/pull/73
+* Do not double-format already highlighted code
+
+### 0.8.0 - 01.06.2015
+* Using reveal.js 3.1
+
+### 0.7.7 - 06.05.2015
+* Fix package
+
 ### 0.7.3 - 02.05.2015
 * Using latest dependencies and fixed FSharp.Formatting
 

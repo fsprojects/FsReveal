@@ -1,0 +1,15 @@
+.reveal pre code {
+	font-family: 'Droid Sans Mono', consolas, monospace;
+	padding: 0;
+	word-wrap: break-word;
+	overflow: visible;
+	max-height: none;
+	box-shadow: none;
+	background: transparent;
+	color: inherit;
+}
+
+.reveal table.pre, .reveal pre.fssnip, .reveal pre {
+  box-shadow:none;
+  font: 16pt 'Droid Sans Mono',consolas,monospace;
+}

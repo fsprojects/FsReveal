@@ -12,6 +12,7 @@ module FsRevealHelper =
     // used to change the working directory
     let mutable RevealJsFolder = __SOURCE_DIRECTORY__    
     let mutable TemplateFile = Path.Combine(__SOURCE_DIRECTORY__,"template.html")
+    let mutable StyleFile = Path.Combine(__SOURCE_DIRECTORY__,"fsreveal.css")
 
 type FsReveal private() = 
     static let defaultFileName (other:FileInfo) optInput = 
@@ -33,6 +34,13 @@ type FsReveal private() =
         printfn "Apply template : %s" FsRevealHelper.TemplateFile
         let output = Formatting.GenerateHTML template presentation
         File.WriteAllText(outDir @@ outFile, output)
+        let cssDir = outDir @@ "css" 
+        printfn "Copy fsreveal.css style from %s to %s" FsRevealHelper.StyleFile cssDir
+        if Directory.Exists cssDir |> not then 
+            Directory.CreateDirectory cssDir |> ignore
+            printfn "Creating %s.." cssDir
+
+        File.Copy(FsRevealHelper.StyleFile, cssDir @@ "fsreveal.css", true)
 
     static let getPresentationFromScriptLines fsxFile fsiEvaluator lines = 
         let fsx = Formatting.preprocessing lines

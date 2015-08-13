@@ -5,6 +5,7 @@ FsReveal allows you to write beautiful slides in Markdown and brings C# and F# t
 ## Features
 
 - Write your slides in [Markdown](formatting.html) or .fsx files
+- Automatically updates the browser in edit mode on every save
 - Syntax highlighting for most programming languages including C#, F# and LaTeX
 - Speaker notes; Shows the current slide, next slide, elapsed time and current time
 - Built in themes
@@ -24,6 +25,8 @@ Check out what others have created. Submit a PR if you have something to add to 
 
 - [Markdown example][md-example] by [@kimsk][kimsk-twitter] [(source)][md-example-source]
 - [.fsx example][fsx-example] by [@kimsk][kimsk-twitter] [(source)][fsx-example-source]
+- [Paket - Intro](http://forki.github.io/PaketIntro/) by [@sforkmann][sforkmann-twitter] [(source)](https://github.com/forki/PaketIntro/blob/master/slides/index.md)
+- [FAKE - Intro](http://forki.github.io/FAKE.Intro/) by [@sforkmann][sforkmann-twitter] [(source)](https://github.com/forki/FAKE.Intro/blob/master/slides/index.md)
 - [RPG F# Workshop][rpg-fsharp-workshop] by [@troykershaw][troykershaw-twitter] [(source)][rpg-fsharp-workshop-source]
 - [F# on the Web - 0 to production in 12 weeks][fsharp-on-the-web] by [@panesofglass][panesofglass-twitter] [(source)][fsharp-on-the-web-source]
 
@@ -52,6 +55,7 @@ redistribution for both commercial and non-commercial purposes. For more informa
   [kimsk-twitter]: https://twitter.com/kimsk "@kimsk on Twitter"
   [troykershaw-twitter]: https://twitter.com/troykershaw "@troykershaw on Twitter"
   [panesofglass-twitter]: https://twitter.com/panesofglass "@panesofglass on Twitter"
+  [sforkmann-twitter]: https://twitter.com/sforkmann "@sforkmann on Twitter"
   
   [fsx-example]: http://kimsk.github.io/fsreveal-sample-fsx/FsReveal.html#/ ".fsx example"
   [fsx-example-source]: https://github.com/kimsk/fsreveal-sample-fsx/blob/master/slides/FsReveal.fsx ".fsx example source"
