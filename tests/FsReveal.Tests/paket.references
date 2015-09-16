@@ -1,3 +1,5 @@
 FSharp.Formatting
+
+group Test
 NUnit
 File:FsUnit.fs .

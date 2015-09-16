@@ -1,7 +1,7 @@
 #I @"../../bin/"
 #r "FsReveal.dll"
 #r "FSharp.Literate.dll"
-#r "../../packages/FAKE/tools/FakeLib.dll"
+#r "../../packages/build/FAKE/tools/FakeLib.dll"
 open Fake
 open System.IO
 
@@ -13,7 +13,7 @@ let outDir = root @@ "/docs/output/samples/"
 FsReveal.FsRevealHelper.RevealJsFolder <- Path.Combine(root,"paket-files/fsprojects/reveal.js")
 FsReveal.FsRevealHelper.TemplateFile <- Path.Combine(root,"src/FsReveal/template.html")
 
-let targetFCIS = Path.Combine(root,@"packages/FAKE/tools/FSharp.Compiler.Interactive.Settings.dll")
+let targetFCIS = Path.Combine(root,@"packages/build/FAKE/tools/FSharp.Compiler.Interactive.Settings.dll")
 if not (System.IO.File.Exists(targetFCIS)) then
     System.IO.File.Copy(Path.Combine(root,@"bin/FSharp.Compiler.Interactive.Settings.dll"), targetFCIS)
 

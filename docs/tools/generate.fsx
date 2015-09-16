@@ -23,8 +23,8 @@ let info =
 // --------------------------------------------------------------------------------------
 
 #load "../../packages/FSharp.Formatting/FSharp.Formatting.fsx"
-#r "../../packages/FAKE/tools/NuGet.Core.dll"
-#r "../../packages/FAKE/tools/FakeLib.dll"
+#r "../../packages/build/FAKE/tools/NuGet.Core.dll"
+#r "../../packages/build/FAKE/tools/FakeLib.dll"
 open Fake
 open System.IO
 open Fake.FileHelper
