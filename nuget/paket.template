@@ -20,4 +20,4 @@ files
     ../src/FsReveal/fsreveal.fsx ==> fsreveal
     ../src/FsReveal/fsreveal.css ==> fsreveal
 dependencies
-    FSharp.Formatting >= 2.7.5
+    FSharp.Formatting >= 2.11.0
