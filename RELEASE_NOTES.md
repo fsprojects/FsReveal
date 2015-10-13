@@ -1,3 +1,6 @@
+### 1.0.4 - 13.10.2015
+* Updated all dependencies
+
 ### 1.0.3 - 13.08.2015
 * Updated all dependencies
 
