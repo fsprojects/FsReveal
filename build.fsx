@@ -94,9 +94,19 @@ let socketHandler (webSocket : WebSocket) =
   }
 
 let startWebServer () =
+    let rec findPort port =
+        let portIsTaken =
+            System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners()
+            |> Seq.exists (fun x -> x.Port = port)
+
+        if portIsTaken then findPort (port + 1) else port
+
+    let port = findPort 8083
+
     let serverConfig = 
         { defaultConfig with
            homeFolder = Some (FullName outDir)
+           bindings = [ Types.HttpBinding.mk' Types.HTTP "127.0.0.1" port ]
         }
     let app =
       choose [
@@ -106,7 +116,7 @@ let startWebServer () =
         >>= Writers.setHeader "Expires" "0"
         >>= browseHome ]
     startWebServerAsync serverConfig app |> snd |> Async.Start
-    Process.Start "http://localhost:8083/index.html" |> ignore
+    Process.Start (sprintf "http://localhost:%d/index.html" port) |> ignore
 
 Target "GenerateSlides" (fun _ ->
     !! (slidesDir @@ "*.md")
