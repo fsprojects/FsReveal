@@ -1,11 +1,7 @@
-### 1.0.7 - 14.10.2015
-* Updated all dependencies
-
-### 1.0.3 - 13.08.2015
-* Updated all dependencies
-
-### 1.0.2 - 15.06.2015
-* Fix CSS around cde
+### 1.1.0-alpha001 - 10.11.2015
+* Updated to reveal.js 3.2.0
+* Update FSharp.Formatting to 2.12.0
+* Fix CSS around code
 
 ### 1.0.0 - 14.06.2015
 * Use highlight.js 8.6 from our own fork - allows 125 languages and 63 styles
