@@ -1,4 +1,4 @@
-### 1.1.0-alpha001 - 10.11.2015
+### 1.1.0 - 10.11.2015
 * Updated to reveal.js 3.2.0
 * Update FSharp.Formatting to 2.12.0
 * Fix CSS around code
