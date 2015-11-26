@@ -3,7 +3,7 @@
 #I @"packages/Suave/lib/net40"
 
 #r "FakeLib.dll"
-#r "suave.dll"
+#r "Suave.dll"
 
 #load "fsreveal.fsx"
 
