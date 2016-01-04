@@ -97,6 +97,7 @@ let socketHandler (webSocket : WebSocket) =
 let startWebServer () =
     let rec findPort port =
         let portIsTaken =
+            if isMono then false else
             System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners()
             |> Seq.exists (fun x -> x.Port = port)
 
