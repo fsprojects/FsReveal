@@ -84,39 +84,22 @@ let testTemplate ="{slides}"
 
 
 let expectedOutput = """<section >
-
 <h3>Slide 1</h3>
-
 </section>
-
 <section >
-
 <section >
-
 <h3>Slide 2</h3>
-
 </section>
-
 <section author="Karlkim Suwanmongkol" description="Introduction to FsReveal" theme="Night" title="FsReveal" transition="default">
-
 <h4>Slide 2.1</h4>
-
 </section>
-
 <section author="Karlkim Suwanmongkol" description="Introduction to FsReveal" theme="Night" title="FsReveal" transition="default">
-
 <h4>Sldie 2.2</h4>
-
 </section>
-
 </section>
-
 <section >
-
 <h3>Slide 3</h3>
-
 </section>
-
 
 """
 

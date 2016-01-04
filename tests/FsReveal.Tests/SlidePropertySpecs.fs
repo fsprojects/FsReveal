@@ -67,32 +67,21 @@ let testTemplate ="{slides}"
 let normalizeLineBreaks (text:string) = text.Replace("\r\n","\n").Replace("\n","\n")
 
 let expectedOutput = """<section >
-
 <ul>
 <li>no property</li>
 <li>background-repeat : repeat</li>
 </ul>
-
 <h3>Section 1</h3>
-
 </section>
-
 <section data-background="images/smalllogo.png" data-background-repeat="repeat" data-background-size="100px">
-
 <h3>Section 2</h3>
-
 <ul>
 <li>Some bullet point</li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Section 3</h3>
-
 </section>
-
 
 """
 

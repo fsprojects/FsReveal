@@ -188,3 +188,4 @@ src/reveal.js
 .fake
 docs/tools/FSharp.Formatting.svclog
 FSharp.Formatting.svclog
+_NCrunch*

@@ -28,26 +28,17 @@ Normal Text
 """
 
 let expectedOutput = """<section >
-
 <h3>Slide 1</h3>
-
 <p>Normal Text</p>
-
 <aside class="notes">
 Oh hey, these are some notes.<br/>
 And some more<br/>
 </aside>
-
 </section>
-
 <section >
-
 <h3>Slide 2</h3>
-
 <p>Normal Text</p>
-
 </section>
-
 
 """
 

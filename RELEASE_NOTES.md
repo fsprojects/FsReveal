@@ -1,3 +1,6 @@
+### 1.1.1 - 04.01.2016
+* Updated all dependencies
+
 ### 1.1.0 - 10.11.2015
 * Updated to reveal.js 3.2.0
 * Update FSharp.Formatting to 2.12.0
