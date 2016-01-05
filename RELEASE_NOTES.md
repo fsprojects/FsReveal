@@ -1,3 +1,6 @@
+### 1.1.2 - 05.01.2016
+* Fix auto-refresh - https://github.com/fsprojects/FsReveal/pull/88
+
 ### 1.1.1 - 04.01.2016
 * Updated all dependencies
 
