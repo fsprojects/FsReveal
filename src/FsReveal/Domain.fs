@@ -9,12 +9,12 @@ open FSharp.Markdown
 open FSharp.Markdown.Html
 
 type SlideData = 
-    | Simple of MarkdownParagraph list
-    | Nested of MarkdownParagraph list list
+    { Properties : Map<string,string>
+      Paragraphs : MarkdownParagraph list }
 
 type Slide = 
-    { Properties : Map<string,string>
-      SlideData : SlideData }
+    | Simple of SlideData
+    | Nested of SlideData list
 
 type Presentation = 
     { Properties : Map<string,string>
