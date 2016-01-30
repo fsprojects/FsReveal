@@ -40,6 +40,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsReveal.Tests", "tests\FsR
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "slides", "slides", "{F77011BE-03C0-4CF1-8398-B730548F7700}"
 	ProjectSection(SolutionItems) = preProject
+		docs\slides\named-slides.md = docs\slides\named-slides.md
 		docs\slides\simple-slides.md = docs\slides\simple-slides.md
 		docs\slides\slide-properties.md = docs\slides\slide-properties.md
 		docs\slides\slides-with-images.md = docs\slides\slides-with-images.md
