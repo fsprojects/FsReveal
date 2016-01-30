@@ -25,7 +25,7 @@ let md = """
 
 ---
 
-#### Sldie 2.2
+#### Slide 2.2
 
 ***
 
@@ -59,7 +59,7 @@ let md2 = """
 
 ---
 
-#### Sldie 2.2
+#### Slide 2.2
 
 ***
 
@@ -90,11 +90,11 @@ let expectedOutput = """<section >
 <section >
 <h3>Slide 2</h3>
 </section>
-<section author="Karlkim Suwanmongkol" description="Introduction to FsReveal" theme="Night" title="FsReveal" transition="default">
+<section >
 <h4>Slide 2.1</h4>
 </section>
-<section author="Karlkim Suwanmongkol" description="Introduction to FsReveal" theme="Night" title="FsReveal" transition="default">
-<h4>Sldie 2.2</h4>
+<section >
+<h4>Slide 2.2</h4>
 </section>
 </section>
 <section >

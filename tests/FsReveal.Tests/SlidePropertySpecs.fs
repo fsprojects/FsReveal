@@ -22,6 +22,11 @@ let md = """
 
 ### Section 2
 
+---
+- background : image2-1.png
+
+#### Section 2.1
+
 ***
 
 ### Section 3"""
@@ -47,6 +52,10 @@ let md2 = """***
 ### Section 2
 
 - Some bullet point
+
+---
+
+#### Section 2.1
 
 ***
 
@@ -74,10 +83,15 @@ let expectedOutput = """<section >
 <h3>Section 1</h3>
 </section>
 <section data-background="images/smalllogo.png" data-background-repeat="repeat" data-background-size="100px">
+<section data-background="images/smalllogo.png" data-background-repeat="repeat" data-background-size="100px">
 <h3>Section 2</h3>
 <ul>
 <li>Some bullet point</li>
 </ul>
+</section>
+<section data-background="images/smalllogo.png" data-background-repeat="repeat" data-background-size="100px">
+<h4>Section 2.1</h4>
+</section>
 </section>
 <section >
 <h3>Section 3</h3>

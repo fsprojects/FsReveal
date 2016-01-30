@@ -63,7 +63,7 @@ let getPresentation (doc : LiterateDocument) =
                     [for p in paragraphs do
                         match p with
                         | HorizontalRule('-') ->
-                            let attributes = properties |> Seq.map (fun kv -> sprintf "%s=\"%s\"" kv.Key kv.Value)
+                            let attributes = slide.Properties |> Seq.map (fun kv -> sprintf "%s=\"%s\"" kv.Key kv.Value)
                             yield InlineBlock("</section>") 
                             yield InlineBlock(sprintf "<section %s>" (String.Join(" ", attributes)))
                             containsMoreThan1Slide := true
