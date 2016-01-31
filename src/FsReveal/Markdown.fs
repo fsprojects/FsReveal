@@ -58,7 +58,7 @@ let getPresentation (doc : LiterateDocument) =
         | Simple(slideData)
         | Nested([slideData]) -> wrappedInSection slideData.Properties slideData.Paragraphs
         | Nested(nestedSlides) -> 
-            nestedSlides    
+            nestedSlides
             |> List.collect (fun slideData -> wrappedInSection slideData.Properties slideData.Paragraphs)
             |> wrappedInSection Map.empty
             

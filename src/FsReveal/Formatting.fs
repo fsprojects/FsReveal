@@ -30,7 +30,7 @@ let preprocessing (text : string []) =
 let GenerateHTML (template:string) presentation =
     let doc = Literate.FormatLiterateNodes presentation.Document
     let htmlSlides = Literate.WriteHtml doc
-    let toolTips = doc.FormattedTips    
+    let toolTips = doc.FormattedTips
     let output = StringBuilder(template)
     // replace properties
     presentation.Properties |> Map.iter (fun k v -> output.Replace(sprintf "{%s}" k, v) |> ignore)

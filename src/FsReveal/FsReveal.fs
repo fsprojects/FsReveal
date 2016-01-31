@@ -10,7 +10,7 @@ open FSharp.Markdown.Html
 
 module FsRevealHelper = 
     // used to change the working directory
-    let mutable RevealJsFolder = __SOURCE_DIRECTORY__    
+    let mutable RevealJsFolder = __SOURCE_DIRECTORY__
     let mutable TemplateFile = Path.Combine(__SOURCE_DIRECTORY__,"template.html")
     let mutable StyleFile = Path.Combine(__SOURCE_DIRECTORY__,"fsreveal.css")
 
@@ -100,7 +100,7 @@ type FsReveal private() =
     ///
     /// The method evaluates F# code snippets in the presentation and embeds the outputs. You
     /// can specify a custom `fsiEvaluator` to add formatting for custom values and handle errors
-    /// during the valuation.  
+    /// during the valuation.
     ///
     /// ## Parameters
     /// - `fsiEvaluator` - Custom evaluator (you can use this parameter to add custom formatting
