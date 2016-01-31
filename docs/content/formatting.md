@@ -110,4 +110,57 @@ Slide properties allow you to customize things like the background of a slide:
 	* bullet point 2
 	* bullet point 3
 
-<a href="samples/slide-properties" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/slide-properties" target="_blank">demo</a> see the effect of the slide properties.
+<a href="samples/slide-properties" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/slide-properties" target="_blank">demo</a> to see the effect of the slide properties.
+
+## Named slides
+
+Slide properties also allow to name slides. You can then reference slides by name in links.
+
+    [lang=markdown]
+	***
+    - id : toc
+  
+	### Table of contents
+
+	* [Chapter 1](#/chapter-1)
+	* [Chapter 2](#/chapter-2)
+	    * [Chapter 2-1](#/chapter-2-1)
+	    * [Chapter 2-2](#/chapter-2-2)
+
+	***
+	- id : chapter-1
+
+	### Chapter 1
+
+	* bullet point 1
+	* bullet point 2
+	* bullet point 3
+
+	***
+	- id : chapter-2
+
+	### Chapter 2
+
+	* bullet point 1
+	* bullet point 2
+	* bullet point 3
+
+    ---
+	- id : chapter-2-1
+
+    #### Chapter 2.1
+
+	* bullet point 1
+	* bullet point 2
+	* bullet point 3
+
+    ---
+	- id : chapter-2-2
+
+    #### Chapter 2.2
+
+	* bullet point 1
+	* bullet point 2
+	* bullet point 3
+
+<a href="samples/named-slides" target="_blank"><img src="img/smalllogo.png" alt="See live demo"></a> &nbsp;&nbsp;&nbsp;Open the <a href="samples/named-slides" target="_blank">demo</a> to see the effect of the named slides.

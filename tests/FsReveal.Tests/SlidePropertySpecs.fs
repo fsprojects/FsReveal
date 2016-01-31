@@ -22,6 +22,11 @@ let md = """
 
 ### Section 2
 
+---
+- background : image2-1.png
+
+#### Section 2.1
+
 ***
 
 ### Section 3"""
@@ -29,9 +34,12 @@ let md = """
 [<Test>]
 let ``can read properties from slides``() = 
     let doc = md |> FsReveal.GetPresentationFromMarkdown
-    let slideProperties = doc.Slides.[0].Properties
-    slideProperties.["background"] |> shouldEqual "image.png"
-    slideProperties.["background-repeat"] |> shouldEqual "repeat"
+    match doc.Slides.[0] with
+    | Simple slide ->
+        let slideProperties = slide.Properties
+        slideProperties.["background"] |> shouldEqual "image.png"
+        slideProperties.["background-repeat"] |> shouldEqual "repeat"
+    | _ -> failwith "first slide should be a simple one"
 
 let md2 = """***
 - no property
@@ -48,6 +56,10 @@ let md2 = """***
 
 - Some bullet point
 
+---
+
+#### Section 2.1
+
 ***
 
 ### Section 3"""
@@ -55,12 +67,15 @@ let md2 = """***
 [<Test>]
 let ``can read properties from slides with list``() = 
     let doc = md2 |> FsReveal.GetPresentationFromMarkdown
-    doc.Slides.[0].Properties |> shouldBeEmpty
-    let slideProperties = doc.Slides.[1].Properties
-    slideProperties.["data-background"] |> shouldEqual "images/smalllogo.png"
-    slideProperties.["data-background-repeat"] |> shouldEqual "repeat"
-    slideProperties.["data-background-size"] |> shouldEqual "100px"
-
+    match doc.Slides.[1] with
+    | Nested slides ->
+        let firstNestedSlideProperties = slides.[0].Properties
+        firstNestedSlideProperties.["data-background"] |> shouldEqual "images/smalllogo.png"
+        firstNestedSlideProperties.["data-background-repeat"] |> shouldEqual "repeat"
+        firstNestedSlideProperties.["data-background-size"] |> shouldEqual "100px"
+        let secondNestedSlideProperties = slides.[1].Properties
+        secondNestedSlideProperties |> shouldEqual Map.empty
+    | _ -> failwith "first slide should be a nested one"
 
 let testTemplate ="{slides}"
 
@@ -73,11 +88,16 @@ let expectedOutput = """<section >
 </ul>
 <h3>Section 1</h3>
 </section>
+<section >
 <section data-background="images/smalllogo.png" data-background-repeat="repeat" data-background-size="100px">
 <h3>Section 2</h3>
 <ul>
 <li>Some bullet point</li>
 </ul>
+</section>
+<section >
+<h4>Section 2.1</h4>
+</section>
 </section>
 <section >
 <h3>Section 3</h3>

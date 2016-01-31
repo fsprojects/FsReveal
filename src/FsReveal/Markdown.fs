@@ -54,43 +54,36 @@ let getPresentation (doc : LiterateDocument) =
         InlineBlock(sprintf "<section %s>" (String.Join(" ", attributes))) :: paragraphs @ [ InlineBlock("</section>") ]
     
     let getParagraphsFromSlide slide = 
-        match slide.SlideData with
-        | Simple(paragraphs) -> wrappedInSection slide.Properties paragraphs
-        | Nested(listOfParagraphs) -> 
-            let containsMoreThan1Slide = ref false
-            let inner = 
-                [for paragraphs in listOfParagraphs ->
-                    [for p in paragraphs do
-                        match p with
-                        | HorizontalRule('-') ->
-                            let attributes = properties |> Seq.map (fun kv -> sprintf "%s=\"%s\"" kv.Key kv.Value)
-                            yield InlineBlock("</section>") 
-                            yield InlineBlock(sprintf "<section %s>" (String.Join(" ", attributes)))
-                            containsMoreThan1Slide := true
-                        | _ -> yield p
-                      ]]
-
-            inner    
-            |> List.collect (wrappedInSection slide.Properties)
-            |> fun x -> if !containsMoreThan1Slide then wrappedInSection slide.Properties x else x
+        match slide with
+        | Simple(slideData)
+        | Nested([slideData]) -> wrappedInSection slideData.Properties slideData.Paragraphs
+        | Nested(nestedSlides) -> 
+            nestedSlides    
+            |> List.collect (fun slideData -> wrappedInSection slideData.Properties slideData.Paragraphs)
+            |> wrappedInSection Map.empty
             
-    
     let extractSlide paragraphs = 
+        let extractSlideData paragraphs = 
+            let properties, data =
+                match paragraphs with
+                | ListBlock(_, spans) :: data -> 
+                    try 
+                        getProperties spans, data
+                    with _ -> [], paragraphs
+                | _ -> [], paragraphs
+
+            { Properties = properties |> Map.ofList
+              Paragraphs = data }
+
         // sub-section is separated by ---
-        let result = splitBy (HorizontalRule('-')) paragraphs
-        
-        let properties, data = 
-            match paragraphs with
-            | ListBlock(_, spans) :: data -> 
-                try 
-                    getProperties spans, [ data ]
-                with _ -> [], [ paragraphs ]
-            | _ -> [], [ paragraphs ]
-        { Properties = properties |> Map.ofList
-          SlideData = 
-              match data with
-              | [ [ slide ] ] -> Simple([ slide ])
-              | _ -> Nested(data) }
+        let nestedSlides =
+            paragraphs
+            |> splitBy (HorizontalRule('-'))
+            |> List.map extractSlideData
+
+        match nestedSlides with
+        | [ slideData ] -> Simple slideData
+        | _ -> Nested nestedSlides
     
     let slides = List.map extractSlide slideData
     let paragraphs = List.collect getParagraphsFromSlide slides

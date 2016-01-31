@@ -25,7 +25,7 @@ let md = """
 
 ---
 
-#### Sldie 2.2
+#### Slide 2.2
 
 ***
 
@@ -39,8 +39,8 @@ let ``can generate sections from markdown``() =
         slides
         |> Seq.skip 1
         |> Seq.head
-    match slide.SlideData with
-    | SlideData.Nested x -> ()
+    match slide with
+    | Slide.Nested x -> ()
     | _ -> failwith "subslides not parsed"
 
 let md2 = """
@@ -59,7 +59,7 @@ let md2 = """
 
 ---
 
-#### Sldie 2.2
+#### Slide 2.2
 
 ***
 
@@ -69,12 +69,9 @@ let md2 = """
 let ``can generate sections from markdown without properties``() = 
     let slides = (md2 |> FsReveal.GetPresentationFromMarkdown).Slides
     slides.Length |> shouldEqual 3
-    let slide = 
-        slides
-        |> Seq.skip 1
-        |> Seq.head
-    match slide.SlideData with
-    | SlideData.Nested x -> ()
+    let slide = slides.[1]
+    match slide with
+    | Slide.Nested x -> ()
     | _ -> failwith "subslides not parsed"
 
 let normalizeLineBreaks (text:string) = text.Replace("\r\n","\n").Replace("\n","\n")
@@ -90,11 +87,11 @@ let expectedOutput = """<section >
 <section >
 <h3>Slide 2</h3>
 </section>
-<section author="Karlkim Suwanmongkol" description="Introduction to FsReveal" theme="Night" title="FsReveal" transition="default">
+<section >
 <h4>Slide 2.1</h4>
 </section>
-<section author="Karlkim Suwanmongkol" description="Introduction to FsReveal" theme="Night" title="FsReveal" transition="default">
-<h4>Sldie 2.2</h4>
+<section >
+<h4>Slide 2.2</h4>
 </section>
 </section>
 <section >
