@@ -1,3 +1,7 @@
+### 1.2.0 - 31.01.2016
+* Slide properties also allow to name slide that you can reference in links - http://fsprojects.github.io/FsReveal/formatting.html#Named-slides
+* Syntax highlighting for Paket files
+
 ### 1.1.2 - 05.01.2016
 * Fix auto-refresh - https://github.com/fsprojects/FsReveal/pull/88
 
