@@ -112,6 +112,18 @@
 
 ---
 
+### Paket
+
+    [lang=cal]
+    source https://nuget.org/api/v2
+
+    nuget Castle.Windsor-log4net >= 3.2
+    nuget NUnit
+    
+    github forki/FsUnit FsUnit.fs
+      
+---
+
 ### C/AL
 
     [lang=cal]
