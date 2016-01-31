@@ -114,7 +114,7 @@
 
 ### Paket
 
-    [lang=cal]
+    [lang=paket]
     source https://nuget.org/api/v2
 
     nuget Castle.Windsor-log4net >= 3.2
