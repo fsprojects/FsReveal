@@ -27,8 +27,5 @@ and brings F# to the [reveal.js][revealjs] web presentation framework.
 - [@kimsk](https://github.com/kimsk)
 - [@forki](https://github.com/forki)
 - [@troykershaw](https://github.com/troykershaw)
-- [@agross](https://github.com/agross)
-- [@shishkin](https://github.com/shishkin)
-- [@ilkerde](https://github.com/ilkerde)
 
 The default maintainer account for projects under "fsprojects" is [@fsprojectsgit](https://github.com/fsprojectsgit) - F# Community Project Incubation Space (repo management)
