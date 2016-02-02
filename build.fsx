@@ -121,8 +121,8 @@ let startWebServer () =
     Process.Start (sprintf "http://localhost:%d/index.html" port) |> ignore
 
 Target "GenerateSlides" (fun _ ->
-    !! (slidesDir </> "*.md")
-      ++ (slidesDir </> "*.fsx")
+    !! (slidesDir + "/**/*.md")
+      ++ (slidesDir + "/**/*.fsx")
     |> Seq.map fileInfo
     |> Seq.iter generateFor
 )
