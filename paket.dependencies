@@ -1,6 +1,8 @@
 source https://nuget.org/api/v2
+redirects: on
 
 nuget FSharp.Formatting
+nuget FSharp.Core
 github fsprojects/reveal.js:master
 
 group Build
