@@ -1,3 +1,6 @@
+### 1.2.1 - 05.02.2016
+* Use FSharp.Formatting 2.14.0 
+
 ### 1.2.0 - 31.01.2016
 * Slide properties also allow to name slide that you can reference in links - http://fsprojects.github.io/FsReveal/formatting.html#Named-slides
 * Syntax highlighting for Paket files
