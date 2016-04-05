@@ -1,3 +1,6 @@
+### 1.2.2 - 05.04.2016
+* Use FSharp.Formatting 2.14.1
+
 ### 1.2.1 - 05.02.2016
 * Use FSharp.Formatting 2.14.0 
 
