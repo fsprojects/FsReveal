@@ -55,6 +55,7 @@ div.tip {
   display:none;
   color:#d1d1d1;
   z-index: 2;
+  pointer-events:none;
 }
 table.pre pre {
   padding:0px;
