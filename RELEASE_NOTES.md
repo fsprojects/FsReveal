@@ -1,8 +1,6 @@
-### 1.2.3 - 05.04.2016
-* Use FSharp.Formatting 2.14.1
-
-### 1.2.1 - 05.02.2016
-* Use FSharp.Formatting 2.14.0 
+### 1.3.0 - 01.06.2016
+* Use FSharp.Formatting 2.14.3
+* Use Reveal.js 3.3.0
 
 ### 1.2.0 - 31.01.2016
 * Slide properties also allow to name slide that you can reference in links - http://fsprojects.github.io/FsReveal/formatting.html#Named-slides
