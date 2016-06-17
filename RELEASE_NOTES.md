@@ -1,3 +1,6 @@
+### 1.3.1 - 17.06.2016
+* BUGFIX: Position tooltips properly on all screens
+
 ### 1.3.0 - 01.06.2016
 * Use FSharp.Formatting 2.14.3
 * Use Reveal.js 3.3.0
