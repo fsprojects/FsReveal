@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="576px" height="324px" viewBox="0 0 576 324" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>onchange_vdom_change</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="vdom-change" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M52.5,120.5 L33.5,109.5" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M35.5,154.5 L56,130" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M44.5,166.5 L72.5,192.5" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M101.5,139.5 L75.5,184.5" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M98.5,132.5 L62.5,125.5" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <circle id="Oval-1" stroke="#417505" fill="#B8E986" sketch:type="MSShapeGroup" cx="25.5" cy="105.5" r="11.5"></circle>
+        <circle id="Oval-1" stroke="#417505" fill="#B8E986" sketch:type="MSShapeGroup" cx="36.5" cy="159.5" r="11.5"></circle>
+        <circle id="Oval-1" stroke="#417505" fill="#D0011B" sketch:type="MSShapeGroup" cx="71.5" cy="190.5" r="11.5"></circle>
+        <circle id="Oval-1" stroke="#979797" fill="#D8D8D8" sketch:type="MSShapeGroup" cx="59.5" cy="123.5" r="11.5"></circle>
+        <circle id="Oval-1" stroke="#417505" fill="#B8E986" sketch:type="MSShapeGroup" cx="59.5" cy="123.5" r="11.5"></circle>
+        <circle id="Oval-1" stroke="#417505" fill="#B8E986" sketch:type="MSShapeGroup" cx="101.5" cy="135.5" r="11.5"></circle>
+        <path d="M220,137 C258.659934,137 290,106.555365 290,69 C290,31.4446352 258.659934,1 220,1 C181.340066,1 150,31.4446352 150,69 C150,106.555365 181.340066,137 220,137 Z" id="Oval-7" stroke="#D4D4D4" fill="#FFFEF0" sketch:type="MSShapeGroup"></path>
+        <path d="M220,300 C258.659934,300 290,269.555365 290,232 C290,194.444635 258.659934,164 220,164 C181.340066,164 150,194.444635 150,232 C150,269.555365 181.340066,300 220,300 Z" id="Oval-7" stroke="#D4D4D4" fill="#FFFEF0" sketch:type="MSShapeGroup"></path>
+        <path d="M502.5,93.5 L472.5,122.5" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M501.5,92.5 L535.5,123.5" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M471.5,142.5 L442.5,169.5" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M472.5,140.5 L503.5,169.5" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M503.5,188.5 L503.5,220.5" id="Line" stroke="#417505" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <rect id="Rectangle-1" stroke="#417505" fill="#B8E986" sketch:type="MSShapeGroup" x="480" y="72" width="43" height="24"></rect>
+        <rect id="Rectangle-1" stroke="#417505" fill="#B8E986" sketch:type="MSShapeGroup" x="451" y="121" width="43" height="24"></rect>
+        <rect id="Rectangle-1" stroke="#417505" fill="#B8E986" sketch:type="MSShapeGroup" x="511" y="121" width="43" height="24"></rect>
+        <rect id="Rectangle-1" stroke="#417505" fill="#D0011B" sketch:type="MSShapeGroup" x="421" y="168" width="43" height="24"></rect>
+        <rect id="Rectangle-1" stroke="#417505" fill="#B8E986" sketch:type="MSShapeGroup" x="480" y="168" width="43" height="24"></rect>
+        <rect id="Rectangle-1" stroke="#417505" fill="#B8E986" sketch:type="MSShapeGroup" x="480" y="214" width="43" height="24"></rect>
+        <path d="M223.677419,24.3333333 L204.322581,43.6666667" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M223.328571,23.34375 L245.671429,44.65625" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M203.683333,57.3392857 L185.316667,75.6607143" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M204.328125,56.3333333 L224.671875,75.6666667" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M224.5,88.3333333 L224.5,109.666667" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="210" y="10" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="191" y="43" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="230" y="43" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="172" y="75" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="210" y="75" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="210" y="106" width="27" height="17"></rect>
+        <path d="M222.677419,190.333333 L203.322581,209.666667" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M222.328571,189.34375 L244.671429,210.65625" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M202.683333,223.339286 L184.316667,241.660714" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M203.328125,222.333333 L223.671875,241.666667" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M223.5,254.333333 L223.5,275.666667" id="Line" stroke="#7ED321" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="209" y="176" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="190" y="209" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="229" y="209" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#D0011B" sketch:type="MSShapeGroup" x="171" y="241" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#D0011B" sketch:type="MSShapeGroup" x="322" y="144" width="27" height="17"></rect>
+        <path d="M276.5,110.5 L321.5,142.5" id="Line" stroke="#D0011B" stroke-linecap="square" fill="#D0011B" sketch:type="MSShapeGroup"></path>
+        <path id="Line-decoration-1" d="M321.322543,142.373808 C318.850512,139.327505 316.731628,136.716389 314.259597,133.670085 C313.042597,135.381492 311.999454,136.848411 310.782454,138.559817 C314.471485,139.894714 317.633512,141.038912 321.322543,142.373808 C321.322543,142.373808 321.322543,142.373808 321.322543,142.373808 Z" stroke="#D0011B" stroke-linecap="square" fill="#D0011B"></path>
+        <path d="M276.5,189.5 L322.5,161.5" id="Line" stroke="#D0011B" stroke-linecap="square" fill="#D0011B" sketch:type="MSShapeGroup"></path>
+        <path id="Line-decoration-1" d="M321.772525,161.942811 C317.99771,163.011302 314.762154,163.927151 310.987339,164.995642 C312.079228,166.789459 313.015132,168.327017 314.107021,170.120834 C316.789947,167.258526 319.089598,164.805119 321.772525,161.942811 C321.772525,161.942811 321.772525,161.942811 321.772525,161.942811 Z" stroke="#D0011B" stroke-linecap="square" fill="#D0011B"></path>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="209" y="241" width="27" height="17"></rect>
+        <rect id="Rectangle-1" stroke="#7ED321" fill="#EDFFDA" sketch:type="MSShapeGroup" x="209" y="272" width="27" height="17"></rect>
+        <text id="Model" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="73" y="104">Model</tspan>
+        </text>
+        <text id="Virtual-DOM" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="188" y="323">Virtual DOM</tspan>
+        </text>
+        <text id="Diff" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="289" y="154">Diff</tspan>
+        </text>
+        <text id="Patch" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="374" y="156">Patch</tspan>
+        </text>
+        <text id="DOM" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="548" y="185">DOM</tspan>
+        </text>
+        <path d="M193.5,4.5 L1.5,101.5" id="Line" stroke="#D4D4D4" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M259.5,126.5 L44.5,216.5" id="Line" stroke="#D4D4D4" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M237.5,166.5 L17.5,87.5" id="Line" stroke="#D4D4D4" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M189.5,294.5 L0.5,161.5" id="Line" stroke="#D4D4D4" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M349.5,152.5 L420.5,180.5" id="Line" stroke="#D0011B" stroke-linecap="square" fill="#D0011B" sketch:type="MSShapeGroup"></path>
+        <path id="Line-decoration-1" d="M420.200744,180.381984 C417.069524,178.018435 414.385621,175.992537 411.254401,173.628988 C410.483978,175.582561 409.823615,177.257053 409.053192,179.210626 C412.954835,179.620601 416.299101,179.972008 420.200744,180.381984 C420.200744,180.381984 420.200744,180.381984 420.200744,180.381984 Z" stroke="#D0011B" stroke-linecap="square" fill="#D0011B"></path>
+    </g>
+</svg>

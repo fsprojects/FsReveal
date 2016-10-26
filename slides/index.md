@@ -1,164 +1,106 @@
-- title : FsReveal
-- description : Introduction to FsReveal
-- author : Karlkim Suwanmongkol
+- title : React Native with F#
+- description : Introduction to React Native with F#
+- author : Steffen Forkmann
 - theme : night
 - transition : default
 
 ***
 
-### What is FsReveal?
+## React Native with F#
 
-- Generates [reveal.js](http://lab.hakim.se/reveal-js/#/) presentation from [markdown](http://daringfireball.net/projects/markdown/)
-- Utilizes [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) for markdown parsing
-- Get it from [http://fsprojects.github.io/FsReveal/](http://fsprojects.github.io/FsReveal/)
+### Look mum no JavaScript
 
-![FsReveal](images/logo.png)
+<br />
+<br />
+Steffen Forkmann
 
-***
-
-### Reveal.js
-
-- A framework for easily creating beautiful presentations using HTML.
-
-
-> **Atwood's Law**: any application that can be written in JavaScript, will eventually be written in JavaScript.
+[@sforkmann](http://www.twitter.com/sforkmann)
 
 ***
 
-### FSharp.Formatting
-
-- F# tools for generating documentation (Markdown processor and F# code formatter).
-- It parses markdown and F# script file and generates HTML or PDF.
-- Code syntax highlighting support.
-- It also evaluates your F# code and produce tooltips.
-
-***
-
-### Syntax Highlighting
-
-#### F# (with tooltips)
-
-    let a = 5
-    let factorial x = [1..x] |> List.reduce (*)
-    let c = factorial a
+<img src="images/javascript-for-millennials.png" style="background: white;" />
 
 ---
 
-#### C#
+### React
 
-    [lang=cs]
-    using System;
-
-    class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("Hello, world!");
-        }
-    }
+* Facebook library for UI 
+* <code>(state) => view</code>
+* Virtual DOM to calc minimal number of DOM changes necessary
 
 ---
 
-#### JavaScript
+### Virtual DOM - Inital
 
-    [lang=js]
-    function copyWithEvaluation(iElem, elem) {
-        return function (obj) {
-            var newObj = {};
-            for (var p in obj) {
-                var v = obj[p];
-                if (typeof v === "function") {
-                    v = v(iElem, elem);
-                }
-                newObj[p] = v;
-            }
-            if (!newObj.exactTiming) {
-                newObj.delay += exports._libraryDelay;
-            }
-            return newObj;
-        };
-    }
+<br />
+<br />
 
+
+ <img src="images/onchange_vdom_initial.svg" style="background: white;" />
+
+<br />
+<br />
+
+ <small>http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html</small>
 
 ---
 
-#### Haskell
- 
-    [lang=haskell]
-    recur_count k = 1 : 1 : 
-        zipWith recurAdd (recur_count k) (tail (recur_count k))
-            where recurAdd x y = k * x + y
+### Virtual DOM - Change
 
-    main = do
-      argv <- getArgs
-      inputFile <- openFile (head argv) ReadMode
-      line <- hGetLine inputFile
-      let [n,k] = map read (words line)
-      printf "%d\n" ((recur_count k) !! (n-1))
+<br />
+<br />
 
-*code from [NashFP/rosalind](https://github.com/NashFP/rosalind/blob/master/mark_wutka%2Bhaskell/FIB/fib_ziplist.hs)*
+
+ <img src="images/onchange_vdom_change.svg" style="background: white;" />
+
+<br />
+<br />
+
+ <small>http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html</small>
 
 ---
 
-### SQL
+### Virtual DOM - Reuse
 
-    [lang=sql]
-    select *
-    from
-    (select 1 as Id union all select 2 union all select 3) as X
-    where Id in (@Ids1, @Ids2, @Ids3)
+<br />
+<br />
 
-*sql from [Dapper](https://code.google.com/p/dapper-dot-net/)*
+
+ <img src="images/onchange_immutable.svg" style="background: white;" />
+
+<br />
+<br />
+
+ <small>http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html</small>
+
+
+*** 
+
+### ReactNative
+
+ <img src="images/ReactNative.png" style="background: white;" />
+
+
+ <small>http://timbuckley.github.io/react-native-presentation</small>
+
+*** 
+
+### Elm - Architecture
+
+ <img src="images/Elm.png" style="background: white;" width=700 />
+
+
+ <small>http://danielbachler.de/2016/02/11/berlinjs-talk-about-elm.html</small>
 
 ---
 
-### Paket
+### Elm - Architecture -Benefits
 
-    [lang=paket]
-    source https://nuget.org/api/v2
+* Model is single source of truth
+* A pure view function
+* Side effects are modelled as Tasks, handled by the runtime
+* Apps are well structured. All state modifications happen in the central update
 
-    nuget Castle.Windsor-log4net >= 3.2
-    nuget NUnit
-    
-    github forki/FsUnit FsUnit.fs
-      
----
+*** 
 
-### C/AL
-
-    [lang=cal]
-    PROCEDURE FizzBuzz(n : Integer) r_Text : Text[1024];
-    VAR
-      l_Text : Text[1024];
-    BEGIN
-      r_Text := '';
-      l_Text := FORMAT(n);
-
-      IF (n MOD 3 = 0) OR (STRPOS(l_Text,'3') > 0) THEN
-        r_Text := 'Fizz';
-      IF (n MOD 5 = 0) OR (STRPOS(l_Text,'5') > 0) THEN
-        r_Text := r_Text + 'Buzz';
-      IF r_Text = '' THEN
-        r_Text := l_Text;
-    END;
-
-***
-
-**Bayes' Rule in LaTeX**
-
-$ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
-
-***
-
-### The Reality of a Developer's Life 
-
-**When I show my boss that I've fixed a bug:**
-  
-![When I show my boss that I've fixed a bug](http://www.topito.com/wp-content/uploads/2013/01/code-07.gif)
-  
-**When your regular expression returns what you expect:**
-  
-![When your regular expression returns what you expect](http://www.topito.com/wp-content/uploads/2013/01/code-03.gif)
-  
-*from [The Reality of a Developer's Life - in GIFs, Of Course](http://server.dzone.com/articles/reality-developers-life-gifs)*
-
+### Show me the code
