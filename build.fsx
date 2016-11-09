@@ -1,4 +1,4 @@
-#I @"packages/FsReveal/fsreveal/"
+#I @"packages/FsReveal/tools/"
 #I @"packages/FAKE/tools/"
 #I @"packages/Suave/lib/net40"
 
