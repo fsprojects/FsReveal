@@ -4,7 +4,7 @@ import '../../paket-files/fsprojects/reveal.js/lib/css/zenburn.css';
 import './fonts.css';
 import './style.css';
 import './deedle.css';
-import './tips.js';
+import 'script!./tips.js'; // https://github.com/webpack/script-loader
 //import 'file?name=[name].[ext]!./favicon.ico';
 import '!file?name=[name].[ext]!./manifest.json';
 
