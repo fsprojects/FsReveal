@@ -115,6 +115,18 @@ Target "CleanDocs" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Build library & test project
 
+let sh exe args =
+  shellExec ({ ExecParams.Program = exe
+               WorkingDirectory = "."
+               CommandLine = args
+               Args = [] })
+  |> function 0 -> () | x -> failwithf "%s %s exited with %i" exe args x
+
+Target "JS" (fun _ ->
+  sh "yarn" "install --ignore-engines"
+  sh "yarn" "run build"
+)
+
 Target "Build" (fun _ ->
     !! solutionFile
     |> MSBuildRelease "" "Rebuild"
@@ -266,6 +278,7 @@ Target "All" DoNothing
 
 "Clean"
   ==> "AssemblyInfo"
+  ==> "JS"
   ==> "Build"
   ==> "RunTests"
   =?> ("GenerateReferenceDocs",isLocalBuild && not isMono)
