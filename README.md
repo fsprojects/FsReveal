@@ -18,6 +18,7 @@ _Inspried by two great works:_
 pyenv local 2.7.10
 # npm install -g yarn
 yarn install --ignore-engines
+yarn run build
 ```
 
 Source code is in `./src/FsReveal`. Built with `FAKE` and `yarn` (in turn uses `webpack`).
