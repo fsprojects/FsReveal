@@ -12,5 +12,5 @@ if not (System.IO.File.Exists(targetFCIS)) then
 FsReveal.FsRevealHelper.DistFolder <- System.IO.Path.Combine(__SOURCE_DIRECTORY__,"../reveal.js")
 printfn "Set dist to %s" FsReveal.FsRevealHelper.DistFolder
 
-FsReveal.FsRevealHelper.TemplateFile <- System.IO.Path.Combine(__SOURCE_DIRECTORY__,"template.html")
+FsReveal.FsRevealHelper.TemplateFile <- System.IO.Path.Combine(__SOURCE_DIRECTORY__,"index.html")
 FsReveal.FsRevealHelper.StyleFile <- System.IO.Path.Combine(__SOURCE_DIRECTORY__,"fsreveal.css")
