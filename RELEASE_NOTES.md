@@ -1,3 +1,7 @@
+### 1.4.0 - 2016-11-09
+* Offline support
+* Bumping JS deps
+
 ### 1.3.1 - 17.06.2016
 * BUGFIX: Position tooltips properly on all screens
 
