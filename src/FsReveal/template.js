@@ -1,6 +1,6 @@
 import 'mathjax';
-import 'css!../../paket-files/fsprojects/reveal.js/css/reveal.css';
-import 'css!../../paket-files/fsprojects/reveal.js/lib/css/zenburn.css';
+import '../../paket-files/fsprojects/reveal.js/css/reveal.css';
+import '../../paket-files/fsprojects/reveal.js/lib/css/zenburn.css';
 import './style.css';
 import './deedle.css';
 import './tips.js';
@@ -27,7 +27,7 @@ function init() {
 window.addEventListener("load", init, false);
 
 // Add the nohighlight class and data-noescape attribute to code elements that have already been formatted by FSharp.Formatting
-document.querySelectorAll('pre.highlighted code').forEach(el => {
+[].forEach.call(document.querySelectorAll('pre.highlighted code'), el => {
   el.classList.add('nohighlight');
   el.setAttribute('data-noescape', '');
 });
