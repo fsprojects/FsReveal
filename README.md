@@ -39,6 +39,6 @@ literate F# files into slides.
 `./src/FsReveal/template.{html,js}` is the entry point for webpack during
 packaging.
 
-When you've performed a change to the repo, it's all packaged as a nuget. That
+When you've performed a change to the repo, it's all packaged as a NuGet package. That
 NuGet now contains a copy of the compiled JS files, as well as
 `./tools/generateSlides.fsx`.
