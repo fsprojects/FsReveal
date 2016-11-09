@@ -37,19 +37,19 @@ module.exports = {
       },
       {
         test: /\.eot(\?\S*)?$/,
-        loader: 'url-loader?limit=100000&mimetype=application/vnd.ms-fontobject'
+        loader: 'url-loader?limit=100000&mimetype=application/vnd.ms-fontobject&name=[name].[hash].eot'
       },
       {
         test: /\.woff2(\?\S*)?$/,
-        loader: 'url-loader?limit=100000&mimetype=application/font-woff2'
+        loader: 'url-loader?limit=100000&mimetype=application/font-woff2&name=[name].[hash].woff2'
       },
       {
         test: /\.woff(\?\S*)?$/,
-        loader: 'url-loader?limit=100000&mimetype=application/font-woff'
+        loader: 'url-loader?limit=100000&mimetype=application/font-woff&name=[name].[hash].woff'
       },
       {
         test: /\.ttf(\?\S*)?$/,
-        loader: 'url-loader?limit=100000&mimetype=application/font-ttf'
+        loader: 'url-loader?limit=100000&mimetype=application/font-ttf&name=[name].[hash].ttf'
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,

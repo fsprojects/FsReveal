@@ -1,6 +1,7 @@
 import 'mathjax';
 import '../../paket-files/fsprojects/reveal.js/css/reveal.css';
 import '../../paket-files/fsprojects/reveal.js/lib/css/zenburn.css';
+import './fonts.css';
 import './style.css';
 import './deedle.css';
 import './tips.js';
