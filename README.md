@@ -26,3 +26,22 @@ yarn run build
 Source code is in `./src/FsReveal`. Built with `FAKE` and `yarn` (in turn uses `webpack`).
 
 Source code is **also** in `./docs/tools` for the generation part.
+
+#### How it all fits together
+
+The node modules take care of bundling all the JS dependencies. You don't need
+anything other than Yarn to compile, but some of them are dependent on having a
+binary called 'python2' on your PATH.
+
+`./src/FsReveal` contain the object model for transforming the Markdown and
+literate F# files into slides.
+
+`./src/FsReveal/template.{html,js}` is the entry point for webpack during
+packaging.
+
+When you've performed a change to the repo, it's all packaged as a nuget. That
+NuGet now contains a copy of the compiled JS files, as well as
+`./tools/generateSlides.fsx`.
+
+
+
