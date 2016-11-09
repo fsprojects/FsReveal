@@ -1,4 +1,4 @@
-import 'mathjax';
+//import 'mathjax'; // currently pretty broken
 import '../../paket-files/fsprojects/reveal.js/css/reveal.css';
 import '../../paket-files/fsprojects/reveal.js/lib/css/zenburn.css';
 import './fonts.css';
