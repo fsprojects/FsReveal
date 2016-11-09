@@ -13,5 +13,6 @@ files
     ../bin/FsReveal.* ==> lib/net40
     ../bin/FSharp.Compiler.Interactive.Settings.dll ==> lib/net40
     ../dist/**/*.* ==> dist
+    ../src/FsReveal/fsreveal.fsx ==> tools
 dependencies
     FSharp.Formatting >= 2.11.0
