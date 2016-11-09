@@ -19,7 +19,7 @@ pyenv local 2.7.10
 # npm install -g yarn
 yarn install --ignore-engines
 yarn run build
-# when you wanna test your changes:
+# when you want to test your changes:
 ./build.sh GenerateSlides
 ```
 
@@ -42,6 +42,3 @@ packaging.
 When you've performed a change to the repo, it's all packaged as a nuget. That
 NuGet now contains a copy of the compiled JS files, as well as
 `./tools/generateSlides.fsx`.
-
-
-

@@ -1,6 +1,6 @@
 import 'mathjax';
-import '../../paket-files/fsprojects/reveal.js/css/reveal.css';
-import '../../paket-files/fsprojects/reveal.js/lib/css/zenburn.css';
+import 'css!../../paket-files/fsprojects/reveal.js/css/reveal.css';
+import 'css!../../paket-files/fsprojects/reveal.js/lib/css/zenburn.css';
 import './style.css';
 import './deedle.css';
 import './tips.js';
@@ -8,7 +8,7 @@ import './tips.js';
 import '!file?name=[name].[ext]!./manifest.json';
 
 // Reveal stuff
-import 'expose?Reveal!imports?define=>null!../../paket-files/fsprojects/reveal.js/js/reveal.js';
+import Reveal from 'imports?define=>null!../../paket-files/fsprojects/reveal.js/js/reveal.js';
 import '!file?name=plugin/markdown/[name].[ext]!../../paket-files/fsprojects/reveal.js/plugin/markdown/marked.js';
 import '!file?name=plugin/markdown/[name].[ext]!../../paket-files/fsprojects/reveal.js/plugin/markdown/markdown.js';
 import '!file?name=plugin/zoom-js/[name].[ext]!../../paket-files/fsprojects/reveal.js/plugin/zoom-js/zoom.js';
@@ -33,7 +33,7 @@ document.querySelectorAll('pre.highlighted code').forEach(el => {
 });
 
 function reveal() {
-  hljs.initHighlightingOnLoad(); // from expose?hljs
+  hljs.initHighlightingOnLoad();
 
   // Full list of configuration options available here:
   // https://github.com/hakimel/reveal.js#configuration
