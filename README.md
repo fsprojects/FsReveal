@@ -19,6 +19,10 @@ pyenv local 2.7.10
 # npm install -g yarn
 yarn install --ignore-engines
 yarn run build
+# when you wanna test your changes:
+./build.sh GenerateSlides
 ```
 
 Source code is in `./src/FsReveal`. Built with `FAKE` and `yarn` (in turn uses `webpack`).
+
+Source code is **also** in `./docs/tools` for the generation part.
