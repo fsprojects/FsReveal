@@ -189,3 +189,5 @@ src/reveal.js
 docs/tools/FSharp.Formatting.svclog
 FSharp.Formatting.svclog
 _NCrunch*
+node_modules/
+dist/

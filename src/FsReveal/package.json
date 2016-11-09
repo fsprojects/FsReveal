@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "css-loader": "^0.25.0"
+  }
+}
