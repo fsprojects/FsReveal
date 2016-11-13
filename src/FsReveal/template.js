@@ -1,10 +1,11 @@
 //import 'mathjax'; // currently pretty broken
 import '../../paket-files/fsprojects/reveal.js/css/reveal.css';
 import '../../paket-files/fsprojects/reveal.js/lib/css/zenburn.css';
+import '../../paket-files/fsprojects/reveal.js/css/theme/night.css';
 import './fonts.css';
 import './style.css';
 import './deedle.css';
-import 'script!./tips.js'; // https://github.com/webpack/script-loader
+import { ToolTips } from './tips.js';
 //import 'file?name=[name].[ext]!./favicon.ico';
 import '!file?name=[name].[ext]!./manifest.json';
 
@@ -20,6 +21,41 @@ import hljs from 'highlight.js';
 if (window.location.search.match( /print-pdf/gi)) {
   require('../../paket-files/fsprojects/reveal.js/css/reveal.css');
 }
+
+// legacy tips.js file:
+var currentTip = null;
+var currentTipElement = null;
+
+function hideTip(evt, name, unique) {
+    var el = document.getElementById(name);
+    el.style.display = "none";
+    currentTip = null;
+}
+
+function hideUsingEsc(e) {
+    if (!e) { e = event; }
+    hideTip(e, currentTipElement, currentTip);
+}
+
+function showTip(evt, name, unique, owner) {
+    document.onkeydown = hideUsingEsc;
+    if (currentTip == unique) return;
+    currentTip = unique;
+    currentTipElement = name;
+
+    var target = owner ? owner : (evt.srcElement ? evt.srcElement : evt.target);
+    var posx = target.offsetLeft;
+    var posy = target.offsetTop + target.offsetHeight;
+
+    var el = document.getElementById(name);
+    var parent = target.offsetParent;
+    el.style.position = "absolute";
+    el.style.left = posx + "px";
+    el.style.top = posy + "px";
+    parent.appendChild(el);
+    el.style.display = "block";
+}
+// end legacy file tips.js
 
 function init() {
   const websocket = new WebSocket(`ws://${window.location.host}/websocket`);
