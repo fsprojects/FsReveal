@@ -3,7 +3,7 @@ id FsReveal
 description
     FsReveal parses markdown or F# script files and generates reveal.js slides.
 authors
-    Karlkim Suwanmongkol
+    Karlkim Suwanmongkol, Steffen Forkmann, Henrik Feldt
 licenseurl http://fsprojects.github.io/FsReveal/license.html
 projecturl https://github.com/fsprojects/FsReveal
 iconurl http://fsprojects.github.io/FsReveal/img/logo-2.png
@@ -12,12 +12,7 @@ tags
 files
     ../bin/FsReveal.* ==> lib/net40
     ../bin/FSharp.Compiler.Interactive.Settings.dll ==> lib/net40
-    ../paket-files/fsprojects/reveal.js/**/*.* ==> reveal.js
-    ../src/FsReveal/style.css ==> reveal.js/fsharp.formatting/styles
-    ../src/FsReveal/tips.js ==> reveal.js/fsharp.formatting/styles
-    ../src/FsReveal/deedle.css ==> reveal.js/fsharp.formatting/styles
-    ../src/FsReveal/template.html ==> fsreveal
-    ../src/FsReveal/fsreveal.fsx ==> fsreveal
-    ../src/FsReveal/fsreveal.css ==> fsreveal
+    ../dist/**/*.* ==> tools
+    ../src/FsReveal/fsreveal.fsx ==> tools
 dependencies
     FSharp.Formatting >= 2.11.0

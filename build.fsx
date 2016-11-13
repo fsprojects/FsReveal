@@ -115,6 +115,18 @@ Target "CleanDocs" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Build library & test project
 
+let sh exe args =
+  shellExec ({ ExecParams.Program = exe
+               WorkingDirectory = "."
+               CommandLine = args
+               Args = [] })
+  |> function 0 -> () | x -> failwithf "%s %s exited with %i" exe args x
+
+Target "JS" (fun _ ->
+  sh "yarn" "install --ignore-engines"
+  sh "yarn" "run build"
+)
+
 Target "Build" (fun _ ->
     !! solutionFile
     |> MSBuildRelease "" "Rebuild"
@@ -158,9 +170,9 @@ Target "SourceLink" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Build a NuGet package
 
-Target "NuGet" (fun _ ->    
-    Paket.Pack (fun p -> 
-        { p with 
+Target "NuGet" (fun _ ->
+    Paket.Pack (fun p ->
+        { p with
             Version = release.NugetVersion
             ReleaseNotes = toLines release.Notes })
 )
@@ -185,10 +197,10 @@ let generateHelp fail =
             failwith "generating help documentation failed"
         else
             traceImportant "generating help documentation failed"
-    
+
 
 Target "GenerateHelp" (fun _ ->
-    DeleteFile "docs/content/release-notes.md"    
+    DeleteFile "docs/content/release-notes.md"
     CopyFile "docs/content/" "RELEASE_NOTES.md"
     Rename "docs/content/release-notes.md" "docs/content/RELEASE_NOTES.md"
 
@@ -202,11 +214,11 @@ Target "GenerateHelp" (fun _ ->
 
 Target "GenerateSlides" (fun _ ->
     if executeFSIWithArgs "docs/tools" "createSlides.fsx" [] [] then
-        traceImportant "Slides generated"    
+        traceImportant "Slides generated"
 )
 
 
-Target "KeepRunning" (fun _ ->    
+Target "KeepRunning" (fun _ ->
     use watcher = new FileSystemWatcher(DirectoryInfo("docs/content").FullName,"*.*")
     watcher.EnableRaisingEvents <- true
     watcher.Changed.Add(fun e -> generateHelp false)
@@ -249,10 +261,10 @@ Target "Release" (fun _ ->
 
     Branches.tag "" release.NugetVersion
     Branches.pushTag "" "origin" release.NugetVersion
-    
+
     // release on github
     createClient (getBuildParamOrDefault "github-user" "") (getBuildParamOrDefault "github-pw" "")
-    |> createDraft gitOwner gitName release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes 
+    |> createDraft gitOwner gitName release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes
     |> releaseDraft
     |> Async.RunSynchronously
 )
@@ -266,6 +278,7 @@ Target "All" DoNothing
 
 "Clean"
   ==> "AssemblyInfo"
+  ==> "JS"
   ==> "Build"
   ==> "RunTests"
   =?> ("GenerateReferenceDocs",isLocalBuild && not isMono)
@@ -273,7 +286,7 @@ Target "All" DoNothing
   ==> "All"
   =?> ("ReleaseDocs",isLocalBuild && not isMono)
 
-"All" 
+"All"
 //#if MONO
 //#else
 //  =?> ("SourceLink", Pdbstr.tryFind().IsSome )
@@ -289,7 +302,7 @@ Target "All" DoNothing
 
 "GenerateHelp"
   ==> "KeepRunning"
-    
+
 "ReleaseDocs"
   ==> "Release"
 

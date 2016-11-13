@@ -1,12 +1,10 @@
-language: objective-c
+language: csharp
 
-env:
-  matrix:
-    - MONO_VERSION="3.4.0"
+mono:
+ - 4.6.1
 
 install:
-  - wget "http://download.mono-project.com/archive/3.4.0/macos-10-x86/MonoFramework-MDK-${MONO_VERSION}.macos10.xamarin.x86.pkg"
-  - sudo installer -pkg "MonoFramework-MDK-${MONO_VERSION}.macos10.xamarin.x86.pkg" -target /
+ - apt-get update -y
 
 script: 
   - ./build.sh All
