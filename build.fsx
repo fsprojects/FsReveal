@@ -7,6 +7,8 @@
 
 #load "fsreveal.fsx"
 
+open System.Text.RegularExpressions
+
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
 let gitOwner = "myGitUser"
@@ -57,6 +59,45 @@ let copyPics() =
     with
     | exn -> traceImportant <| sprintf "Could not copy picture: %s" exn.Message
 
+let downloadAssets file =
+    let download (url:string) (filename:string) =
+        let content = (new System.Net.WebClient()).DownloadString(url)
+        File.WriteAllText((outDir </> filename), content)
+
+    let matchDownloadAndModifyAsset input tag attr subdir =
+        let regex = sprintf @"^(.*<%s.*%s\s*=\s*"")(//[^""]+?)(\?[^""]+?)?("".*)$" tag attr
+        let m = Regex.Match(input, regex)
+        if (m.Success)
+        then
+            let filePath = subdir </> Path.GetFileName(m.Groups.[2].Value)
+            let url = "http:" + m.Groups.[2].Value + m.Groups.[3].Value
+
+            download url filePath
+
+            Some (m.Groups.[1].Value + filePath + m.Groups.[4].Value)
+        else
+            None
+
+    let (|ScriptTag|_|) input =
+        matchDownloadAndModifyAsset input "script" "src" "js"
+
+    let (|LinkTag|_|) input =
+        matchDownloadAndModifyAsset input "link" "href" "css"
+
+    let downloadAssetIfNeeded line =
+        match line with
+        | ScriptTag l -> l
+        | LinkTag l -> l
+        | _ -> line
+
+    let oldFile = file + ".old"
+    File.Move(file, oldFile)
+
+    use stream = new StreamWriter(file);
+    File.ReadLines oldFile
+    |> Seq.map downloadAssetIfNeeded
+    |> Seq.iter stream.WriteLine
+ 
 let generateFor (file:FileInfo) = 
     try
         copyPics()
@@ -70,6 +111,10 @@ let generateFor (file:FileInfo) =
                 traceImportant exn.Message
 
         tryGenerate 3
+
+        let outFile = outDir </> (System.IO.Path.ChangeExtension(file.Name, "html"))
+        trace <| sprintf "Created '%s', downloading CDN-loaded assets..." outFile
+        downloadAssets outFile
 
         copyStylesheet()
     with
