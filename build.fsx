@@ -13,6 +13,8 @@ let gitOwner = "myGitUser"
 let gitHome = "https://github.com/" + gitOwner
 // The name of the project on GitHub
 let gitProjectName = "MyProject"
+// The name of the GitHub repo subdirectory to publish slides to
+let gitSubDir = ""
 
 open FsReveal
 open Fake
@@ -142,15 +144,16 @@ Target "KeepRunning" (fun _ ->
 Target "ReleaseSlides" (fun _ ->
     if gitOwner = "myGitUser" || gitProjectName = "MyProject" then
         failwith "You need to specify the gitOwner and gitProjectName in build.fsx"
-    let tempDocsDir = __SOURCE_DIRECTORY__ </> "temp/gh-pages"
-    CleanDir tempDocsDir
-    Repository.cloneSingleBranch "" (gitHome + "/" + gitProjectName + ".git") "gh-pages" tempDocsDir
+    let tempDocsRoot = __SOURCE_DIRECTORY__ </> "temp/gh-pages"
+    let tempDocsDir = tempDocsRoot </> gitSubDir
+    CleanDir tempDocsRoot
+    Repository.cloneSingleBranch "" (gitHome + "/" + gitProjectName + ".git") "gh-pages" tempDocsRoot
 
     fullclean tempDocsDir
     CopyRecursive outDir tempDocsDir true |> tracefn "%A"
-    StageAll tempDocsDir
-    Git.Commit.Commit tempDocsDir "Update generated slides"
-    Branches.push tempDocsDir
+    StageAll tempDocsRoot
+    Git.Commit.Commit tempDocsRoot "Update generated slides"
+    Branches.push tempDocsRoot
 )
 
 "Clean"
