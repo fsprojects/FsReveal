@@ -8,6 +8,9 @@
 
 ## React Native with F#
 
+<br />
+<br />
+
 ### Look mum no JavaScript
 
 <br />
@@ -18,6 +21,15 @@ Steffen Forkmann
 
 ***
 
+### Modern mobile app development
+
+ <img src="images/meter.png" style="background: transparent; border-style: none;"  width=300 />
+
+---
+
+
+***
+
 <img src="images/javascript-for-millennials.png" style="background: white;" />
 
 ---
@@ -25,12 +37,12 @@ Steffen Forkmann
 ### React
 
 * Facebook library for UI 
-* <code>(state) => view</code>
+* <code>state => view</code>
 * Virtual DOM to calc minimal number of DOM changes necessary
 
 ---
 
-### Virtual DOM - Inital
+### Virtual DOM - Initial
 
 <br />
 <br />
