@@ -3,7 +3,7 @@ const webpack = require('webpack'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       OfflinePlugin = require('offline-plugin');
 
-const APP = path.resolve(__dirname, '/src/FsReveal');
+const APP = path.resolve(__dirname, 'src/FsReveal');
 
 module.exports = {
   context: APP,
