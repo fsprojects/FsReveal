@@ -1,8 +1,8 @@
 ﻿module FsReveal.SpeakerNotesSpecs
 
 open FsReveal
-open NUnit.Framework
-open FsUnit
+open Expecto
+open Expecto.Flip
 
 let testTemplate ="{slides}"
 
@@ -42,9 +42,10 @@ And some more<br/>
 
 """
 
-[<Test>]
-let ``can generate sections from markdown``() = 
+[<Tests>]
+let tests =
+  testCase "can generate sections from markdown" <| fun () ->
     let presentation = FsReveal.GetPresentationFromMarkdown md
     Formatting.GenerateHTML testTemplate presentation
     |> normalizeLineBreaks
-    |> shouldEqual (normalizeLineBreaks expectedOutput)
+    |> Expect.equal "Normalised output for speaker notes in slides" (normalizeLineBreaks expectedOutput)

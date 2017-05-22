@@ -8,6 +8,7 @@ open Fake
 open Fake.Git
 open Fake.AssemblyInfoFile
 open Fake.ReleaseNotesHelper
+open Fake.Testing.Expecto
 open System
 open System.IO
 #if MONO
@@ -47,8 +48,8 @@ let tags = "F#, markdown, reveal.js"
 // File system information
 let solutionFile  = "FsReveal.sln"
 
-// Pattern specifying assemblies to be tested using NUnit
-let testAssemblies = "tests/**/bin/Release/*Tests*.dll"
+// Pattern specifying assemblies to be tested using Expecto
+let testExecutables = "tests/**/bin/Release/*Tests*.exe"
 
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
@@ -72,44 +73,31 @@ let release = LoadReleaseNotes "RELEASE_NOTES.md"
 let outDir = "./docs/output"
 
 let genFSAssemblyInfo (projectPath) =
-    let projectName = System.IO.Path.GetFileNameWithoutExtension(projectPath)
-    let basePath = "src/" + projectName
-    let fileName = basePath + "/AssemblyInfo.fs"
-    CreateFSharpAssemblyInfo fileName
-      [ Attribute.Title (projectName)
-        Attribute.Product project
-        Attribute.Description summary
-        Attribute.Version release.AssemblyVersion
-        Attribute.FileVersion release.AssemblyVersion ]
-
-let genCSAssemblyInfo (projectPath) =
-    let projectName = System.IO.Path.GetFileNameWithoutExtension(projectPath)
-    let basePath = "src/" + projectName + "/Properties"
-    let fileName = basePath + "/AssemblyInfo.cs"
-    CreateCSharpAssemblyInfo fileName
-      [ Attribute.Title (projectName)
-        Attribute.Product project
-        Attribute.Description summary
-        Attribute.Version release.AssemblyVersion
-        Attribute.FileVersion release.AssemblyVersion ]
+  let projectName = System.IO.Path.GetFileNameWithoutExtension(projectPath)
+  let basePath = "src/" + projectName
+  let fileName = basePath + "/AssemblyInfo.fs"
+  CreateFSharpAssemblyInfo fileName
+    [ Attribute.Title (projectName)
+      Attribute.Product project
+      Attribute.Description summary
+      Attribute.Version release.AssemblyVersion
+      Attribute.FileVersion release.AssemblyVersion ]
 
 // Generate assembly info files with the right version & up-to-date information
 Target "AssemblyInfo" (fun _ ->
-  let fsProjs =  !! "src/**/*.fsproj"
-  let csProjs = !! "src/**/*.csproj"
-  fsProjs |> Seq.iter genFSAssemblyInfo
-  csProjs |> Seq.iter genCSAssemblyInfo
+  !! "src/FsReveal/*.fsproj"
+  |> Seq.iter genFSAssemblyInfo
 )
 
 // --------------------------------------------------------------------------------------
 // Clean build results
 
 Target "Clean" (fun _ ->
-    CleanDirs [buildDir; "temp"]
+  CleanDirs [buildDir; "temp"]
 )
 
 Target "CleanDocs" (fun _ ->
-    CleanDirs [outDir]
+  CleanDirs [outDir]
 )
 
 // --------------------------------------------------------------------------------------
@@ -127,9 +115,14 @@ Target "JS" (fun _ ->
   sh "yarn" "run build"
 )
 
+Target "LoggingFile" (fun _ ->
+    ReplaceInFiles [ "namespace Logary.Facade", "namespace FsReveal.Logging" ]
+                   [ "paket-files/logary/logary/src/Logary.Facade/Facade.fs" ]
+)
+
 Target "Build" (fun _ ->
     !! solutionFile
-    |> MSBuildRelease "" "Rebuild"
+    |> MSBuildRelease "" "Build"
     |> ignore
 )
 
@@ -137,12 +130,8 @@ Target "Build" (fun _ ->
 // Run the unit tests using test runner
 
 Target "RunTests" (fun _ ->
-    !! testAssemblies
-    |> NUnit (fun p ->
-        { p with
-            DisableShadowCopy = true
-            TimeOut = TimeSpan.FromMinutes 20.
-            OutputFile = "TestResults.xml" })
+    !! testExecutables
+    |> Expecto (fun p -> { p with Parallel = false } )
 )
 
 #if MONO
@@ -279,6 +268,7 @@ Target "All" DoNothing
 "Clean"
   ==> "AssemblyInfo"
   ==> "JS"
+  ==> "LoggingFile"
   ==> "Build"
   ==> "RunTests"
   =?> ("GenerateReferenceDocs",isLocalBuild && not isMono)
@@ -287,10 +277,6 @@ Target "All" DoNothing
   =?> ("ReleaseDocs",isLocalBuild && not isMono)
 
 "All"
-//#if MONO
-//#else
-//  =?> ("SourceLink", Pdbstr.tryFind().IsSome )
-//#endif
   ==> "NuGet"
   ==> "BuildPackage"
 

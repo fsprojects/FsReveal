@@ -1,20 +1,24 @@
 ﻿module FsReveal.FsRevealIntroTest
 
+open System.IO
 open FsReveal
-open NUnit.Framework
-open FsUnit
+open Expecto
+open Expecto.Flip
 
-[<Test>]
-let ``can read FsReveal intro``() = 
-    let doc = FsReveal.GenerateOutputFromMarkdownFile("Index.md", "." ,"index.html")
+[<Tests>]
+let tests =
+  testList "intro" [
+    testCase "can read FsReveal intro" <| fun () ->
+      let doc = FsReveal.GenerateOutputFromMarkdownFile("Index.md", ".", "index.html")
+      File.Exists "index.html"
+        |> Expect.isTrue "Should have index.html"
 
-    System.IO.File.Exists "index.html" |> shouldEqual true
+    testCase "can create intro twice" <| fun () ->
+      let doc = FsReveal.GenerateOutputFromMarkdownFile("Index.md", ".", "index.html")
+      let doc = FsReveal.GenerateOutputFromMarkdownFile("Index.md", ".", "sample.html")
 
-
-[<Test>]
-let ``can create intro twice``() = 
-    let doc = FsReveal.GenerateOutputFromMarkdownFile("Index.md", ".", "index.html") 
-    let doc = FsReveal.GenerateOutputFromMarkdownFile("Index.md", ".", "sample.html")
-
-    System.IO.File.Exists "index.html" |> shouldEqual true
-    System.IO.File.Exists "sample.html" |> shouldEqual true
+      File.Exists "index.html"
+        |> Expect.isTrue "Should have index.html"
+      File.Exists "sample.html"
+        |> Expect.isTrue "Should have index.html"
+  ]

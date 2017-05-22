@@ -1,8 +1,8 @@
 module FsReveal.PropertySpecs
 
 open FsReveal
-open NUnit.Framework
-open FsUnit
+open Expecto
+open Expecto.Flip
 
 let md = """
 - title : FsReveal
@@ -31,13 +31,21 @@ let md = """
 
 ### Section 3"""
 
-[<Test>]
-let ``can read properties from markdown``() = 
+[<Tests>]
+let tests =
+  testCase "can read properties from markdown" <| fun () ->
     let properties = (md |> FsReveal.GetPresentationFromMarkdown).Properties
-    properties.["title"] |> shouldEqual "FsReveal"
-    properties.["description"] |> shouldEqual "Introduction to FsReveal"
-    properties.["theme"] |> shouldEqual "Night"
-    properties.["transition"] |> shouldEqual "default"
+    properties.["title"]
+      |> Expect.equal "Should have the correct title" "FsReveal"
+
+    properties.["description"]
+      |> Expect.equal "Should have the correct description" "Introduction to FsReveal"
+
+    properties.["theme"]
+      |> Expect.equal "Should have the correct themse" "Night"
+
+    properties.["transition"]
+      |> Expect.equal "Should have the right transition method" "default"
 
 let defaultMD = """
 ***
@@ -60,10 +68,19 @@ let defaultMD = """
 
 ### Section 3"""
 
-[<Test>]
-let ``uses default properties if nothing is specified in markdown``() = 
-    let properties = (defaultMD |> FsReveal.GetPresentationFromMarkdown).Properties
-    properties.["title"] |> shouldEqual "Presentation"
-    properties.["description"] |> shouldEqual ""
-    properties.["theme"] |> shouldEqual "night"
-    properties.["transition"] |> shouldEqual "default"
+[<Tests>]
+let tests2 =
+  testCase "uses default properties if nothing is specified in markdown" <| fun () ->
+    let presentation = defaultMD |> FsReveal.GetPresentationFromMarkdown
+    let properties = presentation.Properties
+    properties.["title"]
+      |> Expect.equal "Presentation title" "Presentation"
+
+    properties.["description"]
+      |> Expect.stringHasLength "Presentation description" 0
+
+    properties.["theme"]
+      |> Expect.equal "Theme is correct" "night"
+
+    properties.["transition"]
+      |> Expect.equal "Transition is default" "default"

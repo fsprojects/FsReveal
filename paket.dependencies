@@ -1,5 +1,6 @@
 source https://nuget.org/api/v2
 redirects: on
+framework net461
 
 nuget FSharp.Formatting
 nuget FSharp.Core
@@ -13,6 +14,7 @@ group Build
   github fsharp/FAKE modules/Octokit/Octokit.fsx
 
 group Test
+  framework net461
   source https://nuget.org/api/v2
   nuget Expecto
   nuget Expecto.FsCheck

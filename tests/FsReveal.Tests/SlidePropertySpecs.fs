@@ -1,8 +1,8 @@
 module FsReveal.SlidePropertySpecs
 
 open FsReveal
-open NUnit.Framework
-open FsUnit
+open Expecto
+open Expecto.Flip
 
 let md = """
 - title : FsReveal
@@ -31,15 +31,17 @@ let md = """
 
 ### Section 3"""
 
-[<Test>]
-let ``can read properties from slides``() = 
-    let doc = md |> FsReveal.GetPresentationFromMarkdown
+[<Tests>]
+let tests =
+  testCase "can read properties from slides" <| fun () ->
+    let doc = FsReveal.GetPresentationFromMarkdown md
     match doc.Slides.[0] with
     | Simple slide ->
-        let slideProperties = slide.Properties
-        slideProperties.["background"] |> shouldEqual "image.png"
-        slideProperties.["background-repeat"] |> shouldEqual "repeat"
-    | _ -> failwith "first slide should be a simple one"
+      let slideProperties = slide.Properties
+      slideProperties.["background"] |> Expect.equal "Background is the right image" "image.png"
+      slideProperties.["background-repeat"] |> Expect.equal "Background-repeat is correct" "repeat"
+    | _ ->
+      failwith "first slide should be a simple one"
 
 let md2 = """***
 - no property
@@ -64,18 +66,29 @@ let md2 = """***
 
 ### Section 3"""
 
-[<Test>]
-let ``can read properties from slides with list``() = 
-    let doc = md2 |> FsReveal.GetPresentationFromMarkdown
-    match doc.Slides.[1] with
-    | Nested slides ->
-        let firstNestedSlideProperties = slides.[0].Properties
-        firstNestedSlideProperties.["data-background"] |> shouldEqual "images/smalllogo.png"
-        firstNestedSlideProperties.["data-background-repeat"] |> shouldEqual "repeat"
-        firstNestedSlideProperties.["data-background-size"] |> shouldEqual "100px"
-        let secondNestedSlideProperties = slides.[1].Properties
-        secondNestedSlideProperties |> shouldEqual Map.empty
-    | _ -> failwith "first slide should be a nested one"
+[<Tests>]
+let tests2 =
+  testCase "can read properties from slides with list" <| fun () ->
+    let doc = FsReveal.GetPresentationFromMarkdown md2
+    let slides =
+      match doc.Slides.[1] with
+      | Nested slides -> slides
+      | _ -> failwith "first slide should be a nested one"
+
+    let firstNestedSlideProperties = slides.[0].Properties
+    firstNestedSlideProperties.["data-background"]
+      |> Expect.equal "Can set data properties" "images/smalllogo.png"
+
+    firstNestedSlideProperties.["data-background-repeat"]
+      |> Expect.equal "Can set data properties 2" "repeat"
+
+    firstNestedSlideProperties.["data-background-size"]
+      |> Expect.equal "Can set data properties 3" "100px"
+
+    let secondNestedSlideProperties = slides.[1].Properties
+    secondNestedSlideProperties
+      |> Expect.equal "Has no properties for the second slide" Map.empty
+
 
 let testTemplate ="{slides}"
 
@@ -105,9 +118,10 @@ let expectedOutput = """<section >
 
 """
 
-[<Test>]
-let ``should not render slide properties``() = 
+[<Tests>]
+let tests3 =
+  testCase "should not render slide properties" <| fun () ->
     let presentation = FsReveal.GetPresentationFromMarkdown md2
     Formatting.GenerateHTML testTemplate presentation
     |> normalizeLineBreaks
-    |> shouldEqual (normalizeLineBreaks expectedOutput)
+    |> Expect.equal "Normalised slides" (normalizeLineBreaks expectedOutput)

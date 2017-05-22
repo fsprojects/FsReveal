@@ -1,8 +1,8 @@
 module FsReveal.SectionsSpecs
 
 open FsReveal
-open NUnit.Framework
-open FsUnit
+open Expecto
+open Expecto.Flip
 
 let md = """
 - title : FsReveal
@@ -31,17 +31,24 @@ let md = """
 
 ### Slide 3"""
 
-[<Test>]
-let ``can generate sections from markdown``() = 
-    let slides = (md |> FsReveal.GetPresentationFromMarkdown).Slides
-    slides.Length |> shouldEqual 3
-    let slide = 
-        slides
-        |> Seq.skip 1
-        |> Seq.head
+[<Tests>]
+let tests =
+  testCase "can generate sections from markdown" <| fun () ->
+    let presentation = FsReveal.GetPresentationFromMarkdown md
+    let slides = presentation.Slides
+
+    slides.Length |> Expect.equal "Should have three slides" 3
+
+    let slide =
+      slides
+      |> Seq.skip 1
+      |> Seq.head
+
     match slide with
-    | Slide.Nested x -> ()
-    | _ -> failwith "subslides not parsed"
+    | Slide.Nested x ->
+      ()
+    | _ ->
+      failwith "subslides not parsed"
 
 let md2 = """
 
@@ -65,16 +72,21 @@ let md2 = """
 
 ### Slide 3"""
 
-[<Test>]
-let ``can generate sections from markdown without properties``() = 
-    let slides = (md2 |> FsReveal.GetPresentationFromMarkdown).Slides
-    slides.Length |> shouldEqual 3
-    let slide = slides.[1]
-    match slide with
-    | Slide.Nested x -> ()
-    | _ -> failwith "subslides not parsed"
+[<Tests>]
+let markdowns =
+  testCase "can generate sections from markdown without properties" <| fun () ->
+    let presentation = FsReveal.GetPresentationFromMarkdown md2
+    let slides = presentation.Slides
+    slides.Length |> Expect.equal "Should have three slides" 3
+    match slides.[1] with
+    | Slide.Nested x ->
+      ()
+    | _ ->
+      failwith "subslides not parsed"
 
-let normalizeLineBreaks (text:string) = text.Replace("\r\n","\n").Replace("\n","\n")
+let normalizeLineBreaks (text: string) =
+  text.Replace("\r\n","\n")
+      .Replace("\n","\n")
 
 
 let testTemplate ="{slides}"
@@ -100,9 +112,10 @@ let expectedOutput = """<section >
 
 """
 
-[<Test>]
-let ``can generate html sections from markdown``() = 
+[<Tests>]
+let outputs =
+  testCase "can generate html sections from markdown" <| fun () ->
     let presentation = FsReveal.GetPresentationFromMarkdown md
     Formatting.GenerateHTML testTemplate presentation
     |> normalizeLineBreaks
-    |> shouldEqual (normalizeLineBreaks expectedOutput)
+    |> Expect.equal "Output with linebreaks equals" (normalizeLineBreaks expectedOutput)
