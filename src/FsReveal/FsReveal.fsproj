@@ -26,7 +26,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <Tailcalls>true</Tailcalls>
-    <OutputPath>bin\Debug</OutputPath>
+    <OutputPath>bin\Release</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <DocumentationFile>bin\Release\FsReveal.xml</DocumentationFile>
@@ -61,7 +61,10 @@
     <None Include="fsreveal.fsx" />
     <None Include="paket.references" />
     <Content Include="fsreveal.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>IfNewer</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\lib\FSharp.Compiler.Interactive.Settings.dll">
+      <CopyToOutputDirectory>IfNewer</CopyToOutputDirectory>
     </Content>
     <Content Include="App.config" />
   </ItemGroup>

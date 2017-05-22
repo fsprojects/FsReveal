@@ -49,7 +49,7 @@ let tags = "F#, markdown, reveal.js"
 let solutionFile  = "FsReveal.sln"
 
 // Pattern specifying assemblies to be tested using Expecto
-let testExecutables = "tests/**/bin/Release/*Tests*.exe"
+let testExecutables = "tests/**/bin/Release/*Tests.exe"
 
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
