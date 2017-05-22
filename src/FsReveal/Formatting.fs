@@ -12,20 +12,20 @@ let (|SpeakerNote|OtherLine|) (line : string) =
 
 let replaceSpeakerNotes text =
     let rec loop inNotes = function
-        | (SpeakerNote note) :: lines -> 
+        | (SpeakerNote note) :: lines ->
             if inNotes then note::(loop true lines)
             else "<aside class=\"notes\">"::note::(loop true lines)
-        | (OtherLine line) :: lines -> 
+        | (OtherLine line) :: lines ->
             if inNotes then "</aside>"::line::(loop false lines)
             else line::(loop false lines)
         | _ -> []
     text |> Array.toList |> loop false
 
-let preprocessing (text : string []) = 
-    text 
+let preprocessing (text : string []) =
+    text
     |> replaceSpeakerNotes
     |> fun s -> String.Join(Environment.NewLine,s)
-    
+
 /// Generates a HTML page from a presentation
 let GenerateHTML (template:string) presentation =
     let doc = Literate.FormatLiterateNodes presentation.Document

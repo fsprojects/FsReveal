@@ -8,15 +8,15 @@ open FSharp.Literate
 open FSharp.Markdown
 open FSharp.Markdown.Html
 
-type SlideData = 
+type SlideData =
     { Properties : Map<string,string>
       Paragraphs : MarkdownParagraph list }
 
-type Slide = 
+type Slide =
     | Simple of SlideData
     | Nested of SlideData list
 
-type Presentation = 
+type Presentation =
     { Properties : Map<string,string>
       Slides : Slide list
       Document : LiterateDocument }
