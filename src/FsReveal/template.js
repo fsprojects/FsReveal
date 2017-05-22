@@ -55,6 +55,9 @@ function showTip(evt, name, unique, owner) {
     parent.appendChild(el);
     el.style.display = "block";
 }
+window.hideTip = hideTip;
+window.hideUsingEsc = hideUsingEsc;
+window.showTip = showTip;
 // end legacy file tips.js
 
 function init() {
