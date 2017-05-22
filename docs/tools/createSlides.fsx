@@ -1,4 +1,4 @@
-#I @"../../bin/"
+#I @"../../src/FsReveal/bin/Release"
 #r "FsReveal.dll"
 #r "FSharp.Literate.dll"
 #r "../../packages/build/FAKE/tools/FakeLib.dll"
