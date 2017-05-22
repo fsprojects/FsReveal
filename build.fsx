@@ -104,6 +104,9 @@ Target "CleanDocs" (fun _ ->
 // Build library & test project
 
 let sh exe args =
+  let exe, args =
+      if EnvironmentHelper.isUnix
+      then exe, args else "cmd", ("/C " + exe + " " + args)
   shellExec ({ ExecParams.Program = exe
                WorkingDirectory = "."
                CommandLine = args
