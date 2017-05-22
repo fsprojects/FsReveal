@@ -1,5 +1,5 @@
 #load "../../FSharp.Formatting/FSharp.Formatting.fsx"
-#I "."
+#I "../lib/net461" // this fils is in ./tools in the nuget package
 #r "FsReveal.dll"
 open System.IO
 

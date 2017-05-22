@@ -8,6 +8,7 @@ github logary/logary src/Logary.Facade/Facade.fs
 github fsprojects/reveal.js:master
 
 group Build
+  framework net461
   source https://nuget.org/api/v2
   nuget FAKE
   nuget SourceLink.Fake

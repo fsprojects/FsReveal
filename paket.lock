@@ -17,17 +17,11 @@ GITHUB
   remote: fsprojects/reveal.js
     FULLPROJECT (539e774d31f91676bcc3f75e28168921cd27d819)
 GROUP Build
+FRAMEWORK: NET461
 NUGET
   remote: https://www.nuget.org/api/v2
     FAKE (4.61.2)
-    Microsoft.Bcl (1.1.10) - framework: net10, net11, net20, net30, net35, net40, net40-full
-      Microsoft.Bcl.Build (>= 1.0.14)
-    Microsoft.Bcl.Build (1.0.21) - import_targets: false, framework: net10, net11, net20, net30, net35, net40, net40-full
-    Microsoft.Net.Http (2.2.29) - framework: net10, net11, net20, net30, net35, net40, net40-full
-      Microsoft.Bcl (>= 1.1.10)
-      Microsoft.Bcl.Build (>= 1.0.14)
     Octokit (0.24)
-      Microsoft.Net.Http  - framework: net10, net11, net20, net30, net35, net40, net40-full
     SourceLink.Fake (1.1)
 GITHUB
   remote: fsharp/FAKE
