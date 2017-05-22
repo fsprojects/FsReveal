@@ -32,24 +32,18 @@ the [reveal.js][revealjs] web presentation framework.
 guide](http://fsprojects.github.io/FsReveal/getting-started.html) can be found
 in the docs.
 
-[revealjs]: https://github.com/hakimel/reveal.js/ "reveal.js | HTML
-presentations made easy"
+[revealjs]: https://github.com/hakimel/reveal.js/ "reveal.js | HTML presentations made easy"
+
+### Hacking on the project
+
+    git checkout develop
+    # follow README in branch
+    # git commit ...
+    # send PR to `develop` if you're improving `FsReveal` or to `master` if you're
+    # changing the 'default' presentation everyone starts off with.
 
 ### Maintainer(s)
 
 - [@kimsk](https://github.com/kimsk)
 - [@forki](https://github.com/forki)
 - [@troykershaw](https://github.com/troykershaw)
-
-The default maintainer account for projects under "fsprojects" is
-[@fsprojectsgit](https://github.com/fsprojectsgit) - F# Community Project
-Incubation Space (repo management)
-
-### Hacking on the project
-
-```
-git checkout develop
-# follow README in branch
-# git commit ...
-# send PR
-```
