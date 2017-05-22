@@ -2,5 +2,5 @@ FSharp.Formatting
 FSharp.Core
 
 group Test
-NUnit
-File:FsUnit.fs .
+Expecto
+Expecto.FsCheck

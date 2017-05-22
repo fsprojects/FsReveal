@@ -3,16 +3,16 @@ redirects: on
 
 nuget FSharp.Formatting
 nuget FSharp.Core
+github logary/logary src/Logary.Facade/Facade.fs
 github fsprojects/reveal.js:master
 
 group Build
-  source https://nuget.org/api/v2    
+  source https://nuget.org/api/v2
   nuget FAKE
   nuget SourceLink.Fake
   github fsharp/FAKE modules/Octokit/Octokit.fsx
 
 group Test
   source https://nuget.org/api/v2
-  nuget NUnit ~> 2 
-  nuget NUnit.Runners ~> 2
-  github forki/FsUnit FsUnit.fs
+  nuget Expecto
+  nuget Expecto.FsCheck

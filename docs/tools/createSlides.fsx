@@ -15,10 +15,10 @@ let outDir = root @@ "/docs/output/samples/"
 FsReveal.FsRevealHelper.DistFolder <- rooted "dist"
 FsReveal.FsRevealHelper.TemplateFile <- rooted "dist/index.html"
 
-let targetFCIS = rooted @"packages/build/FAKE/tools/FSharp.Compiler.Interactive.Settings.dll"
+let targetFCIS = rooted @"lib/FSharp.Compiler.Interactive.Settings.dll"
+
 if not (exists targetFCIS) then
   copy (rooted @"bin/FSharp.Compiler.Interactive.Settings.dll") targetFCIS
-
 
 let copyStylesheet () =
   try
