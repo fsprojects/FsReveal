@@ -1,8 +1,7 @@
 [![Issue Stats](http://issuestats.com/github/fsprojects/FsReveal/badge/issue)](http://issuestats.com/github/fsprojects/FsReveal)
 [![Issue Stats](http://issuestats.com/github/fsprojects/FsReveal/badge/pr)](http://issuestats.com/github/fsprojects/FsReveal)
 
-# FsReveal [![NuGet
-Status](http://img.shields.io/nuget/v/FsReveal.svg?style=flat)](https://www.nuget.org/packages/FsReveal/)
+# FsReveal [![NuGet Status](http://img.shields.io/nuget/v/FsReveal.svg?style=flat)](https://www.nuget.org/packages/FsReveal/)
 
 FsReveal allows you to write beautiful slides in
 [Markdown](http://daringfireball.net/projects/markdown/syntax) and brings F# to
@@ -10,11 +9,9 @@ the [reveal.js][revealjs] web presentation framework.
 
 ## Quickstart
 
-```
-git clone --depth=1 https://github.com/fsprojects/FsReveal.git
-cd FsReveal
-./build.sh
-```
+    git clone --depth=1 https://github.com/fsprojects/FsReveal.git
+    cd FsReveal
+    ./build.sh
 
 ## Features
 
