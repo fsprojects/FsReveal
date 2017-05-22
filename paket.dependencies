@@ -3,4 +3,4 @@ framework NET461
 
 nuget FsReveal
 nuget FAKE
-nuget Suave prerelease
+nuget Suave
