@@ -108,7 +108,7 @@ let startWebServer () =
 
         if portIsTaken then findPort (port + 1) else port
 
-    let port = findPort 8083
+    let port = findPort 8080
 
     let serverConfig =
         { defaultConfig with
