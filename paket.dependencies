@@ -1,4 +1,5 @@
 source https://nuget.org/api/v2
+framework NET461
 
 nuget FsReveal
 nuget FAKE
