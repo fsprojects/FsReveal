@@ -33,7 +33,7 @@ open Suave.Utils
 open Suave.Files
 
 let outDir = __SOURCE_DIRECTORY__ </> "output"
-let slidesDir = __SOURCE_DIRECTORY__ </> "slides"
+let slidesDir = getBuildParamOrDefault "input" (__SOURCE_DIRECTORY__ </> "slides")
 
 Target "Clean" (fun _ ->
     CleanDirs [outDir]
