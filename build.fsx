@@ -33,7 +33,7 @@ open Suave.Utils
 open Suave.Files
 
 let outDir = __SOURCE_DIRECTORY__ </> "output"
-let slidesDir = __SOURCE_DIRECTORY__ </> "slides"
+let slidesDir = getBuildParamOrDefault "input" (__SOURCE_DIRECTORY__ </> "slides")
 
 Target "Clean" (fun _ ->
     CleanDirs [outDir]
@@ -123,18 +123,19 @@ let startWebServer () =
     Process.Start (sprintf "http://localhost:%d/index.html" port) |> ignore
 
 Target "GenerateSlides" (fun _ ->
-    !! (slidesDir + "/**/*.md")
-      ++ (slidesDir + "/**/*.fsx")
+    !! (slidesDir </> "**" </> "*.md")
+      ++ (slidesDir </> "**" </> "*.fsx")
     |> Seq.map fileInfo
     |> Seq.iter generateFor
 )
 
 Target "KeepRunning" (fun _ ->
-    use watcher = !! (slidesDir + "/**/*.*") |> WatchChanges handleWatcherEvents
+    let watchSelection = slidesDir </> "**" </> "*.*"
+    use watcher = !! watchSelection |> WatchChanges handleWatcherEvents
     
     startWebServer ()
 
-    traceImportant "Waiting for slide edits. Press any key to stop."
+    sprintf "Waiting for slide edits in %s. Press any key to stop." watchSelection |> traceImportant 
 
     System.Console.ReadKey() |> ignore
 
